@@ -4,6 +4,7 @@ import { Hero } from "@/components/site/Hero";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { RacingButton } from "@/components/site/RacingButton";
+import { dictionary } from "@/i18n/dictionary";
 import { useLang } from "@/i18n/LanguageProvider";
 import kartCorner from "@/assets/kart-corner.jpg";
 import gokart from "@/assets/gokart.png";
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/")({
       { title: "MAGIK Reparto Corse — Team Kart Professionale Emilia-Romagna" },
       { name: "description", content: "Reparto corse ufficiale del Kart Magik. Assistenza in pista, riparazione go-kart, ricambi e rivenditore LKE in Emilia-Romagna." },
       { property: "og:title", content: "MAGIK Reparto Corse — Performance, tecnica e ambizione mondiale" },
-      { property: "og:description", content: "Prepariamo, assistiamo e portiamo in pista il Kart Magik con un solo obiettivo: vincere." },
+      { property: "og:description", content: dictionary.it.home.ctaClosing },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -135,7 +136,7 @@ function Index() {
       <section className="relative py-20 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <h2 className="font-display font-black uppercase italic text-3xl md:text-5xl tracking-tight">
-            {t.home.missionTitle}
+            {t.home.ctaClosing}
           </h2>
           <div className="flex flex-wrap gap-3">
             <RacingButton to="/contact">{t.common.contactUs}</RacingButton>

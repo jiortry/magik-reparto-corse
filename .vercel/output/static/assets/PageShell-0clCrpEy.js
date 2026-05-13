@@ -1,0 +1,1 @@
+import{j as i,m as n}from"./index-DGBX3nTW.js";function e({children:t,className:a=""}){return i.jsx(n.main,{initial:{opacity:0,y:12},animate:{opacity:1,y:0},transition:{duration:.4},className:`relative pt-28 lg:pt-32 pb-24 ${a}`,children:t})}export{e as P};

@@ -6,6 +6,7 @@ export type Dict = {
   hero: { eyebrow: string; title: string; subtitle: string; lead: string; scroll: string };
   home: {
     missionEyebrow: string; missionTitle: string; missionLead: string; statsTitle: string;
+    ctaClosing: string;
     stats: { value: string; label: string }[];
   };
   about: { title: string; eyebrow: string; lead: string; blocks: { title: string; body: string }[] };
@@ -59,7 +60,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "MAGIK Reparto Corse",
       subtitle: "Tecnica, velocità e ambizione mondiale.",
       lead:
-        "Prepariamo, assistiamo e portiamo in pista il Kart Magik con un solo obiettivo: vincere.",
+        "Prepariamo, assistiamo e portiamo in pista il Kart Magik: massimo livello tecnico e supporto gara.",
       scroll: "Scroll",
     },
     home: {
@@ -68,10 +69,11 @@ export const dictionary: Record<Lang, Dict> = {
       missionLead:
         "Un reparto corse costruito attorno a una sola promessa: portare il marchio Magik sul gradino più alto del podio internazionale.",
       statsTitle: "Numeri che corrono",
+      ctaClosing: "Un solo obiettivo: vincere i Mondiali con il Kart Magik.",
       stats: [
         { value: "100%", label: "Assistenza Pista" },
         { value: "24/7", label: "Reparto Tecnico" },
-        { value: "1°", label: "Obiettivo Mondiale" },
+        { value: "1°", label: "Top mondiale" },
         { value: "ER", label: "Rivenditore LKE" },
       ],
     },
@@ -237,7 +239,7 @@ export const dictionary: Record<Lang, Dict> = {
       title: "MAGIK Reparto Corse",
       subtitle: "Technical precision, racing performance and world-class ambition.",
       lead:
-        "We prepare, support and race the Magik Kart with one single goal: to win.",
+        "We prepare, support and race the Magik Kart at the highest technical level—on track, every session.",
       scroll: "Scroll",
     },
     home: {
@@ -246,10 +248,11 @@ export const dictionary: Record<Lang, Dict> = {
       missionLead:
         "A racing department built around one promise: to bring the Magik brand to the top step of the international podium.",
       statsTitle: "Numbers that race",
+      ctaClosing: "One goal: win the World Championship with the Magik Kart.",
       stats: [
         { value: "100%", label: "Trackside Support" },
         { value: "24/7", label: "Tech Department" },
-        { value: "1st", label: "World Goal" },
+        { value: "1st", label: "World stage" },
         { value: "ER", label: "LKE Dealer" },
       ],
     },
