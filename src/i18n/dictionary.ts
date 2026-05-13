@@ -14,19 +14,56 @@ export type Dict = {
   };
   hero: { eyebrow: string; title: string; subtitle: string; lead: string; scroll: string };
   home: {
-    missionEyebrow: string; missionTitle: string; missionLead: string; statsTitle: string;
+    missionEyebrow: string;
+    missionTitle: string;
+    missionLead: string;
+    statsTitle: string;
     ctaClosing: string;
     missionImageAlt: string;
     kartTeaserAlt: string;
     raceNumberLabel: string;
     stats: { value: string; label: string }[];
   };
-  about: { title: string; eyebrow: string; lead: string; blocks: { title: string; body: string }[] };
-  services: { title: string; eyebrow: string; lead: string; items: { icon: string; title: string; body: string }[] };
-  kart: { title: string; eyebrow: string; lead: string; hotspots: { label: string; body: string }[] };
-  lke: { title: string; eyebrow: string; lead: string; ctas: { label: string; href: string }[]; points: string[] };
-  team: { title: string; eyebrow: string; lead: string; imageAltCrew: string; imageAltPilot: string };
-  gallery: { title: string; eyebrow: string; lead: string; close: string; prev: string; next: string };
+  about: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    blocks: { title: string; body: string }[];
+  };
+  services: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    items: { icon: string; title: string; body: string }[];
+  };
+  kart: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    hotspots: { label: string; body: string }[];
+  };
+  lke: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    ctas: { label: string; href: string }[];
+    points: string[];
+  };
+  team: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    imageAltCrew: string;
+    imageAltPilot: string;
+  };
+  gallery: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    close: string;
+    prev: string;
+    next: string;
+  };
   blog: {
     title: string;
     eyebrow: string;
@@ -38,10 +75,19 @@ export type Dict = {
   };
   faq: { title: string; eyebrow: string; lead: string };
   contact: {
-    title: string; eyebrow: string; lead: string;
+    title: string;
+    eyebrow: string;
+    lead: string;
     form: {
-      firstName: string; lastName: string; email: string; phone: string; type: string; message: string;
-      submit: string; success: string; types: string[];
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      type: string;
+      message: string;
+      submit: string;
+      success: string;
+      types: string[];
     };
     ctas: string[];
   };
@@ -88,8 +134,7 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Reparto Corse Ufficiale",
       title: "MAGIK Reparto Corse",
       subtitle: "Tecnica, velocità e ambizione mondiale.",
-      lead:
-        "Prepariamo, assistiamo e portiamo in pista il Kart Magik: massimo livello tecnico e supporto gara.",
+      lead: "Prepariamo, assistiamo e portiamo in pista il Kart Magik: massimo livello tecnico e supporto gara.",
       scroll: "Scroll",
     },
     home: {
@@ -113,8 +158,7 @@ export const dictionary: Record<Lang, Dict> = {
     about: {
       title: "Chi Siamo",
       eyebrow: "About",
-      lead:
-        "MAGIK Reparto Corse è il reparto corse ufficiale del marchio Magik, dedicato alla preparazione, allo sviluppo e all'assistenza in gara del Kart Magik.",
+      lead: "MAGIK Reparto Corse è il reparto corse ufficiale del marchio Magik, dedicato alla preparazione, allo sviluppo e all'assistenza in gara del Kart Magik.",
       blocks: [
         {
           title: "Nati per Competere",
@@ -126,38 +170,66 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           title: "Presenza internazionale",
-          body:
-            "Seguiamo calendari e circuiti in Italia e all’estero: logistica trasferta, assistenza in griglia e protocolli da gara consolidati sul campo.",
+          body: "Seguiamo calendari e circuiti in Italia e all’estero: logistica trasferta, assistenza in griglia e protocolli da gara consolidati sul campo.",
         },
       ],
     },
     services: {
       title: "Servizi",
       eyebrow: "Cosa facciamo",
-      lead:
-        "Dalla preparazione tecnica alla pista, MAGIK Reparto Corse segue ogni fase della performance.",
+      lead: "Dalla preparazione tecnica alla pista, MAGIK Reparto Corse segue ogni fase della performance.",
       items: [
-        { icon: "🏁", title: "Kart Magik Omologato", body: "Telaio Magik pronto-gara, omologato e sviluppato dal nostro reparto corse." },
-        { icon: "🔧", title: "Riparazione Go-Kart", body: "Officina specializzata in riparazione e revisione di go-kart da competizione." },
-        { icon: "⚙️", title: "Assistenza Tecnica & Meccanica", body: "Diagnosi, manutenzione e setup eseguiti da meccanici professionisti." },
-        { icon: "🏎️", title: "Assistenza in Pista", body: "Affianchiamo piloti e team durante prove e gare con supporto tecnico completo." },
-        { icon: "👨‍🔧", title: "Giornata di Pista", body: "Vivi una giornata in circuito affiancato da un team professionale." },
-        { icon: "🧩", title: "Punto Vendita Ricambi", body: "Componenti kart originali, all'ingrosso e al dettaglio, con consulenza tecnica." },
-        { icon: "📦", title: "Vendita Ingrosso & Dettaglio", body: "Logistica e disponibilità per piloti, team e officine." },
-        { icon: "🔥", title: "Rivenditore Ufficiale LKE", body: "Riferimento ufficiale per il motore LKE in Emilia-Romagna." },
+        {
+          icon: "🏁",
+          title: "Kart Magik Omologato",
+          body: "Telaio Magik pronto-gara, omologato e sviluppato dal nostro reparto corse.",
+        },
+        {
+          icon: "🔧",
+          title: "Riparazione Go-Kart",
+          body: "Officina specializzata in riparazione e revisione di go-kart da competizione.",
+        },
+        {
+          icon: "⚙️",
+          title: "Assistenza Tecnica & Meccanica",
+          body: "Diagnosi, manutenzione e setup eseguiti da meccanici professionisti.",
+        },
+        {
+          icon: "🏎️",
+          title: "Assistenza in Pista",
+          body: "Affianchiamo piloti e team durante prove e gare con supporto tecnico completo.",
+        },
+        {
+          icon: "👨‍🔧",
+          title: "Giornata di Pista",
+          body: "Vivi una giornata in circuito affiancato da un team professionale.",
+        },
+        {
+          icon: "🧩",
+          title: "Punto Vendita Ricambi",
+          body: "Componenti kart originali, all'ingrosso e al dettaglio, con consulenza tecnica.",
+        },
+        {
+          icon: "📦",
+          title: "Vendita Ingrosso & Dettaglio",
+          body: "Logistica e disponibilità per piloti, team e officine.",
+        },
+        {
+          icon: "🔥",
+          title: "Rivenditore Ufficiale LKE",
+          body: "Riferimento ufficiale per il motore LKE in Emilia-Romagna.",
+        },
         {
           icon: "🌍",
           title: "Programmi gara & stagione",
-          body:
-            "Piani su più round, telemetria e checklist operative: affianchiamo piloti e team con continuità dall’officina alla bandiera a scacchi.",
+          body: "Piani su più round, telemetria e checklist operative: affianchiamo piloti e team con continuità dall’officina alla bandiera a scacchi.",
         },
       ],
     },
     kart: {
       title: "Kart Magik",
       eyebrow: "Il Telaio",
-      lead:
-        "Il Kart Magik omologato è il cuore del nostro reparto corse: un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
+      lead: "Il Kart Magik omologato è il cuore del nostro reparto corse: un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
       hotspots: [
         { label: "Telaio", body: "Geometria racing, rigidità calibrata per la trazione." },
         { label: "Carene", body: "Aerodinamica e linee taglienti, look motorsport." },
@@ -170,8 +242,7 @@ export const dictionary: Record<Lang, Dict> = {
     lke: {
       title: "LKE Emilia-Romagna",
       eyebrow: "Rivenditore Ufficiale",
-      lead:
-        "MAGIK è rivenditore ufficiale in Emilia-Romagna del motore LKE, con supporto tecnico, ricambi disponibili e consulenza specializzata.",
+      lead: "MAGIK è rivenditore ufficiale in Emilia-Romagna del motore LKE, con supporto tecnico, ricambi disponibili e consulenza specializzata.",
       ctas: [
         { label: "Richiedi informazioni LKE", href: "/contact" },
         { label: "Ordina componenti", href: "/contact" },
@@ -187,8 +258,7 @@ export const dictionary: Record<Lang, Dict> = {
     team: {
       title: "Racing Team",
       eyebrow: "Il Team",
-      lead:
-        "Un team tecnico, veloce e determinato. Dalla preparazione del kart all'assistenza in pista, ogni dettaglio è studiato per la performance.",
+      lead: "Un team tecnico, veloce e determinato. Dalla preparazione del kart all'assistenza in pista, ogni dettaglio è studiato per la performance.",
       imageAltCrew: "MAGIK Racing Team al lavoro",
       imageAltPilot: "Pilota MAGIK — casco e attrezzatura",
     },
@@ -204,7 +274,15 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Blog",
       eyebrow: "Insights",
       lead: "News, tecnica e dietro le quinte di MAGIK Reparto Corse.",
-      categories: ["Gare", "Tecnica", "Setup", "Motori", "News Magik", "Consigli", "Dietro le Quinte"],
+      categories: [
+        "Gare",
+        "Tecnica",
+        "Setup",
+        "Motori",
+        "News Magik",
+        "Consigli",
+        "Dietro le Quinte",
+      ],
       postNotFoundTitle: "Articolo non trovato",
       backToBlog: "Torna al blog",
       navBackLabel: "Blog",
@@ -217,8 +295,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       title: "Contatti",
       eyebrow: "Parla con il Team",
-      lead:
-        "Assistenza tecnica, ricambi, motore LKE o una giornata in pista: dicci di cosa hai bisogno.",
+      lead: "Assistenza tecnica, ricambi, motore LKE o una giornata in pista: dicci di cosa hai bisogno.",
       form: {
         firstName: "Nome",
         lastName: "Cognome",
@@ -291,8 +368,7 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Official Racing Department",
       title: "MAGIK Reparto Corse",
       subtitle: "Technical precision, racing performance and world-class ambition.",
-      lead:
-        "We prepare, support and race the Magik Kart at the highest technical level—on track, every session.",
+      lead: "We prepare, support and race the Magik Kart at the highest technical level—on track, every session.",
       scroll: "Scroll",
     },
     home: {
@@ -316,8 +392,7 @@ export const dictionary: Record<Lang, Dict> = {
     about: {
       title: "About",
       eyebrow: "About Us",
-      lead:
-        "MAGIK Reparto Corse is the official racing department of the Magik brand, dedicated to preparing, developing and racing the Magik Kart.",
+      lead: "MAGIK Reparto Corse is the official racing department of the Magik brand, dedicated to preparing, developing and racing the Magik Kart.",
       blocks: [
         {
           title: "Built to Compete",
@@ -329,38 +404,66 @@ export const dictionary: Record<Lang, Dict> = {
         },
         {
           title: "International presence",
-          body:
-            "We follow race calendars and circuits in Italy and abroad: travel logistics, grid-side assistance and field-proven race protocols.",
+          body: "We follow race calendars and circuits in Italy and abroad: travel logistics, grid-side assistance and field-proven race protocols.",
         },
       ],
     },
     services: {
       title: "Services",
       eyebrow: "What we do",
-      lead:
-        "From technical preparation to the track, MAGIK Reparto Corse follows every phase of performance.",
+      lead: "From technical preparation to the track, MAGIK Reparto Corse follows every phase of performance.",
       items: [
-        { icon: "🏁", title: "Magik Homologated Kart", body: "Race-ready Magik chassis, homologated and developed by our racing department." },
-        { icon: "🔧", title: "Go-Kart Repair", body: "Workshop specialised in repair and overhaul of competition karts." },
-        { icon: "⚙️", title: "Technical & Mechanical Service", body: "Diagnostics, maintenance and setup performed by professional mechanics." },
-        { icon: "🏎️", title: "Trackside Support", body: "We support drivers and teams during practice and races with full technical assistance." },
-        { icon: "👨‍🔧", title: "Track Day", body: "Spend a day on circuit alongside a professional team." },
-        { icon: "🧩", title: "Kart Parts Store", body: "Original kart components, wholesale and retail, with technical advice." },
-        { icon: "📦", title: "Wholesale & Retail", body: "Logistics and stock for drivers, teams and workshops." },
-        { icon: "🔥", title: "Official LKE Dealer", body: "Official reference for LKE engines in Emilia-Romagna." },
+        {
+          icon: "🏁",
+          title: "Magik Homologated Kart",
+          body: "Race-ready Magik chassis, homologated and developed by our racing department.",
+        },
+        {
+          icon: "🔧",
+          title: "Go-Kart Repair",
+          body: "Workshop specialised in repair and overhaul of competition karts.",
+        },
+        {
+          icon: "⚙️",
+          title: "Technical & Mechanical Service",
+          body: "Diagnostics, maintenance and setup performed by professional mechanics.",
+        },
+        {
+          icon: "🏎️",
+          title: "Trackside Support",
+          body: "We support drivers and teams during practice and races with full technical assistance.",
+        },
+        {
+          icon: "👨‍🔧",
+          title: "Track Day",
+          body: "Spend a day on circuit alongside a professional team.",
+        },
+        {
+          icon: "🧩",
+          title: "Kart Parts Store",
+          body: "Original kart components, wholesale and retail, with technical advice.",
+        },
+        {
+          icon: "📦",
+          title: "Wholesale & Retail",
+          body: "Logistics and stock for drivers, teams and workshops.",
+        },
+        {
+          icon: "🔥",
+          title: "Official LKE Dealer",
+          body: "Official reference for LKE engines in Emilia-Romagna.",
+        },
         {
           icon: "🌍",
           title: "Race programmes & season",
-          body:
-            "Multi-round plans, telemetry and ops checklists: we support drivers and teams with continuity from the workshop to the chequered flag.",
+          body: "Multi-round plans, telemetry and ops checklists: we support drivers and teams with continuity from the workshop to the chequered flag.",
         },
       ],
     },
     kart: {
       title: "Kart Magik",
       eyebrow: "The Chassis",
-      lead:
-        "The homologated Magik Kart is the heart of our racing department: a chassis developed for speed, precision and reliability.",
+      lead: "The homologated Magik Kart is the heart of our racing department: a chassis developed for speed, precision and reliability.",
       hotspots: [
         { label: "Chassis", body: "Racing geometry, calibrated stiffness for traction." },
         { label: "Bodywork", body: "Aero lines and sharp cuts, full motorsport look." },
@@ -373,8 +476,7 @@ export const dictionary: Record<Lang, Dict> = {
     lke: {
       title: "LKE Emilia-Romagna",
       eyebrow: "Official Dealer",
-      lead:
-        "MAGIK is the official LKE engine dealer in Emilia-Romagna, with technical support, parts availability and specialised consulting.",
+      lead: "MAGIK is the official LKE engine dealer in Emilia-Romagna, with technical support, parts availability and specialised consulting.",
       ctas: [
         { label: "Request LKE info", href: "/contact" },
         { label: "Order components", href: "/contact" },
@@ -390,8 +492,7 @@ export const dictionary: Record<Lang, Dict> = {
     team: {
       title: "Racing Team",
       eyebrow: "The Team",
-      lead:
-        "A technical, fast and determined team. From kart preparation to trackside support, every detail is engineered for performance.",
+      lead: "A technical, fast and determined team. From kart preparation to trackside support, every detail is engineered for performance.",
       imageAltCrew: "MAGIK Racing Team at work",
       imageAltPilot: "MAGIK driver — helmet and gear",
     },
@@ -407,7 +508,15 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Blog",
       eyebrow: "Insights",
       lead: "News, technique and behind the scenes of MAGIK Reparto Corse.",
-      categories: ["Races", "Technique", "Setup", "Engines", "Magik News", "Tips", "Behind the Scenes"],
+      categories: [
+        "Races",
+        "Technique",
+        "Setup",
+        "Engines",
+        "Magik News",
+        "Tips",
+        "Behind the Scenes",
+      ],
       postNotFoundTitle: "Post not found",
       backToBlog: "Back to blog",
       navBackLabel: "Blog",
@@ -420,8 +529,7 @@ export const dictionary: Record<Lang, Dict> = {
     contact: {
       title: "Contact",
       eyebrow: "Talk to the Team",
-      lead:
-        "Technical support, parts, LKE engines or a track day: tell us what you need.",
+      lead: "Technical support, parts, LKE engines or a track day: tell us what you need.",
       form: {
         firstName: "First Name",
         lastName: "Last Name",

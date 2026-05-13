@@ -20,14 +20,15 @@ function ContactPage() {
     <PageShell>
       <div className="mx-auto max-w-[1400px] px-5 lg:px-8 grid gap-12 lg:grid-cols-[1fr_1.2fr]">
         <div>
-          <SectionHeader eyebrow={t.contact.eyebrow} title={t.contact.title} lead={t.contact.lead} />
+          <SectionHeader
+            eyebrow={t.contact.eyebrow}
+            title={t.contact.title}
+            lead={t.contact.lead}
+          />
 
           <div className="mt-10 space-y-3">
             {t.contact.ctas.map((c, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 border border-border bg-card p-4"
-              >
+              <div key={i} className="flex items-center gap-3 border border-border bg-card p-4">
                 <span className="font-display font-black italic text-xl text-primary">→</span>
                 <p className="text-sm text-foreground/85">{c}</p>
               </div>

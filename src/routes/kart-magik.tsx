@@ -25,7 +25,9 @@ function KartPage() {
         </div>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
           <RacingButton to="/lke">LKE Emilia-Romagna</RacingButton>
-          <RacingButton to="/contact" variant="outline">{t.common.requestInfo}</RacingButton>
+          <RacingButton to="/contact" variant="outline">
+            {t.common.requestInfo}
+          </RacingButton>
         </div>
       </div>
     </PageShell>

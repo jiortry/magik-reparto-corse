@@ -54,14 +54,16 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       description:
         "Il Kart Magik omologato: telaio racing, impianto frenante, radiatore, motore LKE e setup gara curato dal team.",
       ogTitle: "Kart Magik omologato",
-      ogDescription: "Un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
+      ogDescription:
+        "Un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
     },
     "/lke": {
       title: `Motore LKE Emilia-Romagna — Rivenditore ufficiale | MAGIK`,
       description:
         "MAGIK è rivenditore ufficiale del motore LKE in Emilia-Romagna: supporto tecnico, ricambi e consulenza.",
       ogTitle: "LKE Emilia-Romagna — Rivenditore ufficiale",
-      ogDescription: "Supporto tecnico, disponibilità ricambi e consulenza specializzata sul motore LKE.",
+      ogDescription:
+        "Supporto tecnico, disponibilità ricambi e consulenza specializzata sul motore LKE.",
     },
     "/team": {
       title: `Racing Team — ${SITE}`,
@@ -72,7 +74,8 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     },
     "/gallery": {
       title: `Gallery — ${SITE}`,
-      description: "Immagini dal box, dalla pista e dai momenti che contano del MAGIK Reparto Corse.",
+      description:
+        "Immagini dal box, dalla pista e dai momenti che contano del MAGIK Reparto Corse.",
       ogTitle: `Gallery — ${SITE}`,
       ogDescription: "In pista, in box, dietro le quinte.",
     },
@@ -149,7 +152,8 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     },
     "/blog": {
       title: `Blog — Technique, races, engines | ${SITE}`,
-      description: "News, engineering, setup, LKE engines and behind the scenes at MAGIK Reparto Corse.",
+      description:
+        "News, engineering, setup, LKE engines and behind the scenes at MAGIK Reparto Corse.",
       ogTitle: `Blog — ${SITE}`,
       ogDescription: "Racing insights, setup notes and behind the scenes.",
     },
@@ -204,7 +208,7 @@ export function getSsrPageSeo(path: string): PageSeo {
 export function metaArrayFromPageSeo(
   seo: PageSeo,
   path: string,
-  extras?: { ogImage?: string }
+  extras?: { ogImage?: string },
 ): (
   | { title: string }
   | { name: string; content: string }

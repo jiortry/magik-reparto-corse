@@ -37,9 +37,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-carbon/90 backdrop-blur-xl border-b border-border"
-          : "bg-transparent"
+        scrolled ? "bg-carbon/90 backdrop-blur-xl border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3 lg:px-8">

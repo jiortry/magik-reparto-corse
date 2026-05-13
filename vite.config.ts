@@ -11,10 +11,7 @@ const vercelBuild = process.env.VERCEL === "1";
 // Redirect TanStack Start's bundled server entry to src/server.ts (SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig(async ({ command, mode }) => {
-  const plugins = [
-    tailwindcss(),
-    tsConfigPaths({ projects: ["./tsconfig.json"] }),
-  ];
+  const plugins = [tailwindcss(), tsConfigPaths({ projects: ["./tsconfig.json"] })];
 
   if (!vercelBuild && command === "build") {
     plugins.push(cloudflare({ viteEnvironment: { name: "ssr" } }));

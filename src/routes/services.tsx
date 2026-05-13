@@ -18,7 +18,11 @@ function ServicesPage() {
   return (
     <PageShell>
       <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
-        <SectionHeader eyebrow={t.services.eyebrow} title={t.services.title} lead={t.services.lead} />
+        <SectionHeader
+          eyebrow={t.services.eyebrow}
+          title={t.services.title}
+          lead={t.services.lead}
+        />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {t.services.items.map((it, i) => (
             <ServiceCard key={i} index={i} {...it} />

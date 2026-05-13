@@ -30,15 +30,9 @@ export function Hero() {
   }, [mx, my]);
 
   return (
-    <section
-      ref={ref}
-      className="relative min-h-[100svh] overflow-hidden flex items-center"
-    >
+    <section ref={ref} className="relative min-h-[100svh] overflow-hidden flex items-center">
       {/* Background image with parallax */}
-      <motion.div
-        style={{ x: parX, y: parY, scale: 1.1 }}
-        className="absolute inset-0 -z-10"
-      >
+      <motion.div style={{ x: parX, y: parY, scale: 1.1 }} className="absolute inset-0 -z-10">
         <img
           src={kartTrack}
           alt=""
@@ -82,7 +76,9 @@ export function Hero() {
             style={{ fontStretch: "condensed" }}
           >
             <span className="block text-foreground">MAGIK</span>
-            <span className="block text-primary drop-shadow-[0_0_30px_rgba(225,6,0,0.5)]">REPARTO</span>
+            <span className="block text-primary drop-shadow-[0_0_30px_rgba(225,6,0,0.5)]">
+              REPARTO
+            </span>
             <span className="block text-stroke">CORSE</span>
           </motion.h1>
           <motion.p
@@ -107,9 +103,15 @@ export function Hero() {
             transition={{ delay: 0.75, duration: 0.6 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <RacingButton to="/team" variant="primary">{t.common.discoverTeam}</RacingButton>
-            <RacingButton to="/contact" variant="outline">{t.common.contactUs}</RacingButton>
-            <RacingButton to="/services" variant="ghost">{t.common.trackDay}</RacingButton>
+            <RacingButton to="/team" variant="primary">
+              {t.common.discoverTeam}
+            </RacingButton>
+            <RacingButton to="/contact" variant="outline">
+              {t.common.contactUs}
+            </RacingButton>
+            <RacingButton to="/services" variant="ghost">
+              {t.common.trackDay}
+            </RacingButton>
           </motion.div>
         </div>
 

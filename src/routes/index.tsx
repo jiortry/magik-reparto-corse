@@ -38,8 +38,12 @@ function Index() {
               className="relative clip-diagonal w-full aspect-[4/5] object-cover"
             />
             <div className="absolute -bottom-4 -right-4 border border-accent bg-carbon px-4 py-3">
-              <p className="font-display font-black uppercase text-2xl italic text-accent leading-none">#130</p>
-              <p className="text-[10px] font-display uppercase tracking-widest text-foreground/60 mt-1">{t.home.raceNumberLabel}</p>
+              <p className="font-display font-black uppercase text-2xl italic text-accent leading-none">
+                #130
+              </p>
+              <p className="text-[10px] font-display uppercase tracking-widest text-foreground/60 mt-1">
+                {t.home.raceNumberLabel}
+              </p>
             </div>
           </div>
           <div>
@@ -105,11 +109,7 @@ function Index() {
         <div className="absolute inset-0 carbon-texture opacity-30" />
         <div className="relative mx-auto max-w-[1400px] px-5 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
           <div>
-            <SectionHeader
-              eyebrow={t.kart.eyebrow}
-              title={t.kart.title}
-              lead={t.kart.lead}
-            />
+            <SectionHeader eyebrow={t.kart.eyebrow} title={t.kart.title} lead={t.kart.lead} />
             <div className="mt-8">
               <RacingButton to="/kart-magik">{t.common.readMore}</RacingButton>
             </div>
@@ -134,7 +134,9 @@ function Index() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <RacingButton to="/contact">{t.common.contactUs}</RacingButton>
-            <RacingButton to="/services" variant="outline">{t.common.trackDay}</RacingButton>
+            <RacingButton to="/services" variant="outline">
+              {t.common.trackDay}
+            </RacingButton>
           </div>
         </div>
       </section>

@@ -40,11 +40,7 @@ function BlogPage() {
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
               className="group relative border border-border bg-card overflow-hidden hover:border-primary/60 transition-colors"
             >
-              <Link
-                to="/blog/$slug"
-                params={{ slug: p.slug }}
-                className="block"
-              >
+              <Link to="/blog/$slug" params={{ slug: p.slug }} className="block">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={p.cover}
@@ -59,12 +55,18 @@ function BlogPage() {
                 </div>
                 <div className="p-5">
                   <p className="text-[10px] font-display uppercase tracking-widest text-muted-foreground">
-                    {new Date(p.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", { day: "2-digit", month: "short", year: "numeric" })}
+                    {new Date(p.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
                   </p>
                   <h3 className="mt-2 font-display font-bold uppercase text-lg leading-tight tracking-tight group-hover:text-primary transition-colors">
                     {p.title[lang]}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{p.excerpt[lang]}</p>
+                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                    {p.excerpt[lang]}
+                  </p>
                 </div>
               </Link>
             </motion.article>

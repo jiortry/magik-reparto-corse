@@ -39,7 +39,9 @@ function BlogPostNotFound() {
   return (
     <PageShell>
       <div className="mx-auto max-w-3xl px-5 text-center">
-        <h1 className="font-display font-black italic uppercase text-4xl">{t.blog.postNotFoundTitle}</h1>
+        <h1 className="font-display font-black italic uppercase text-4xl">
+          {t.blog.postNotFoundTitle}
+        </h1>
         <Link to="/blog" className="mt-6 inline-block text-primary">
           ← {t.blog.backToBlog}
         </Link>
@@ -54,11 +56,19 @@ function PostPage() {
   return (
     <PageShell>
       <article className="mx-auto max-w-3xl px-5 lg:px-8">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-display uppercase tracking-widest text-accent hover:text-primary transition-colors">
+        <Link
+          to="/blog"
+          className="inline-flex items-center gap-2 text-xs font-display uppercase tracking-widest text-accent hover:text-primary transition-colors"
+        >
           <ArrowLeft size={14} /> {t.blog.navBackLabel}
         </Link>
         <p className="mt-6 text-[10px] font-display uppercase tracking-widest text-accent">
-          {post.category[lang]} · {new Date(post.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", { day: "2-digit", month: "long", year: "numeric" })}
+          {post.category[lang]} ·{" "}
+          {new Date(post.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          })}
         </p>
         <h1 className="mt-3 font-display font-black uppercase italic text-4xl md:text-5xl tracking-tight leading-[1]">
           {post.title[lang]}

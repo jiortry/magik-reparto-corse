@@ -31,7 +31,9 @@ export function ContactForm() {
           className="w-full bg-card border border-border px-4 py-3 text-sm focus:border-primary outline-none"
         >
           {f.types.map((typ) => (
-            <option key={typ} value={typ}>{typ}</option>
+            <option key={typ} value={typ}>
+              {typ}
+            </option>
           ))}
         </select>
       </div>
@@ -82,7 +84,8 @@ function Field({
   return (
     <div>
       <label className="block text-[10px] font-display font-bold uppercase tracking-widest text-accent mb-2">
-        {label}{required && " *"}
+        {label}
+        {required && " *"}
       </label>
       <input
         type={type}

@@ -2,11 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 
-export function FAQAccordion({
-  items,
-}: {
-  items: { q: string; a: string }[];
-}) {
+export function FAQAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <div className="divide-y divide-border border-y border-border">

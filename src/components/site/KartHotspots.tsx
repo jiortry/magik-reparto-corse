@@ -6,12 +6,12 @@ type Hotspot = { label: string; body: string; x: number; y: number };
 export function KartHotspots({ items }: { items: ReadonlyArray<{ label: string; body: string }> }) {
   // Fixed positions tuned to gokart.png composition
   const positions: Array<Pick<Hotspot, "x" | "y">> = [
-    { x: 50, y: 65 },   // Telaio
-    { x: 24, y: 76 },   // Carene
-    { x: 82, y: 36 },   // Radiatore
-    { x: 74, y: 70 },   // Freni
-    { x: 50, y: 22 },   // Motore
-    { x: 28, y: 30 },   // Setup
+    { x: 50, y: 65 }, // Telaio
+    { x: 24, y: 76 }, // Carene
+    { x: 82, y: 36 }, // Radiatore
+    { x: 74, y: 70 }, // Freni
+    { x: 50, y: 22 }, // Motore
+    { x: 28, y: 30 }, // Setup
   ];
   const hotspots: Hotspot[] = items.map((it, i) => ({ ...it, ...positions[i % positions.length] }));
 
@@ -48,7 +48,9 @@ export function KartHotspots({ items }: { items: ReadonlyArray<{ label: string; 
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
         {items.map((it) => (
           <div key={it.label} className="border border-border bg-card/60 p-3">
-            <p className="font-display text-[10px] uppercase tracking-widest text-accent">{it.label}</p>
+            <p className="font-display text-[10px] uppercase tracking-widest text-accent">
+              {it.label}
+            </p>
             <p className="mt-1 text-xs text-muted-foreground">{it.body}</p>
           </div>
         ))}

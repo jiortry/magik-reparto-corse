@@ -59,7 +59,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       window.setTimeout(() => setLang(l), 450);
       window.setTimeout(() => setIsTransitioning(false), 1100);
     },
-    [lang, setLang]
+    [lang, setLang],
   );
 
   const value = useMemo<Ctx>(
@@ -71,7 +71,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       isTransitioning,
       changeLangAnimated,
     }),
-    [lang, hasChosen, isTransitioning, changeLangAnimated, setLang]
+    [lang, hasChosen, isTransitioning, changeLangAnimated, setLang],
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
