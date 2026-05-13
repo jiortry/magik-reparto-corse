@@ -3,7 +3,7 @@ import gokart from "@/assets/gokart.png";
 
 type Hotspot = { label: string; body: string; x: number; y: number };
 
-export function KartHotspots({ items }: { items: { label: string; body: string }[] }) {
+export function KartHotspots({ items }: { items: ReadonlyArray<{ label: string; body: string }> }) {
   // Fixed positions tuned to gokart.png composition
   const positions: Array<Pick<Hotspot, "x" | "y">> = [
     { x: 50, y: 65 },   // Telaio

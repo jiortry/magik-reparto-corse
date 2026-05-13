@@ -1,6 +1,6 @@
 export type Lang = "it" | "en";
 
-export const dictionary = {
+export const dictionary: Record<Lang, any> = {
   it: {
     nav: {
       home: "Home",
