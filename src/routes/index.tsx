@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Hero } from "@/components/site/Hero";
 import { SectionHeader } from "@/components/site/SectionHeader";
