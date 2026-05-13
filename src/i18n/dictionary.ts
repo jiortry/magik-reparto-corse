@@ -1,6 +1,33 @@
 export type Lang = "it" | "en";
 
-export const dictionary: Record<Lang, any> = {
+export type Dict = {
+  nav: Record<string, string>;
+  common: Record<string, string>;
+  hero: { eyebrow: string; title: string; subtitle: string; lead: string; scroll: string };
+  home: {
+    missionEyebrow: string; missionTitle: string; missionLead: string; statsTitle: string;
+    stats: { value: string; label: string }[];
+  };
+  about: { title: string; eyebrow: string; lead: string; blocks: { title: string; body: string }[] };
+  services: { title: string; eyebrow: string; lead: string; items: { icon: string; title: string; body: string }[] };
+  kart: { title: string; eyebrow: string; lead: string; hotspots: { label: string; body: string }[] };
+  lke: { title: string; eyebrow: string; lead: string; ctas: { label: string; href: string }[]; points: string[] };
+  team: { title: string; eyebrow: string; lead: string };
+  gallery: { title: string; eyebrow: string; lead: string; close: string; prev: string; next: string };
+  blog: { title: string; eyebrow: string; lead: string; categories: string[] };
+  faq: { title: string; eyebrow: string; lead: string };
+  contact: {
+    title: string; eyebrow: string; lead: string;
+    form: {
+      firstName: string; lastName: string; email: string; phone: string; type: string; message: string;
+      submit: string; success: string; types: string[];
+    };
+    ctas: string[];
+  };
+  footer: { desc: string; quickLinks: string; services: string; contact: string; rights: string };
+};
+
+export const dictionary: Record<Lang, Dict> = {
   it: {
     nav: {
       home: "Home",
@@ -357,6 +384,4 @@ export const dictionary: Record<Lang, any> = {
       rights: "All rights reserved.",
     },
   },
-} as const;
-
-export type Dict = typeof dictionary["it"];
+};
