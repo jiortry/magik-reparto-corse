@@ -3,19 +3,39 @@ export type Lang = "it" | "en";
 export type Dict = {
   nav: Record<string, string>;
   common: Record<string, string>;
+  errors: {
+    notFoundKicker: string;
+    notFoundTitle: string;
+    notFoundBody: string;
+    notFoundCta: string;
+    brokeTitle: string;
+    retry: string;
+    homeLink: string;
+  };
   hero: { eyebrow: string; title: string; subtitle: string; lead: string; scroll: string };
   home: {
     missionEyebrow: string; missionTitle: string; missionLead: string; statsTitle: string;
     ctaClosing: string;
+    missionImageAlt: string;
+    kartTeaserAlt: string;
+    raceNumberLabel: string;
     stats: { value: string; label: string }[];
   };
   about: { title: string; eyebrow: string; lead: string; blocks: { title: string; body: string }[] };
   services: { title: string; eyebrow: string; lead: string; items: { icon: string; title: string; body: string }[] };
   kart: { title: string; eyebrow: string; lead: string; hotspots: { label: string; body: string }[] };
   lke: { title: string; eyebrow: string; lead: string; ctas: { label: string; href: string }[]; points: string[] };
-  team: { title: string; eyebrow: string; lead: string };
+  team: { title: string; eyebrow: string; lead: string; imageAltCrew: string; imageAltPilot: string };
   gallery: { title: string; eyebrow: string; lead: string; close: string; prev: string; next: string };
-  blog: { title: string; eyebrow: string; lead: string; categories: string[] };
+  blog: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    categories: string[];
+    postNotFoundTitle: string;
+    backToBlog: string;
+    navBackLabel: string;
+  };
   faq: { title: string; eyebrow: string; lead: string };
   contact: {
     title: string; eyebrow: string; lead: string;
@@ -55,6 +75,15 @@ export const dictionary: Record<Lang, Dict> = {
       langPickSub: "Choose your language",
       backHome: "Torna alla Home",
     },
+    errors: {
+      notFoundKicker: "404",
+      notFoundTitle: "Fuori pista",
+      notFoundBody: "La pagina che cerchi non esiste o è stata spostata.",
+      notFoundCta: "Torna in pista",
+      brokeTitle: "Qualcosa non va",
+      retry: "Riprova",
+      homeLink: "Home",
+    },
     hero: {
       eyebrow: "Reparto Corse Ufficiale",
       title: "MAGIK Reparto Corse",
@@ -69,7 +98,11 @@ export const dictionary: Record<Lang, Dict> = {
       missionLead:
         "Un reparto corse costruito attorno a una sola promessa: portare il marchio Magik sul gradino più alto del podio internazionale.",
       statsTitle: "Numeri che corrono",
-      ctaClosing: "Un solo obiettivo: vincere i Mondiali con il Kart Magik.",
+      ctaClosing:
+        "Dalla preparazione alla pista: contattaci per assistenza, ricambi o una giornata in circuito con il team.",
+      missionImageAlt: "Kart Magik in pista — MAGIK Reparto Corse",
+      kartTeaserAlt: "Kart Magik — vista prodotto",
+      raceNumberLabel: "Numero gara",
       stats: [
         { value: "100%", label: "Assistenza Pista" },
         { value: "24/7", label: "Reparto Tecnico" },
@@ -92,8 +125,9 @@ export const dictionary: Record<Lang, Dict> = {
           body: "Ogni dettaglio è studiato: telaio, motore, setup, assistenza. Lavoriamo come un team di alta categoria, dalla preparazione alla pista.",
         },
         {
-          title: "Visione Mondiale",
-          body: "Il nostro obiettivo è chiaro: vincere i Mondiali con il Kart Magik. Una rotta tracciata, un team determinato, una sola direzione.",
+          title: "Presenza internazionale",
+          body:
+            "Seguiamo calendari e circuiti in Italia e all’estero: logistica trasferta, assistenza in griglia e protocolli da gara consolidati sul campo.",
         },
       ],
     },
@@ -111,7 +145,12 @@ export const dictionary: Record<Lang, Dict> = {
         { icon: "🧩", title: "Punto Vendita Ricambi", body: "Componenti kart originali, all'ingrosso e al dettaglio, con consulenza tecnica." },
         { icon: "📦", title: "Vendita Ingrosso & Dettaglio", body: "Logistica e disponibilità per piloti, team e officine." },
         { icon: "🔥", title: "Rivenditore Ufficiale LKE", body: "Riferimento ufficiale per il motore LKE in Emilia-Romagna." },
-        { icon: "🌍", title: "Obiettivo Mondiale", body: "Vincere con il Kart Magik: la missione che guida ogni nostra scelta." },
+        {
+          icon: "🌍",
+          title: "Programmi gara & stagione",
+          body:
+            "Piani su più round, telemetria e checklist operative: affianchiamo piloti e team con continuità dall’officina alla bandiera a scacchi.",
+        },
       ],
     },
     kart: {
@@ -149,7 +188,9 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Racing Team",
       eyebrow: "Il Team",
       lead:
-        "Un team tecnico, veloce e determinato. Dalla preparazione del kart all'assistenza in pista, ogni dettaglio è studiato per vincere.",
+        "Un team tecnico, veloce e determinato. Dalla preparazione del kart all'assistenza in pista, ogni dettaglio è studiato per la performance.",
+      imageAltCrew: "MAGIK Racing Team al lavoro",
+      imageAltPilot: "Pilota MAGIK — casco e attrezzatura",
     },
     gallery: {
       title: "Gallery",
@@ -164,6 +205,9 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Insights",
       lead: "News, tecnica e dietro le quinte di MAGIK Reparto Corse.",
       categories: ["Gare", "Tecnica", "Setup", "Motori", "News Magik", "Consigli", "Dietro le Quinte"],
+      postNotFoundTitle: "Articolo non trovato",
+      backToBlog: "Torna al blog",
+      navBackLabel: "Blog",
     },
     faq: {
       title: "FAQ",
@@ -234,6 +278,15 @@ export const dictionary: Record<Lang, Dict> = {
       langPickSub: "Scegli la lingua",
       backHome: "Back to home",
     },
+    errors: {
+      notFoundKicker: "404",
+      notFoundTitle: "Off track",
+      notFoundBody: "The page you’re looking for doesn’t exist or has been moved.",
+      notFoundCta: "Back on track",
+      brokeTitle: "Something went wrong",
+      retry: "Retry",
+      homeLink: "Home",
+    },
     hero: {
       eyebrow: "Official Racing Department",
       title: "MAGIK Reparto Corse",
@@ -248,7 +301,11 @@ export const dictionary: Record<Lang, Dict> = {
       missionLead:
         "A racing department built around one promise: to bring the Magik brand to the top step of the international podium.",
       statsTitle: "Numbers that race",
-      ctaClosing: "One goal: win the World Championship with the Magik Kart.",
+      ctaClosing:
+        "From prep to the track: contact us for support, parts or a circuit day with the team.",
+      missionImageAlt: "Magik Kart on track — MAGIK Reparto Corse",
+      kartTeaserAlt: "Magik Kart — product view",
+      raceNumberLabel: "Race number",
       stats: [
         { value: "100%", label: "Trackside Support" },
         { value: "24/7", label: "Tech Department" },
@@ -271,8 +328,9 @@ export const dictionary: Record<Lang, Dict> = {
           body: "Every detail is engineered: chassis, engine, setup, support. We work like a top-tier team, from preparation to track.",
         },
         {
-          title: "World-Class Vision",
-          body: "Our goal is clear: win the World Championship with the Magik Kart. One direction, one team, one mission.",
+          title: "International presence",
+          body:
+            "We follow race calendars and circuits in Italy and abroad: travel logistics, grid-side assistance and field-proven race protocols.",
         },
       ],
     },
@@ -290,7 +348,12 @@ export const dictionary: Record<Lang, Dict> = {
         { icon: "🧩", title: "Kart Parts Store", body: "Original kart components, wholesale and retail, with technical advice." },
         { icon: "📦", title: "Wholesale & Retail", body: "Logistics and stock for drivers, teams and workshops." },
         { icon: "🔥", title: "Official LKE Dealer", body: "Official reference for LKE engines in Emilia-Romagna." },
-        { icon: "🌍", title: "World Goal", body: "Winning with the Magik Kart: the mission that drives every choice." },
+        {
+          icon: "🌍",
+          title: "Race programmes & season",
+          body:
+            "Multi-round plans, telemetry and ops checklists: we support drivers and teams with continuity from the workshop to the chequered flag.",
+        },
       ],
     },
     kart: {
@@ -328,7 +391,9 @@ export const dictionary: Record<Lang, Dict> = {
       title: "Racing Team",
       eyebrow: "The Team",
       lead:
-        "A technical, fast and determined team. From kart preparation to trackside support, every detail is engineered to win.",
+        "A technical, fast and determined team. From kart preparation to trackside support, every detail is engineered for performance.",
+      imageAltCrew: "MAGIK Racing Team at work",
+      imageAltPilot: "MAGIK driver — helmet and gear",
     },
     gallery: {
       title: "Gallery",
@@ -343,6 +408,9 @@ export const dictionary: Record<Lang, Dict> = {
       eyebrow: "Insights",
       lead: "News, technique and behind the scenes of MAGIK Reparto Corse.",
       categories: ["Races", "Technique", "Setup", "Engines", "Magik News", "Tips", "Behind the Scenes"],
+      postNotFoundTitle: "Post not found",
+      backToBlog: "Back to blog",
+      navBackLabel: "Blog",
     },
     faq: {
       title: "FAQ",

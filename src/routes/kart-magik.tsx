@@ -4,16 +4,11 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { KartHotspots } from "@/components/site/KartHotspots";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 
 export const Route = createFileRoute("/kart-magik")({
   head: () => ({
-    meta: [
-      { title: "Kart Magik Omologato — Telaio, Motore, Setup | MAGIK Reparto Corse" },
-      { name: "description", content: "Il Kart Magik omologato: telaio racing, impianto frenante, radiatore, motore LKE e setup gara curato dal team." },
-      { property: "og:title", content: "Kart Magik Omologato" },
-      { property: "og:description", content: "Un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara." },
-      { property: "og:url", content: "/kart-magik" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/kart-magik"), "/kart-magik"),
     links: [{ rel: "canonical", href: "/kart-magik" }],
   }),
   component: KartPage,

@@ -3,18 +3,13 @@ import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import team from "@/assets/team.jpg";
 import pilot from "@/assets/pilot-helmet.jpg";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
-    meta: [
-      { title: "Racing Team — MAGIK Reparto Corse" },
-      { name: "description", content: "Un team tecnico, veloce e determinato: dalla preparazione del kart all'assistenza in pista." },
-      { property: "og:title", content: "Racing Team — MAGIK Reparto Corse" },
-      { property: "og:description", content: "Ogni dettaglio è studiato per vincere." },
-      { property: "og:url", content: "/team" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/team"), "/team"),
     links: [{ rel: "canonical", href: "/team" }],
   }),
   component: TeamPage,
@@ -33,7 +28,7 @@ function TeamPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             src={team}
-            alt="MAGIK Racing Team"
+            alt={t.team.imageAltCrew}
             className="w-full h-full object-cover clip-diagonal"
           />
           <motion.img
@@ -42,7 +37,7 @@ function TeamPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
             src={pilot}
-            alt="Pilota MAGIK"
+            alt={t.team.imageAltPilot}
             className="w-full h-full object-cover clip-diagonal-r"
           />
         </div>

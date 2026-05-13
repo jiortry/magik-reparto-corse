@@ -4,20 +4,14 @@ import { Hero } from "@/components/site/Hero";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { RacingButton } from "@/components/site/RacingButton";
-import { dictionary } from "@/i18n/dictionary";
 import { useLang } from "@/i18n/LanguageProvider";
-import kartCorner from "@/assets/kart-corner.jpg";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import missionPhoto from "@/assets/gallery/D4S_2474.JPG";
 import gokart from "@/assets/gokart.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    meta: [
-      { title: "MAGIK Reparto Corse — Team Kart Professionale Emilia-Romagna" },
-      { name: "description", content: "Reparto corse ufficiale del Kart Magik. Assistenza in pista, riparazione go-kart, ricambi e rivenditore LKE in Emilia-Romagna." },
-      { property: "og:title", content: "MAGIK Reparto Corse — Performance, tecnica e ambizione mondiale" },
-      { property: "og:description", content: dictionary.it.home.ctaClosing },
-      { property: "og:url", content: "/" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/"), "/"),
     links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
@@ -39,13 +33,13 @@ function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7 }}
-              src={kartCorner}
-              alt="Kart Magik in curva"
+              src={missionPhoto}
+              alt={t.home.missionImageAlt}
               className="relative clip-diagonal w-full aspect-[4/5] object-cover"
             />
             <div className="absolute -bottom-4 -right-4 border border-accent bg-carbon px-4 py-3">
               <p className="font-display font-black uppercase text-2xl italic text-accent leading-none">#130</p>
-              <p className="text-[10px] font-display uppercase tracking-widest text-foreground/60 mt-1">Race Number</p>
+              <p className="text-[10px] font-display uppercase tracking-widest text-foreground/60 mt-1">{t.home.raceNumberLabel}</p>
             </div>
           </div>
           <div>
@@ -126,7 +120,7 @@ function Index() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
             src={gokart}
-            alt="Kart Magik"
+            alt={t.home.kartTeaserAlt}
             className="w-full max-w-2xl mx-auto drop-shadow-[0_30px_60px_rgba(225,6,0,0.3)]"
           />
         </div>

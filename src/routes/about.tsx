@@ -3,17 +3,12 @@ import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import team from "@/assets/team.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
-    meta: [
-      { title: "Chi Siamo — MAGIK Reparto Corse" },
-      { name: "description", content: "MAGIK Reparto Corse: il reparto corse ufficiale del Kart Magik. Tecnica, metodo, ambizione mondiale." },
-      { property: "og:title", content: "Chi Siamo — MAGIK Reparto Corse" },
-      { property: "og:description", content: "Nati per portare il Kart Magik al massimo livello competitivo." },
-      { property: "og:url", content: "/about" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/about"), "/about"),
     links: [{ rel: "canonical", href: "/about" }],
   }),
   component: AboutPage,

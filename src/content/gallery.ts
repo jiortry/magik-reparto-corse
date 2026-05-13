@@ -1,18 +1,36 @@
-import kartPit from "@/assets/kart-pitlane.jpg";
-import pilot from "@/assets/pilot-helmet.jpg";
-import kartCorner from "@/assets/kart-corner.jpg";
-import kartTrack from "@/assets/kart-track.jpg";
-import kartStudio from "@/assets/kart-studio.jpg";
-import team from "@/assets/team.jpg";
 import type { GalleryItem } from "@/components/site/Gallery";
 
-export const galleryItems: GalleryItem[] = [
-  { src: kartPit, alt: "Kart Magik in pit lane", caption: "Pit Lane" },
-  { src: pilot, alt: "Pilota MAGIK Reparto Corse", caption: "Pilot Focus" },
-  { src: kartCorner, alt: "Kart Magik in curva", caption: "Apex" },
-  { src: kartTrack, alt: "Kart Magik in pista", caption: "Race Pace" },
-  { src: kartStudio, alt: "Kart Magik allestito", caption: "Studio Setup" },
-  { src: team, alt: "Team MAGIK Reparto Corse", caption: "The Team" },
-  { src: kartCorner, alt: "Kart Magik #130", caption: "#130" },
-  { src: kartTrack, alt: "Kart Magik on track" , caption: "Full Throttle" },
-];
+const jpgModules = import.meta.glob<{ default: string }>("../assets/gallery/*.jpg", {
+  eager: true,
+});
+const upperJpgModules = import.meta.glob<{ default: string }>("../assets/gallery/*.JPG", {
+  eager: true,
+});
+const jpegModules = import.meta.glob<{ default: string }>("../assets/gallery/*.jpeg", {
+  eager: true,
+});
+
+const modules = { ...jpgModules, ...upperJpgModules, ...jpegModules };
+
+function fileNameFromPath(path: string): string {
+  const seg = path.split("/");
+  return seg[seg.length - 1] ?? path;
+}
+
+function labelFromFileName(name: string): string {
+  return name.replace(/\.(jpe?g)$/i, "").replace(/_/g, " ");
+}
+
+const sortedPaths = Object.keys(modules).sort((a, b) =>
+  fileNameFromPath(a).localeCompare(fileNameFromPath(b), undefined, { numeric: true }),
+);
+
+export const galleryItems: GalleryItem[] = sortedPaths.map((path) => {
+  const file = fileNameFromPath(path);
+  const label = labelFromFileName(file);
+  return {
+    src: modules[path]!.default,
+    alt: `Kart Magik — MAGIK Reparto Corse (${label})`,
+    caption: `MAGIK · ${label}`,
+  };
+});

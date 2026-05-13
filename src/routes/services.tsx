@@ -3,16 +3,11 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
-    meta: [
-      { title: "Servizi — Riparazione, assistenza in pista, ricambi kart | MAGIK" },
-      { name: "description", content: "Riparazione go-kart, assistenza tecnica e in pista, vendita ricambi kart, giornata di pista e rivenditore LKE Emilia-Romagna." },
-      { property: "og:title", content: "Servizi MAGIK Reparto Corse" },
-      { property: "og:description", content: "Dalla preparazione tecnica alla pista: ogni fase della performance." },
-      { property: "og:url", content: "/services" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/services"), "/services"),
     links: [{ rel: "canonical", href: "/services" }],
   }),
   component: ServicesPage,

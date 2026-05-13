@@ -4,16 +4,11 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 
 export const Route = createFileRoute("/lke")({
   head: () => ({
-    meta: [
-      { title: "Motore LKE Emilia-Romagna — Rivenditore Ufficiale | MAGIK" },
-      { name: "description", content: "MAGIK è rivenditore ufficiale del motore LKE in Emilia-Romagna: supporto tecnico, ricambi e consulenza." },
-      { property: "og:title", content: "LKE Emilia-Romagna — Rivenditore Ufficiale" },
-      { property: "og:description", content: "Supporto tecnico, disponibilità ricambi e consulenza specializzata sul motore LKE." },
-      { property: "og:url", content: "/lke" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/lke"), "/lke"),
     links: [{ rel: "canonical", href: "/lke" }],
   }),
   component: LkePage,

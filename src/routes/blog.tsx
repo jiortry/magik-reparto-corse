@@ -3,17 +3,12 @@ import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import { posts } from "@/content/blog";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
-    meta: [
-      { title: "Blog — Tecnica, gare, motori | MAGIK Reparto Corse" },
-      { name: "description", content: "News, tecnica, setup, motori LKE e dietro le quinte di MAGIK Reparto Corse." },
-      { property: "og:title", content: "Blog — MAGIK Reparto Corse" },
-      { property: "og:description", content: "Insights racing, setup e dietro le quinte." },
-      { property: "og:url", content: "/blog" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/blog"), "/blog"),
     links: [{ rel: "canonical", href: "/blog" }],
   }),
   component: BlogPage,

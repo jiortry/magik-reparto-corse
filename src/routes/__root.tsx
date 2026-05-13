@@ -9,7 +9,10 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { DocumentMetaSync } from "@/i18n/DocumentMetaSync";
+import { LanguageProvider, readStoredLang } from "@/i18n/LanguageProvider";
+import { dictionary } from "@/i18n/dictionary";
+import { buildRootJsonLd, getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { LanguagePopup } from "@/components/site/LanguagePopup";
@@ -19,21 +22,20 @@ import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 function NotFoundComponent() {
+  const t = dictionary[readStoredLang()];
   return (
     <div className="flex min-h-screen items-center justify-center bg-carbon px-4">
       <div className="max-w-md text-center">
-        <p className="font-display text-xs uppercase tracking-[0.4em] text-accent">404</p>
+        <p className="font-display text-xs uppercase tracking-[0.4em] text-accent">{t.errors.notFoundKicker}</p>
         <h1 className="mt-4 font-display font-black uppercase italic text-6xl text-foreground">
-          Off Track
+          {t.errors.notFoundTitle}
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">
-          La pagina che cerchi non esiste.
-        </p>
+        <p className="mt-3 text-sm text-muted-foreground">{t.errors.notFoundBody}</p>
         <Link
           to="/"
           className="mt-6 inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-3 font-display text-xs font-bold uppercase tracking-widest clip-diagonal hover:bg-primary/90 transition-colors"
         >
-          Torna in pista
+          {t.errors.notFoundCta}
         </Link>
       </div>
     </div>
@@ -43,11 +45,12 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
+  const t = dictionary[readStoredLang()];
   return (
     <div className="flex min-h-screen items-center justify-center bg-carbon px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display font-black uppercase italic text-3xl text-foreground">
-          Something broke
+          {t.errors.brokeTitle}
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
         <div className="mt-6 flex justify-center gap-2">
@@ -55,10 +58,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             onClick={() => { router.invalidate(); reset(); }}
             className="bg-primary text-primary-foreground px-4 py-2 text-xs font-display uppercase tracking-widest"
           >
-            Retry
+            {t.errors.retry}
           </button>
           <a href="/" className="border border-border px-4 py-2 text-xs font-display uppercase tracking-widest">
-            Home
+            {t.errors.homeLink}
           </a>
         </div>
       </div>
@@ -67,17 +70,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: () => {
+    const homeSeo = getSsrPageSeo("/");
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MAGIK Reparto Corse — Team Kart Professionale Emilia-Romagna" },
-      { name: "description", content: "MAGIK Reparto Corse: reparto corse ufficiale del Kart Magik. Assistenza in pista, riparazione go-kart, ricambi, rivenditore LKE in Emilia-Romagna." },
+      ...metaArrayFromPageSeo(homeSeo, "/"),
       { name: "theme-color", content: "#0d0d10" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "MAGIK Reparto Corse" },
-      { property: "og:title", content: "MAGIK Reparto Corse — Team Kart Professionale" },
-      { property: "og:description", content: "Reparto corse ufficiale del Kart Magik. Assistenza in pista, ricambi, rivenditore LKE in Emilia-Romagna." },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -92,18 +94,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "MAGIK Reparto Corse",
-          description:
-            "Reparto corse ufficiale del marchio Magik. Preparazione, assistenza in pista, ricambi kart e rivenditore LKE in Emilia-Romagna.",
-          areaServed: "Emilia-Romagna",
-          sameAs: ["https://www.instagram.com/magik_repartocorse/"],
-        }),
+        children: JSON.stringify(buildRootJsonLd()),
       },
     ],
-  }),
+  };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -129,6 +124,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
+        <DocumentMetaSync />
         <SmoothScroll />
         <IntroLoader />
         <LanguagePopup />

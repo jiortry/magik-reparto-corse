@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { useLang } from "@/i18n/LanguageProvider";
 import { posts } from "@/content/blog";
+import { blogPostFallbackSeo, getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -12,39 +13,49 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => {
     const p = loaderData?.post;
-    if (!p) return { meta: [{ title: "Post — MAGIK Reparto Corse" }] };
+    if (!p) {
+      return {
+        meta: metaArrayFromPageSeo(blogPostFallbackSeo.it, "/blog"),
+        links: [{ rel: "canonical", href: "/blog" }],
+      };
+    }
+    const path = `/blog/${p.slug}`;
+    const seo = getSsrPageSeo(path);
+    const cover = typeof p.cover === "string" ? p.cover : String(p.cover);
     return {
       meta: [
-        { title: `${p.title.it} — MAGIK Reparto Corse` },
-        { name: "description", content: p.excerpt.it },
+        ...metaArrayFromPageSeo(seo, path, { ogImage: cover }),
         { property: "og:type", content: "article" },
-        { property: "og:title", content: p.title.it },
-        { property: "og:description", content: p.excerpt.it },
-        { property: "og:image", content: p.cover },
-        { property: "og:url", content: `/blog/${p.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/blog/${p.slug}` }],
+      links: [{ rel: "canonical", href: path }],
     };
   },
   component: PostPage,
-  notFoundComponent: () => (
+  notFoundComponent: BlogPostNotFound,
+});
+
+function BlogPostNotFound() {
+  const { t } = useLang();
+  return (
     <PageShell>
       <div className="mx-auto max-w-3xl px-5 text-center">
-        <h1 className="font-display font-black italic uppercase text-4xl">Post non trovato</h1>
-        <Link to="/blog" className="mt-6 inline-block text-primary">← Blog</Link>
+        <h1 className="font-display font-black italic uppercase text-4xl">{t.blog.postNotFoundTitle}</h1>
+        <Link to="/blog" className="mt-6 inline-block text-primary">
+          ← {t.blog.backToBlog}
+        </Link>
       </div>
     </PageShell>
-  ),
-});
+  );
+}
 
 function PostPage() {
   const { post } = Route.useLoaderData();
-  const { lang } = useLang();
+  const { lang, t } = useLang();
   return (
     <PageShell>
       <article className="mx-auto max-w-3xl px-5 lg:px-8">
         <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-display uppercase tracking-widest text-accent hover:text-primary transition-colors">
-          <ArrowLeft size={14} /> Blog
+          <ArrowLeft size={14} /> {t.blog.navBackLabel}
         </Link>
         <p className="mt-6 text-[10px] font-display uppercase tracking-widest text-accent">
           {post.category[lang]} · {new Date(post.date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", { day: "2-digit", month: "long", year: "numeric" })}

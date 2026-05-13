@@ -3,17 +3,12 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { FAQAccordion } from "@/components/site/FAQAccordion";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import { faqItems } from "@/content/faq";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
-    meta: [
-      { title: "FAQ — Domande frequenti | MAGIK Reparto Corse" },
-      { name: "description", content: "Risposte sulle nostre attività: assistenza in pista, ricambi kart, motore LKE, riparazione go-kart e team racing." },
-      { property: "og:title", content: "FAQ — MAGIK Reparto Corse" },
-      { property: "og:description", content: "Le risposte più richieste." },
-      { property: "og:url", content: "/faq" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/faq"), "/faq"),
     links: [{ rel: "canonical", href: "/faq" }],
     scripts: [{
       type: "application/ld+json",

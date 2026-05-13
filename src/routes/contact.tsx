@@ -4,16 +4,11 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ContactForm } from "@/components/site/ContactForm";
 import { useLang } from "@/i18n/LanguageProvider";
+import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
-    meta: [
-      { title: "Contatti — MAGIK Reparto Corse Emilia-Romagna" },
-      { name: "description", content: "Contatta MAGIK Reparto Corse: assistenza tecnica kart, ricambi, motore LKE, giornate di pista e gare." },
-      { property: "og:title", content: "Contatti — MAGIK Reparto Corse" },
-      { property: "og:description", content: "Parla con il team." },
-      { property: "og:url", content: "/contact" },
-    ],
+    meta: metaArrayFromPageSeo(getSsrPageSeo("/contact"), "/contact"),
     links: [{ rel: "canonical", href: "/contact" }],
   }),
   component: ContactPage,

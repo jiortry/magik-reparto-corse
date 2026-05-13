@@ -1,9 +1,9 @@
-import kartTrack from "@/assets/kart-track.jpg";
-import kartCorner from "@/assets/kart-corner.jpg";
-import kartPit from "@/assets/kart-pitlane.jpg";
-import pilot from "@/assets/pilot-helmet.jpg";
-import kartStudio from "@/assets/kart-studio.jpg";
-import team from "@/assets/team.jpg";
+import coverPreparation from "@/assets/gallery/DSC_6804.jpg";
+import coverPitlane from "@/assets/gallery/D4S_2454.JPG";
+import coverSetup from "@/assets/gallery/D4S_2473.JPG";
+import coverTrack from "@/assets/gallery/D4S_2505.JPG";
+import coverTeam from "@/assets/gallery/DSC_6994.jpg";
+import coverPilot from "@/assets/gallery/DSC_6885.jpg";
 
 export type Post = {
   slug: string;
@@ -20,7 +20,7 @@ export const posts: Post[] = [
     slug: "preparare-kart-magik-gara",
     category: { it: "Tecnica", en: "Technique" },
     date: "2025-09-12",
-    cover: kartStudio,
+    cover: coverPreparation,
     title: {
       it: "Come prepariamo un Kart Magik per una gara",
       en: "How we prepare a Magik Kart for a race",
@@ -38,7 +38,7 @@ export const posts: Post[] = [
     slug: "assistenza-pista-team-professionale",
     category: { it: "Dietro le Quinte", en: "Behind the Scenes" },
     date: "2025-08-28",
-    cover: kartPit,
+    cover: coverPitlane,
     title: {
       it: "Assistenza in pista: cosa fa davvero un team professionale",
       en: "Trackside support: what a professional team really does",
@@ -56,7 +56,7 @@ export const posts: Post[] = [
     slug: "setup-kart-precisione-metodo",
     category: { it: "Setup", en: "Setup" },
     date: "2025-08-10",
-    cover: kartCorner,
+    cover: coverSetup,
     title: {
       it: "Setup kart: precisione, metodo e performance",
       en: "Kart setup: precision, method and performance",
@@ -74,7 +74,7 @@ export const posts: Post[] = [
     slug: "lke-emilia-romagna-supporto",
     category: { it: "Motori", en: "Engines" },
     date: "2025-07-22",
-    cover: kartTrack,
+    cover: coverTrack,
     title: {
       it: "LKE in Emilia-Romagna: supporto, ricambi e consulenza",
       en: "LKE in Emilia-Romagna: support, parts and consulting",
@@ -92,14 +92,14 @@ export const posts: Post[] = [
     slug: "racing-team-mondiale-magik",
     category: { it: "News Magik", en: "Magik News" },
     date: "2025-07-05",
-    cover: team,
+    cover: coverTeam,
     title: {
       it: "Racing Team: la rotta verso il Mondiale",
       en: "Racing Team: the road to the World Championship",
     },
     excerpt: {
-      it: "Una squadra costruita con un solo obiettivo: vincere con il Kart Magik.",
-      en: "A team built with one goal: winning with the Magik Kart.",
+      it: "Ruoli, turni e responsabilità: come lavora il reparto corse quando la griglia si avvicina.",
+      en: "Roles, shifts and responsibilities: how the racing department works as the grid approaches.",
     },
     body: {
       it: "Il MAGIK Racing Team nasce per portare il Kart Magik ai vertici della competizione internazionale. Ogni stagione è un capitolo, ogni gara un test. La direzione è chiara.",
@@ -110,7 +110,7 @@ export const posts: Post[] = [
     slug: "consigli-piloti-giovani",
     category: { it: "Consigli", en: "Tips" },
     date: "2025-06-18",
-    cover: pilot,
+    cover: coverPilot,
     title: {
       it: "5 consigli per i giovani piloti",
       en: "5 tips for young drivers",

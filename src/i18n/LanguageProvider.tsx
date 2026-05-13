@@ -11,7 +11,14 @@ type Ctx = {
 };
 
 const LanguageContext = createContext<Ctx | null>(null);
-const STORAGE_KEY = "magik.lang";
+export const LANG_STORAGE_KEY = "magik.lang";
+
+/** For components outside LanguageProvider (e.g. root 404) — client only; SSR returns `it`. */
+export function readStoredLang(): Lang {
+  if (typeof window === "undefined") return "it";
+  const saved = window.localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
+  return saved === "en" ? "en" : "it";
+}
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("it");
@@ -20,7 +27,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const saved = window.localStorage.getItem(STORAGE_KEY) as Lang | null;
+    const saved = window.localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
     if (saved === "it" || saved === "en") {
       setLangState(saved);
       setHasChosen(true);
@@ -32,7 +39,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     setLangState(l);
     setHasChosen(true);
     if (typeof window !== "undefined") {
-      window.localStorage.setItem(STORAGE_KEY, l);
+      window.localStorage.setItem(LANG_STORAGE_KEY, l);
       document.documentElement.lang = l;
     }
   }, []);
