@@ -30,6 +30,7 @@ export function Navbar() {
     { to: "/team", label: t.nav.team },
     { to: "/gallery", label: t.nav.gallery },
     { to: "/blog", label: t.nav.blog },
+    { to: "/partnership", label: t.nav.partnership },
     { to: "/faq", label: t.nav.faq },
     { to: "/contact", label: t.nav.contact },
   ];

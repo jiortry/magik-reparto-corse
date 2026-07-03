@@ -56,6 +56,11 @@ export function Footer() {
                 {t.nav.gallery}
               </Link>
             </li>
+            <li>
+              <Link to="/partnership" className="text-foreground/70 hover:text-primary">
+                {t.nav.partnership}
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -83,6 +88,14 @@ export function Footer() {
               <Link to="/blog" className="text-foreground/70 hover:text-primary">
                 {t.nav.blog}
               </Link>
+            </li>
+            <li>
+              <a
+                href={`mailto:${t.footer.email}`}
+                className="break-all text-foreground/70 hover:text-primary"
+              >
+                {t.footer.email}
+              </a>
             </li>
           </ul>
         </div>

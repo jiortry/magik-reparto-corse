@@ -55,6 +55,36 @@ export type Dict = {
     lead: string;
     imageAltCrew: string;
     imageAltPilot: string;
+    founderEyebrow: string;
+    founderTitle: string;
+    founderBody: string;
+    founderCta: string;
+  };
+  founder: {
+    backLabel: string;
+    eyebrow: string;
+    kicker: string;
+    name: string;
+    role: string;
+    emailCta: string;
+    timelineEyebrow: string;
+    timelineTitle: string;
+    timelineLead: string;
+    timelineHint: string;
+    timelinePrev: string;
+    timelineNext: string;
+    manufacturersTitle: string;
+    driversEyebrow: string;
+    driversTitle: string;
+    driversLead: string;
+    driversSearchPlaceholder: string;
+    driversEmpty: string;
+    driversCount: string;
+    ctaEyebrow: string;
+    ctaTitle: string;
+    ctaBody: string;
+    ctaTeam: string;
+    ctaContact: string;
   };
   gallery: {
     title: string;
@@ -90,8 +120,27 @@ export type Dict = {
       types: string[];
     };
     ctas: string[];
+    emailsTitle: string;
+    emails: { label: string; address: string }[];
   };
-  footer: { desc: string; quickLinks: string; services: string; contact: string; rights: string };
+  footer: {
+    desc: string;
+    quickLinks: string;
+    services: string;
+    contact: string;
+    rights: string;
+    email: string;
+  };
+  partnership: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    partnersTitle: string;
+    partnersLead: string;
+    sponsorsTitle: string;
+    sponsorsLead: string;
+    visitLabel: string;
+  };
 };
 
 export const dictionary: Record<Lang, Dict> = {
@@ -105,6 +154,7 @@ export const dictionary: Record<Lang, Dict> = {
       team: "Racing Team",
       gallery: "Gallery",
       blog: "Blog",
+      partnership: "Partnership",
       faq: "FAQ",
       contact: "Contatti",
     },
@@ -261,6 +311,40 @@ export const dictionary: Record<Lang, Dict> = {
       lead: "Un team tecnico, veloce e determinato. Dalla preparazione del kart all'assistenza in pista, ogni dettaglio è studiato per la performance.",
       imageAltCrew: "MAGIK Racing Team al lavoro",
       imageAltPilot: "Pilota MAGIK — casco e attrezzatura",
+      founderEyebrow: "Il Fondatore",
+      founderTitle: "Giuseppe “Peppo” Morcia",
+      founderBody:
+        "Dai titoli in Perù alla Formula del karting mondiale: la storia del co-fondatore di MAGIK, capo meccanico e coach di campioni dal 1994 a oggi.",
+      founderCta: "Scopri la sua storia",
+    },
+    founder: {
+      backLabel: "Racing Team",
+      eyebrow: "Il Fondatore",
+      kicker: "AKA Peppo",
+      name: "Giuseppe Morcia",
+      role: "Co-Fondatore · Capo Meccanico & Coach",
+      emailCta: "Scrivi a Peppo",
+      timelineEyebrow: "Carriera in pista",
+      timelineTitle: "Trent'anni di titoli",
+      timelineLead:
+        "Ogni tappa è una gara vinta insieme a un pilota. Scorri la timeline per rivivere le tappe più importanti.",
+      timelineHint: "Trascina il cursore o tocca un anno per cambiare tappa",
+      timelinePrev: "Tappa precedente",
+      timelineNext: "Tappa successiva",
+      manufacturersTitle: "Marchi con cui ha lavorato",
+      driversEyebrow: "Allievi in pista",
+      driversTitle: "Piloti seguiti nel mondo",
+      driversLead:
+        "Decine di piloti internazionali affiancati in oltre trent'anni. Cerca un nome per scoprirlo.",
+      driversSearchPlaceholder: "Cerca un pilota…",
+      driversEmpty: "Nessun pilota trovato con questo nome.",
+      driversCount: "{n} di {total} piloti",
+      ctaEyebrow: "Il futuro",
+      ctaTitle: "Nuove sfide, nuovi campioni",
+      ctaBody:
+        "Giuseppe Morcia continua a cercare nuovi piloti da portare ai vertici del karting mondiale con il team MAGIK.",
+      ctaTeam: "Conosci il Team",
+      ctaContact: "Contattaci",
     },
     gallery: {
       title: "Gallery",
@@ -320,6 +404,12 @@ export const dictionary: Record<Lang, Dict> = {
         "Richiedi assistenza in pista",
         "Chiedi disponibilità ricambi",
       ],
+      emailsTitle: "Scrivici via email",
+      emails: [
+        { label: "Informazioni generali", address: "posmaster@magikrepartocorse.it" },
+        { label: "Giuseppe Morcia — Fondatore", address: "peppo.morcia@magikrepartocorse.it" },
+        { label: "Contatto alternativo", address: "magik.racing@gmail.com" },
+      ],
     },
     footer: {
       desc: "Reparto corse ufficiale del marchio Magik. Preparazione, assistenza e gare con il Kart Magik.",
@@ -327,6 +417,17 @@ export const dictionary: Record<Lang, Dict> = {
       services: "Servizi",
       contact: "Contatti",
       rights: "Tutti i diritti riservati.",
+      email: "posmaster@magikrepartocorse.it",
+    },
+    partnership: {
+      eyebrow: "Partner & Sponsor",
+      title: "Partnership & Sponsor",
+      lead: "I marchi e le realtà che corrono insieme a noi, dal motore al box fino al traguardo.",
+      partnersTitle: "Partnership Tecniche",
+      partnersLead: "I fornitori tecnici che rendono possibile ogni prestazione in pista.",
+      sponsorsTitle: "I Nostri Sponsor",
+      sponsorsLead: "Chi sostiene il progetto MAGIK Reparto Corse fuori dalla pista.",
+      visitLabel: "Visita il sito",
     },
   },
   en: {
@@ -339,6 +440,7 @@ export const dictionary: Record<Lang, Dict> = {
       team: "Racing Team",
       gallery: "Gallery",
       blog: "Blog",
+      partnership: "Partnership",
       faq: "FAQ",
       contact: "Contact",
     },
@@ -495,6 +597,40 @@ export const dictionary: Record<Lang, Dict> = {
       lead: "A technical, fast and determined team. From kart preparation to trackside support, every detail is engineered for performance.",
       imageAltCrew: "MAGIK Racing Team at work",
       imageAltPilot: "MAGIK driver — helmet and gear",
+      founderEyebrow: "The Founder",
+      founderTitle: "Giuseppe “Peppo” Morcia",
+      founderBody:
+        "From titles in Peru to world karting's top step: the story of MAGIK's co-founder, lead mechanic and coach of champions since 1994.",
+      founderCta: "Discover his story",
+    },
+    founder: {
+      backLabel: "Racing Team",
+      eyebrow: "The Founder",
+      kicker: "AKA Peppo",
+      name: "Giuseppe Morcia",
+      role: "Co-Founder · Lead Mechanic & Coach",
+      emailCta: "Email Peppo",
+      timelineEyebrow: "Career on track",
+      timelineTitle: "Thirty years of titles",
+      timelineLead:
+        "Every stop on this track is a race won together with a driver. Scrub the timeline to relive the milestones.",
+      timelineHint: "Drag the slider or tap a year to change milestone",
+      timelinePrev: "Previous milestone",
+      timelineNext: "Next milestone",
+      manufacturersTitle: "Brands he's worked with",
+      driversEyebrow: "Drivers coached",
+      driversTitle: "Drivers coached worldwide",
+      driversLead:
+        "Dozens of international drivers supported over thirty-plus years. Search a name to find it.",
+      driversSearchPlaceholder: "Search a driver…",
+      driversEmpty: "No driver found with that name.",
+      driversCount: "{n} of {total} drivers",
+      ctaEyebrow: "What's next",
+      ctaTitle: "New challenges, new champions",
+      ctaBody:
+        "Giuseppe Morcia keeps looking for the next drivers to bring to the top of world karting with the MAGIK team.",
+      ctaTeam: "Meet the Team",
+      ctaContact: "Contact Us",
     },
     gallery: {
       title: "Gallery",
@@ -554,6 +690,12 @@ export const dictionary: Record<Lang, Dict> = {
         "Request trackside support",
         "Check parts availability",
       ],
+      emailsTitle: "Email us",
+      emails: [
+        { label: "General inquiries", address: "posmaster@magikrepartocorse.it" },
+        { label: "Giuseppe Morcia — Founder", address: "peppo.morcia@magikrepartocorse.it" },
+        { label: "Alternative contact", address: "magik.racing@gmail.com" },
+      ],
     },
     footer: {
       desc: "Official racing department of the Magik brand. Preparation, support and racing with the Magik Kart.",
@@ -561,6 +703,17 @@ export const dictionary: Record<Lang, Dict> = {
       services: "Services",
       contact: "Contact",
       rights: "All rights reserved.",
+      email: "posmaster@magikrepartocorse.it",
+    },
+    partnership: {
+      eyebrow: "Partners & Sponsors",
+      title: "Partnership & Sponsors",
+      lead: "The brands and businesses racing alongside us, from the engine to the pit box to the chequered flag.",
+      partnersTitle: "Technical Partnerships",
+      partnersLead: "The technical suppliers that make every on-track performance possible.",
+      sponsorsTitle: "Our Sponsors",
+      sponsorsLead: "The businesses supporting the MAGIK Reparto Corse project off track.",
+      visitLabel: "Visit website",
     },
   },
 };

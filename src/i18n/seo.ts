@@ -79,6 +79,20 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ogTitle: `Gallery — ${SITE}`,
       ogDescription: "In pista, in box, dietro le quinte.",
     },
+    "/giuseppe-morcia": {
+      title: `Giuseppe Morcia “Peppo” — Fondatore | ${SITE}`,
+      description:
+        "La storia di Giuseppe Morcia, co-fondatore di MAGIK: dai titoli in Perù al coaching dei campioni mondiali del karting dal 1994 a oggi.",
+      ogTitle: `Giuseppe "Peppo" Morcia — Il Fondatore`,
+      ogDescription: "Capo meccanico e coach di campioni, dal Perù al karting mondiale.",
+    },
+    "/partnership": {
+      title: `Partnership & Sponsor — ${SITE}`,
+      description:
+        "I partner tecnici e gli sponsor di MAGIK Reparto Corse: motori LKE, telemetria AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering e i nostri sponsor.",
+      ogTitle: `Partnership & Sponsor — ${SITE}`,
+      ogDescription: "I marchi e le realtà che corrono insieme a noi.",
+    },
     "/blog": {
       title: `Blog — Tecnica, gare, motori | ${SITE}`,
       description: "News, tecnica, setup, motori LKE e dietro le quinte di MAGIK Reparto Corse.",
@@ -149,6 +163,20 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       description: "Images from the pitlane, the track and the moments that matter.",
       ogTitle: `Gallery — ${SITE}`,
       ogDescription: "On track, in the pit, behind the scenes.",
+    },
+    "/giuseppe-morcia": {
+      title: `Giuseppe "Peppo" Morcia — Founder | ${SITE}`,
+      description:
+        "The story of Giuseppe Morcia, co-founder of MAGIK: from titles in Peru to coaching world karting champions since 1994.",
+      ogTitle: `Giuseppe "Peppo" Morcia — The Founder`,
+      ogDescription: "Lead mechanic and coach of champions, from Peru to world karting.",
+    },
+    "/partnership": {
+      title: `Partnership & Sponsors — ${SITE}`,
+      description:
+        "MAGIK Reparto Corse's technical partners and sponsors: LKE engines, AIM telemetry, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering and our sponsors.",
+      ogTitle: `Partnership & Sponsors — ${SITE}`,
+      ogDescription: "The brands and businesses racing alongside us.",
     },
     "/blog": {
       title: `Blog — Technique, races, engines | ${SITE}`,

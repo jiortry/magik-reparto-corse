@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ContactForm } from "@/components/site/ContactForm";
@@ -35,7 +35,32 @@ function ContactPage() {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8">
+            <h4 className="text-xs font-display uppercase tracking-widest text-accent mb-3">
+              {t.contact.emailsTitle}
+            </h4>
+            <div className="space-y-2.5">
+              {t.contact.emails.map((e) => (
+                <a
+                  key={e.address}
+                  href={`mailto:${e.address}`}
+                  className="group flex items-center gap-3 border border-border bg-card p-3.5 hover:border-primary transition-colors"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Mail size={16} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-xs text-muted-foreground">{e.label}</span>
+                    <span className="block truncate text-sm font-semibold text-foreground/90 group-hover:text-primary transition-colors">
+                      {e.address}
+                    </span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="https://wa.me/?text=Ciao%20MAGIK%20Reparto%20Corse"
               target="_blank"

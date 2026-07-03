@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as LkeRouteImport } from './routes/lke'
 import { Route as KartMagikRouteImport } from './routes/kart-magik'
+import { Route as GiuseppeMorciaRouteImport } from './routes/giuseppe-morcia'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -31,6 +33,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartnershipRoute = PartnershipRouteImport.update({
+  id: '/partnership',
+  path: '/partnership',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LkeRoute = LkeRouteImport.update({
   id: '/lke',
   path: '/lke',
@@ -39,6 +46,11 @@ const LkeRoute = LkeRouteImport.update({
 const KartMagikRoute = KartMagikRouteImport.update({
   id: '/kart-magik',
   path: '/kart-magik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiuseppeMorciaRoute = GiuseppeMorciaRouteImport.update({
+  id: '/giuseppe-morcia',
+  path: '/giuseppe-morcia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -84,8 +96,10 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
+  '/giuseppe-morcia': typeof GiuseppeMorciaRoute
   '/kart-magik': typeof KartMagikRoute
   '/lke': typeof LkeRoute
+  '/partnership': typeof PartnershipRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -97,8 +111,10 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
+  '/giuseppe-morcia': typeof GiuseppeMorciaRoute
   '/kart-magik': typeof KartMagikRoute
   '/lke': typeof LkeRoute
+  '/partnership': typeof PartnershipRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -111,8 +127,10 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
+  '/giuseppe-morcia': typeof GiuseppeMorciaRoute
   '/kart-magik': typeof KartMagikRoute
   '/lke': typeof LkeRoute
+  '/partnership': typeof PartnershipRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -126,8 +144,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/gallery'
+    | '/giuseppe-morcia'
     | '/kart-magik'
     | '/lke'
+    | '/partnership'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -139,8 +159,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/gallery'
+    | '/giuseppe-morcia'
     | '/kart-magik'
     | '/lke'
+    | '/partnership'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -152,8 +174,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/gallery'
+    | '/giuseppe-morcia'
     | '/kart-magik'
     | '/lke'
+    | '/partnership'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -166,8 +190,10 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
+  GiuseppeMorciaRoute: typeof GiuseppeMorciaRoute
   KartMagikRoute: typeof KartMagikRoute
   LkeRoute: typeof LkeRoute
+  PartnershipRoute: typeof PartnershipRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
 }
@@ -188,6 +214,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partnership': {
+      id: '/partnership'
+      path: '/partnership'
+      fullPath: '/partnership'
+      preLoaderRoute: typeof PartnershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lke': {
       id: '/lke'
       path: '/lke'
@@ -200,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/kart-magik'
       fullPath: '/kart-magik'
       preLoaderRoute: typeof KartMagikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/giuseppe-morcia': {
+      id: '/giuseppe-morcia'
+      path: '/giuseppe-morcia'
+      fullPath: '/giuseppe-morcia'
+      preLoaderRoute: typeof GiuseppeMorciaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -271,8 +311,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
+  GiuseppeMorciaRoute: GiuseppeMorciaRoute,
   KartMagikRoute: KartMagikRoute,
   LkeRoute: LkeRoute,
+  PartnershipRoute: PartnershipRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
 }

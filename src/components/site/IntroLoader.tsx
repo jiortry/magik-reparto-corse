@@ -29,7 +29,7 @@ export function IntroLoader() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="relative h-16 md:h-20 w-auto drop-shadow-[0_0_30px_rgba(225,6,0,0.5)]"
+            className="relative h-28 sm:h-36 md:h-48 lg:h-56 w-auto max-w-[80vw] drop-shadow-[0_0_45px_rgba(225,6,0,0.55)]"
           />
         </motion.div>
       )}
