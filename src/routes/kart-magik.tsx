@@ -24,15 +24,24 @@ function KartPage() {
       <div className="mx-auto max-w-[1400px] px-5 lg:px-8">
         <SectionHeader eyebrow={k.eyebrow} title={k.title} lead={k.lead} />
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-6 inline-flex items-center gap-2 border border-accent/60 bg-carbon/80 px-3 py-1.5 font-display text-[10px] font-bold uppercase tracking-widest text-accent"
+          className="mt-6 flex flex-wrap items-center gap-3"
         >
-          {k.homologation}
-        </motion.p>
+          <p className="inline-flex items-center gap-2 border border-accent/60 bg-carbon/80 px-3 py-1.5 font-display text-[10px] font-bold uppercase tracking-widest text-accent">
+            {k.homologation}
+          </p>
+          <a
+            href="/magik-mrk1-007-CH-60.pdf"
+            download="Magik-MRK1-007-CH-60.pdf"
+            className="inline-flex items-center gap-2 bg-primary px-4 py-2 font-display text-[10px] font-bold uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors clip-diagonal"
+          >
+            {k.ficheDownload}
+          </a>
+        </motion.div>
 
         <div className="mt-16">
           <KartHotspots items={k.hotspots} />
@@ -104,9 +113,8 @@ function KartPage() {
           <div className="mt-6">
             <a
               href="/magik-mrk1-007-CH-60.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-accent px-5 py-3 font-display text-xs font-bold uppercase tracking-widest text-accent hover:bg-accent hover:text-accent-foreground transition-colors"
+              download="Magik-MRK1-007-CH-60.pdf"
+              className="inline-flex items-center gap-2 bg-primary px-5 py-3 font-display text-xs font-bold uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors clip-diagonal"
             >
               {k.ficheDownload}
             </a>

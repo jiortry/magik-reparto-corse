@@ -338,7 +338,7 @@ export const dictionary: Record<Lang, Dict> = {
       specsTitle: "Scheda tecnica",
       specsLead: "Dati del Magik MRK1 secondo omologazione CIK-FIA 007-CH-60 (Group 2, 2025–2027).",
       homologation: "Omologazione CIK-FIA 007-CH-60",
-      ficheDownload: "Scarica fiche d'omologazione",
+      ficheDownload: "Download Fiche",
       specs: [
         { label: "Modello", value: "Magik MRK1" },
         { label: "Materiale scocca", value: "Acciaio cromo molibdeno" },
@@ -678,7 +678,7 @@ export const dictionary: Record<Lang, Dict> = {
       specsTitle: "Technical sheet",
       specsLead: "Magik MRK1 data per CIK-FIA homologation 007-CH-60 (Group 2, 2025–2027).",
       homologation: "CIK-FIA Homologation 007-CH-60",
-      ficheDownload: "Download homologation form",
+      ficheDownload: "Download Fiche",
       specs: [
         { label: "Model", value: "Magik MRK1" },
         { label: "Frame material", value: "Chrome-molybdenum steel" },
