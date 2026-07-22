@@ -50,12 +50,12 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ogDescription: "Dalla preparazione tecnica alla pista: ogni fase della performance.",
     },
     "/kart-magik": {
-      title: `Kart Magik omologato — Telaio, motore, setup | ${SITE}`,
+      title: `Kart Magik MRK1 omologato CIK-FIA — Scheda tecnica | ${SITE}`,
       description:
-        "Il Kart Magik omologato: telaio racing, impianto frenante, radiatore, motore LKE e setup gara curato dal team.",
-      ogTitle: "Kart Magik omologato",
+        "Magik MRK1 omologato CIK-FIA 007-CH-60: scocca cromo molibdeno Ø 30 mm, passo 1045 mm, assale 50 mm, freni FREELINE e carene KG 509-507.",
+      ogTitle: "Kart Magik MRK1 omologato",
       ogDescription:
-        "Un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
+        "Scocca in acciaio cromo molibdeno, impianto FREELINE e carene KG 509-507 incluse nel pacchetto.",
     },
     "/lke": {
       title: `Motore LKE Emilia-Romagna — Rivenditore ufficiale | MAGIK`,
@@ -138,11 +138,12 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ogDescription: "From technical prep to the track: every phase of performance.",
     },
     "/kart-magik": {
-      title: `Homologated Magik Kart — Chassis, engine, setup | ${SITE}`,
+      title: `Homologated Magik Kart MRK1 CIK-FIA — Specs | ${SITE}`,
       description:
-        "The homologated Magik Kart: racing chassis, brakes, radiator, LKE engine and race setup curated by the team.",
-      ogTitle: "Homologated Magik Kart",
-      ogDescription: "A chassis developed for speed, precision and reliability on track.",
+        "Magik MRK1 CIK-FIA 007-CH-60: chrome-moly Ø 30 mm frame, 1045 mm wheelbase, 50 mm axle, FREELINE brakes and KG 509-507 bodywork.",
+      ogTitle: "Homologated Magik Kart MRK1",
+      ogDescription:
+        "Chrome-molybdenum steel frame, FREELINE brakes and KG 509-507 bodywork included in the package.",
     },
     "/lke": {
       title: `LKE engine Emilia-Romagna — Official dealer | MAGIK`,

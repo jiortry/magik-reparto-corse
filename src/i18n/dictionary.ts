@@ -41,6 +41,13 @@ export type Dict = {
     eyebrow: string;
     lead: string;
     hotspots: { label: string; body: string }[];
+    features: { eyebrow: string; title: string; body: string }[];
+    highlights: { label: string; body: string }[];
+    specsTitle: string;
+    specsLead: string;
+    homologation: string;
+    ficheDownload: string;
+    specs: { label: string; value: string }[];
   };
   lke: {
     title: string;
@@ -277,16 +284,70 @@ export const dictionary: Record<Lang, Dict> = {
       ],
     },
     kart: {
-      title: "Kart Magik",
+      title: "Kart Magik MRK1",
       eyebrow: "Il Telaio",
-      lead: "Il Kart Magik omologato è il cuore del nostro reparto corse: un telaio sviluppato per la velocità, la precisione e l'affidabilità in gara.",
+      lead: "Il Magik MRK1 omologato CIK-FIA (007-CH-60) è il cuore del nostro reparto corse: scocca in acciaio cromo molibdeno, geometria racing e pacchetto completo per la pista.",
       hotspots: [
-        { label: "Telaio", body: "Geometria racing, rigidità calibrata per la trazione." },
-        { label: "Carene", body: "Aerodinamica e linee taglienti, look motorsport." },
+        {
+          label: "Telaio",
+          body: "Scocca in acciaio cromo molibdeno, tubi Ø 30 mm, passo 1045 mm.",
+        },
+        {
+          label: "Carene",
+          body: "KG 509-507 con supporti dedicati, incluse nel pacchetto d'acquisto.",
+        },
         { label: "Radiatore", body: "Raffreddamento ad alta efficienza per le gare lunghe." },
-        { label: "Impianto Frenante", body: "Frenata potente e modulabile, calibrata in pista." },
+        {
+          label: "Impianto Frenante",
+          body: "Impianto FREELINE: frenata potente, modulabile e costante.",
+        },
         { label: "Motore", body: "Configurazione LKE per massima performance." },
         { label: "Setup Gara", body: "Assetto curato dal team, tarato sul circuito." },
+      ],
+      features: [
+        {
+          eyebrow: "Kit carenature KG",
+          title: "Carene KG 509-507",
+          body: "Presenti nel pacchetto d'acquisto del telaio, le carene KG 509-507 con i supporti dedicati.",
+        },
+        {
+          eyebrow: "Impianto frenante FREELINE",
+          title: "Frenata da gara",
+          body: "L'MRK1 adotta l'impianto frenante FREELINE: componenti di qualità racing per una frenata efficiente, modulabile e costante in ogni condizione di pista. Gli accessori forniti sono componenti FREELINE.",
+        },
+        {
+          eyebrow: "Scocca racing",
+          title: "Cromo molibdeno Ø 30 mm",
+          body: "La scocca è realizzata in acciaio cromo molibdeno con tubi da 30 mm di diametro: rigidità calibrata, risposta diretta e handling su ogni tipo di circuito, con passo da 1045 mm e assale Ø 50 mm omologato CIK-FIA.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Assale",
+          body: "Diametro 50 mm, omologato CIK-FIA, per massima rigidità e feeling in uscita di curva.",
+        },
+        {
+          label: "Diametro tubi",
+          body: "Tubo Ø 30 mm di pari diametro su longheroni e traverse della scocca.",
+        },
+        {
+          label: "Passo",
+          body: "1045 mm — geometria omologata per il migliore handling su tutti i tipi di circuito.",
+        },
+      ],
+      specsTitle: "Scheda tecnica",
+      specsLead: "Dati del Magik MRK1 secondo omologazione CIK-FIA 007-CH-60 (Group 2, 2025–2027).",
+      homologation: "Omologazione CIK-FIA 007-CH-60",
+      ficheDownload: "Scarica fiche d'omologazione",
+      specs: [
+        { label: "Modello", value: "Magik MRK1" },
+        { label: "Materiale scocca", value: "Acciaio cromo molibdeno" },
+        { label: "Tubi Ø", value: "30 mm" },
+        { label: "Passo", value: "1045 mm" },
+        { label: "Assale Ø", value: "50 mm omologato CIK-FIA" },
+        { label: "Impianto frenante", value: "FREELINE" },
+        { label: "Accessori forniti", value: "Componenti FREELINE" },
+        { label: "Carenature", value: "KG 509-507 con supporti dedicati" },
       ],
     },
     lke: {
@@ -563,16 +624,70 @@ export const dictionary: Record<Lang, Dict> = {
       ],
     },
     kart: {
-      title: "Kart Magik",
+      title: "Kart Magik MRK1",
       eyebrow: "The Chassis",
-      lead: "The homologated Magik Kart is the heart of our racing department: a chassis developed for speed, precision and reliability.",
+      lead: "The CIK-FIA homologated Magik MRK1 (007-CH-60) is the heart of our racing department: chrome-molybdenum steel frame, racing geometry and a complete track package.",
       hotspots: [
-        { label: "Chassis", body: "Racing geometry, calibrated stiffness for traction." },
-        { label: "Bodywork", body: "Aero lines and sharp cuts, full motorsport look." },
+        {
+          label: "Chassis",
+          body: "Chrome-molybdenum steel frame, Ø 30 mm tubes, 1045 mm wheelbase.",
+        },
+        {
+          label: "Bodywork",
+          body: "KG 509-507 with dedicated mounts, included in the chassis package.",
+        },
         { label: "Radiator", body: "High-efficiency cooling for long races." },
-        { label: "Brake System", body: "Powerful, modulable braking, tuned on track." },
+        {
+          label: "Brake System",
+          body: "FREELINE braking: powerful, modulable and consistent.",
+        },
         { label: "Engine", body: "LKE configuration for maximum performance." },
         { label: "Race Setup", body: "Setup curated by the team, tuned to the circuit." },
+      ],
+      features: [
+        {
+          eyebrow: "KG bodywork kit",
+          title: "KG 509-507 bodywork",
+          body: "Included in the chassis purchase package: KG 509-507 bodywork with dedicated mounts.",
+        },
+        {
+          eyebrow: "FREELINE brake system",
+          title: "Race-ready braking",
+          body: "The MRK1 runs a FREELINE brake system: racing-grade components for efficient, modulable and consistent braking in every track condition. Supplied accessories are FREELINE components.",
+        },
+        {
+          eyebrow: "Racing frame",
+          title: "Chrome-moly Ø 30 mm",
+          body: "The frame is built in chrome-molybdenum steel with 30 mm diameter tubes: calibrated stiffness, direct response and handling on every circuit type, with a 1045 mm wheelbase and Ø 50 mm CIK-FIA homologated axle.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Axle",
+          body: "50 mm diameter, CIK-FIA homologated, for maximum stiffness and drive out of corners.",
+        },
+        {
+          label: "Tube diameter",
+          body: "Ø 30 mm tubes of equal diameter on both chassis rails and cross members.",
+        },
+        {
+          label: "Wheelbase",
+          body: "1045 mm — homologated geometry for the best handling on every type of circuit.",
+        },
+      ],
+      specsTitle: "Technical sheet",
+      specsLead: "Magik MRK1 data per CIK-FIA homologation 007-CH-60 (Group 2, 2025–2027).",
+      homologation: "CIK-FIA Homologation 007-CH-60",
+      ficheDownload: "Download homologation form",
+      specs: [
+        { label: "Model", value: "Magik MRK1" },
+        { label: "Frame material", value: "Chrome-molybdenum steel" },
+        { label: "Tubes Ø", value: "30 mm" },
+        { label: "Wheelbase", value: "1045 mm" },
+        { label: "Axle Ø", value: "50 mm CIK-FIA homologated" },
+        { label: "Brake system", value: "FREELINE" },
+        { label: "Supplied accessories", value: "FREELINE components" },
+        { label: "Bodywork", value: "KG 509-507 with dedicated mounts" },
       ],
     },
     lke: {
