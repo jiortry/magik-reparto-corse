@@ -51,8 +51,8 @@ export const founderTimeline: Record<Lang, FounderMilestone[]> = {
     },
     {
       year: "2014",
-      title: "Lorenzo Travisanutto — Campione del Mondo CIK-FIA",
-      body: "Il titolo mondiale più prestigioso, conquistato insieme.",
+      title: "Lorenzo Travisanutto — Vincitore del 3° round di Campionato europeo a Kristianstad",
+      body: "Vittoria al 3° round del Campionato europeo a Kristianstad.",
     },
     {
       year: "2016",
@@ -123,8 +123,8 @@ export const founderTimeline: Record<Lang, FounderMilestone[]> = {
     },
     {
       year: "2014",
-      title: "Lorenzo Travisanutto — CIK-FIA World Champion",
-      body: "The most prestigious world title, won together.",
+      title: "Lorenzo Travisanutto — Winner of the 3rd round of the European Championship in Kristianstad",
+      body: "Winner of round 3 of the European Championship in Kristianstad.",
     },
     {
       year: "2016",

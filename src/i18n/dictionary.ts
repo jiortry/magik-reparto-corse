@@ -318,13 +318,13 @@ export const dictionary: Record<Lang, Dict> = {
         {
           eyebrow: "Scocca racing",
           title: "Cromo molibdeno Ø 30 mm",
-          body: "La scocca è realizzata in acciaio cromo molibdeno con tubi da 30 mm di diametro: rigidità calibrata, risposta diretta e handling su ogni tipo di circuito, con passo da 1045 mm e assale Ø 50 mm omologato CIK-FIA.",
+          body: "La scocca è realizzata in acciaio cromo molibdeno con tubi da 30 mm di diametro: rigidità calibrata, risposta diretta e handling su ogni tipo di circuito, con passo da 1045 mm e assale Ø 50 mm.",
         },
       ],
       highlights: [
         {
           label: "Assale",
-          body: "Diametro 50 mm, omologato CIK-FIA, per massima rigidità e feeling in uscita di curva.",
+          body: "Diametro 50 mm, per massima rigidità e feeling in uscita di curva.",
         },
         {
           label: "Diametro tubi",
@@ -344,7 +344,7 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Materiale scocca", value: "Acciaio cromo molibdeno" },
         { label: "Tubi Ø", value: "30 mm" },
         { label: "Passo", value: "1045 mm" },
-        { label: "Assale Ø", value: "50 mm omologato CIK-FIA" },
+        { label: "Assale Ø", value: "50 mm" },
         { label: "Impianto frenante", value: "FREELINE" },
         { label: "Accessori forniti", value: "Componenti FREELINE" },
         { label: "Carenature", value: "KG 509-507 con supporti dedicati" },
@@ -658,13 +658,13 @@ export const dictionary: Record<Lang, Dict> = {
         {
           eyebrow: "Racing frame",
           title: "Chrome-moly Ø 30 mm",
-          body: "The frame is built in chrome-molybdenum steel with 30 mm diameter tubes: calibrated stiffness, direct response and handling on every circuit type, with a 1045 mm wheelbase and Ø 50 mm CIK-FIA homologated axle.",
+          body: "The frame is built in chrome-molybdenum steel with 30 mm diameter tubes: calibrated stiffness, direct response and handling on every circuit type, with a 1045 mm wheelbase and Ø 50 mm axle.",
         },
       ],
       highlights: [
         {
           label: "Axle",
-          body: "50 mm diameter, CIK-FIA homologated, for maximum stiffness and drive out of corners.",
+          body: "50 mm diameter, for maximum stiffness and drive out of corners.",
         },
         {
           label: "Tube diameter",
@@ -684,7 +684,7 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Frame material", value: "Chrome-molybdenum steel" },
         { label: "Tubes Ø", value: "30 mm" },
         { label: "Wheelbase", value: "1045 mm" },
-        { label: "Axle Ø", value: "50 mm CIK-FIA homologated" },
+        { label: "Axle Ø", value: "50 mm" },
         { label: "Brake system", value: "FREELINE" },
         { label: "Supplied accessories", value: "FREELINE components" },
         { label: "Bodywork", value: "KG 509-507 with dedicated mounts" },
