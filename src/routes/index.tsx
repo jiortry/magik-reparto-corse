@@ -5,14 +5,14 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import { getSsrPageSeo, linksForPath, metaArrayFromPageSeo } from "@/i18n/seo";
 import missionPhoto from "@/assets/gallery/D4S_2474.JPG";
 import gokart from "@/assets/gokart.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/"), "/"),
-    links: [{ rel: "canonical", href: "/" }],
+    links: linksForPath("/"),
   }),
   component: Index,
 });

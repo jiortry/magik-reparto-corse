@@ -109,6 +109,34 @@ export type Dict = {
     postNotFoundTitle: string;
     backToBlog: string;
     navBackLabel: string;
+    allCategories: string;
+    featured: string;
+    readArticle: string;
+    readingTime: string;
+    empty: string;
+    searchPlaceholder: string;
+    resultsCount: string;
+    resultsCountOne: string;
+    tocTitle: string;
+    tagsTitle: string;
+    relatedTitle: string;
+    shareTitle: string;
+    copyLink: string;
+    copied: string;
+    faqTitle: string;
+    updatedOn: string;
+    prevPost: string;
+    nextPost: string;
+    ctaTitle: string;
+    ctaBody: string;
+    ctaButton: string;
+  };
+  webCta: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    button: string;
+    note: string;
   };
   faq: { title: string; eyebrow: string; lead: string };
   contact: {
@@ -416,9 +444,9 @@ export const dictionary: Record<Lang, Dict> = {
       next: "Successiva",
     },
     blog: {
-      title: "Blog",
-      eyebrow: "Insights",
-      lead: "News, tecnica e dietro le quinte di MAGIK Reparto Corse.",
+      title: "Blog Karting",
+      eyebrow: "Guide & Insights",
+      lead: "Guide pratiche su setup kart, motori LKE, assistenza in pista, costi del karting e categorie: quello che chiediamo e ci viene chiesto ogni weekend di gara.",
       categories: [
         "Gare",
         "Tecnica",
@@ -431,6 +459,28 @@ export const dictionary: Record<Lang, Dict> = {
       postNotFoundTitle: "Articolo non trovato",
       backToBlog: "Torna al blog",
       navBackLabel: "Blog",
+      allCategories: "Tutti",
+      featured: "In evidenza",
+      readArticle: "Leggi l'articolo",
+      readingTime: "min di lettura",
+      empty: "Nessun articolo per questi filtri.",
+      searchPlaceholder: "Cerca: setup, LKE, costi, categorie…",
+      resultsCount: "articoli",
+      resultsCountOne: "articolo",
+      tocTitle: "In questo articolo",
+      tagsTitle: "Argomenti",
+      relatedTitle: "Continua a leggere",
+      shareTitle: "Condividi",
+      copyLink: "Copia link",
+      copied: "Link copiato",
+      faqTitle: "Domande frequenti",
+      updatedOn: "Aggiornato il",
+      prevPost: "Precedente",
+      nextPost: "Successivo",
+      ctaTitle: "Hai una domanda tecnica sul tuo kart?",
+      ctaBody:
+        "Setup, ricambi, motore LKE o assistenza in pista in Emilia-Romagna: parlane direttamente con il nostro reparto corse.",
+      ctaButton: "Contatta il team",
     },
     faq: {
       title: "FAQ",
@@ -471,6 +521,13 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Giuseppe Morcia — Fondatore", address: "peppo.morcia@magikrepartocorse.it" },
         { label: "Contatto alternativo", address: "magik.racing@gmail.com" },
       ],
+    },
+    webCta: {
+      eyebrow: "Web & Digital",
+      title: "Vuoi anche tu un sito web?",
+      lead: "Siti web e app su misura, veloci, curati nei dettagli come un kart da gara. Scrivici su WhatsApp: ti rispondiamo con un'idea concreta, non con un preventivo automatico.",
+      button: "Scrivi su WhatsApp",
+      note: "Risposta rapida · +39 351 992 5868",
     },
     footer: {
       desc: "Reparto corse ufficiale del marchio Magik. Preparazione, assistenza e gare con il Kart Magik.",
@@ -756,9 +813,9 @@ export const dictionary: Record<Lang, Dict> = {
       next: "Next",
     },
     blog: {
-      title: "Blog",
-      eyebrow: "Insights",
-      lead: "News, technique and behind the scenes of MAGIK Reparto Corse.",
+      title: "Karting Blog",
+      eyebrow: "Guides & Insights",
+      lead: "Practical guides on kart setup, LKE engines, trackside support, karting costs and classes: what we ask and get asked every race weekend.",
       categories: [
         "Races",
         "Technique",
@@ -771,6 +828,28 @@ export const dictionary: Record<Lang, Dict> = {
       postNotFoundTitle: "Post not found",
       backToBlog: "Back to blog",
       navBackLabel: "Blog",
+      allCategories: "All",
+      featured: "Featured",
+      readArticle: "Read the article",
+      readingTime: "min read",
+      empty: "No articles match these filters.",
+      searchPlaceholder: "Search: setup, LKE, costs, classes…",
+      resultsCount: "articles",
+      resultsCountOne: "article",
+      tocTitle: "In this article",
+      tagsTitle: "Topics",
+      relatedTitle: "Keep reading",
+      shareTitle: "Share",
+      copyLink: "Copy link",
+      copied: "Link copied",
+      faqTitle: "Frequently asked",
+      updatedOn: "Updated on",
+      prevPost: "Previous",
+      nextPost: "Next",
+      ctaTitle: "Got a technical question about your kart?",
+      ctaBody:
+        "Setup, parts, LKE engine or trackside support in Emilia-Romagna: talk directly to our racing department.",
+      ctaButton: "Contact the team",
     },
     faq: {
       title: "FAQ",
@@ -811,6 +890,13 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Giuseppe Morcia — Founder", address: "peppo.morcia@magikrepartocorse.it" },
         { label: "Alternative contact", address: "magik.racing@gmail.com" },
       ],
+    },
+    webCta: {
+      eyebrow: "Web & Digital",
+      title: "Do you want a website too?",
+      lead: "Custom websites and apps — fast, detailed and tuned like a race kart. Message us on WhatsApp: you'll get a concrete idea back, not an automated quote.",
+      button: "Message on WhatsApp",
+      note: "Fast reply · +39 351 992 5868",
     },
     footer: {
       desc: "Official racing department of the Magik brand. Preparation, support and racing with the Magik Kart.",

@@ -4,7 +4,12 @@ import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 import team from "@/assets/team.jpg";
 import pilot from "@/assets/pilot-helmet.jpg";
 import peppo from "@/assets/peppo.jpeg";
@@ -12,7 +17,18 @@ import peppo from "@/assets/peppo.jpeg";
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/team"), "/team"),
-    links: [{ rel: "canonical", href: "/team" }],
+    links: linksForPath("/team"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Racing Team", path: "/team" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: TeamPage,
 });

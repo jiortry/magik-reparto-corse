@@ -3,13 +3,29 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { PartnerCard } from "@/components/site/PartnerCard";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 import { partnerships, sponsors } from "@/content/partnership";
 
 export const Route = createFileRoute("/partnership")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/partnership"), "/partnership"),
-    links: [{ rel: "canonical", href: "/partnership" }],
+    links: linksForPath("/partnership"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Partnership", path: "/partnership" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: PartnershipPage,
 });

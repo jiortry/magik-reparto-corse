@@ -5,7 +5,12 @@ import { FounderTimeline } from "@/components/site/FounderTimeline";
 import { DriverGrid } from "@/components/site/DriverGrid";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 import {
   founderTimeline,
   founderBio,
@@ -17,7 +22,18 @@ import peppo from "@/assets/peppo.jpeg";
 export const Route = createFileRoute("/giuseppe-morcia")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/giuseppe-morcia"), "/giuseppe-morcia"),
-    links: [{ rel: "canonical", href: "/giuseppe-morcia" }],
+    links: linksForPath("/giuseppe-morcia"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Giuseppe Morcia", path: "/giuseppe-morcia" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: FounderPage,
 });

@@ -20,6 +20,7 @@ import { KartTransition } from "@/components/site/KartTransition";
 import { IntroLoader } from "@/components/site/IntroLoader";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
+import { WebsiteCta } from "@/components/site/WebsiteCta";
 
 function NotFoundComponent() {
   const t = dictionary[readStoredLang()];
@@ -86,9 +87,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         ...metaArrayFromPageSeo(homeSeo, "/"),
         { name: "theme-color", content: "#0d0d10" },
-        { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "MAGIK Reparto Corse" },
-        { name: "twitter:card", content: "summary_large_image" },
+        { name: "format-detection", content: "telephone=no" },
+        { name: "geo.region", content: "IT-45" },
+        { name: "geo.placename", content: "Emilia-Romagna" },
       ],
       links: [
         { rel: "stylesheet", href: appCss },
@@ -139,6 +140,7 @@ function RootComponent() {
         <KartTransition />
         <Navbar />
         <Outlet />
+        <WebsiteCta />
         <Footer />
         <WhatsAppFab />
       </LanguageProvider>

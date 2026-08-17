@@ -3,12 +3,28 @@ import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/services"), "/services"),
-    links: [{ rel: "canonical", href: "/services" }],
+    links: linksForPath("/services"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Servizi", path: "/services" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: ServicesPage,
 });

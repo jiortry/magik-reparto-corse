@@ -5,12 +5,48 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { KartHotspots } from "@/components/site/KartHotspots";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  absoluteUrl,
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 
 export const Route = createFileRoute("/kart-magik")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/kart-magik"), "/kart-magik"),
-    links: [{ rel: "canonical", href: "/kart-magik" }],
+    links: linksForPath("/kart-magik"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Kart Magik MRK1", path: "/kart-magik" },
+          ]),
+        ),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Kart Magik MRK1",
+          category: "Telaio kart da competizione",
+          description:
+            "Telaio kart Magik MRK1 omologato CIK-FIA 007-CH-60: acciaio cromo molibdeno Ø 30 mm, passo 1045 mm, assale 50 mm, impianto frenante FREELINE e carene KG 509-507.",
+          brand: { "@type": "Brand", name: "Magik" },
+          url: absoluteUrl("/kart-magik"),
+          material: "Acciaio cromo molibdeno",
+          additionalProperty: [
+            { "@type": "PropertyValue", name: "Omologazione", value: "CIK-FIA 007-CH-60" },
+            { "@type": "PropertyValue", name: "Passo", value: "1045 mm" },
+            { "@type": "PropertyValue", name: "Assale", value: "50 mm" },
+          ],
+        }),
+      },
+    ],
   }),
   component: KartPage,
 });
@@ -94,10 +130,7 @@ function KartPage() {
             <table className="w-full text-left">
               <tbody>
                 {k.specs.map((row, i) => (
-                  <tr
-                    key={row.label}
-                    className={i % 2 === 0 ? "bg-card/80" : "bg-carbon/40"}
-                  >
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-card/80" : "bg-carbon/40"}>
                     <th className="w-[42%] sm:w-[36%] border-b border-border px-4 py-3.5 sm:px-6 font-display text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-accent align-top">
                       {row.label}
                     </th>

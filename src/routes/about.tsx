@@ -3,13 +3,29 @@ import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 import team from "@/assets/team.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/about"), "/about"),
-    links: [{ rel: "canonical", href: "/about" }],
+    links: linksForPath("/about"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Chi Siamo", path: "/about" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: AboutPage,
 });

@@ -18,7 +18,12 @@ export const partnerships: Record<Lang, PartnerItem[]> = {
       url: "https://www.aim-sportline.com/",
       icon: "telemetry",
     },
-    { name: "Olivia Racing", category: "Partner", url: "https://oliviaracing.com/", icon: "partner" },
+    {
+      name: "Olivia Racing",
+      category: "Partner",
+      url: "https://oliviaracing.com/",
+      icon: "partner",
+    },
     { name: "AMV Kart", category: "Cerchi", url: "https://www.amvkart.com/", icon: "wheels" },
     {
       name: "Greyhound Seats",
@@ -41,7 +46,12 @@ export const partnerships: Record<Lang, PartnerItem[]> = {
       url: "https://www.aim-sportline.com/",
       icon: "telemetry",
     },
-    { name: "Olivia Racing", category: "Partner", url: "https://oliviaracing.com/", icon: "partner" },
+    {
+      name: "Olivia Racing",
+      category: "Partner",
+      url: "https://oliviaracing.com/",
+      icon: "partner",
+    },
     { name: "AMV Kart", category: "Wheels", url: "https://www.amvkart.com/", icon: "wheels" },
     {
       name: "Greyhound Seats",

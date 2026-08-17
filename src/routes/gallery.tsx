@@ -4,12 +4,28 @@ import { SectionHeader } from "@/components/site/SectionHeader";
 import { Gallery } from "@/components/site/Gallery";
 import { galleryItems } from "@/content/gallery";
 import { useLang } from "@/i18n/LanguageProvider";
-import { getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
+import {
+  buildBreadcrumbJsonLd,
+  getSsrPageSeo,
+  linksForPath,
+  metaArrayFromPageSeo,
+} from "@/i18n/seo";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: metaArrayFromPageSeo(getSsrPageSeo("/gallery"), "/gallery"),
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: linksForPath("/gallery"),
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Gallery", path: "/gallery" },
+          ]),
+        ),
+      },
+    ],
   }),
   component: GalleryPage,
 });

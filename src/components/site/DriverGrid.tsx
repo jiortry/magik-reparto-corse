@@ -70,9 +70,7 @@ export function DriverGrid({
             </motion.span>
           ))}
         </AnimatePresence>
-        {filtered.length === 0 && (
-          <p className="text-sm text-muted-foreground">{empty}</p>
-        )}
+        {filtered.length === 0 && <p className="text-sm text-muted-foreground">{empty}</p>}
       </div>
     </div>
   );

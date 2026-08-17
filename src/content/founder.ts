@@ -123,7 +123,8 @@ export const founderTimeline: Record<Lang, FounderMilestone[]> = {
     },
     {
       year: "2014",
-      title: "Lorenzo Travisanutto — Winner of the 3rd round of the European Championship in Kristianstad",
+      title:
+        "Lorenzo Travisanutto — Winner of the 3rd round of the European Championship in Kristianstad",
       body: "Winner of round 3 of the European Championship in Kristianstad.",
     },
     {

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# No admin or private areas on this site.
+Disallow: /*?*utm_
+
+Sitemap: https://www.magikrepartocorse.it/sitemap.xml
