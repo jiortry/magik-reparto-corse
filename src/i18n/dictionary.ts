@@ -134,6 +134,7 @@ export type Dict = {
   webCta: {
     eyebrow: string;
     title: string;
+    titleAccent: string;
     lead: string;
     button: string;
     note: string;
@@ -524,7 +525,8 @@ export const dictionary: Record<Lang, Dict> = {
     },
     webCta: {
       eyebrow: "Web & Digital",
-      title: "Vuoi anche tu un sito web?",
+      title: "Vuoi anche tu un",
+      titleAccent: "sito web?",
       lead: "Siti web e app su misura, veloci, curati nei dettagli come un kart da gara. Scrivici su WhatsApp: ti rispondiamo con un'idea concreta, non con un preventivo automatico.",
       button: "Scrivi su WhatsApp",
       note: "Risposta rapida · +39 351 992 5868",
@@ -893,7 +895,8 @@ export const dictionary: Record<Lang, Dict> = {
     },
     webCta: {
       eyebrow: "Web & Digital",
-      title: "Do you want a website too?",
+      title: "Do you want a",
+      titleAccent: "website too?",
       lead: "Custom websites and apps — fast, detailed and tuned like a race kart. Message us on WhatsApp: you'll get a concrete idea back, not an automated quote.",
       button: "Message on WhatsApp",
       note: "Fast reply · +39 351 992 5868",
