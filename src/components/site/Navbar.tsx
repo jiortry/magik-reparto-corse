@@ -43,7 +43,11 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-3 lg:px-8">
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={logo} alt="MAGIK Reparto Corse" className="h-8 lg:h-10 w-auto" />
+          <img
+            src={logo}
+            alt="MAGIK Reparto Corse"
+            className="h-11 w-auto lg:h-14 -my-1.5 lg:-my-2"
+          />
         </Link>
 
         <nav className="hidden xl:flex items-center gap-1">

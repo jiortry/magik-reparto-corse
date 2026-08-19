@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Cpu, Gauge, Handshake, Circle, Armchair, Wrench, Award } from "lucide-react";
+import {
+  ArrowUpRight,
+  Cpu,
+  Gauge,
+  Handshake,
+  Circle,
+  Armchair,
+  Wrench,
+  Award,
+  Thermometer,
+  Hammer,
+} from "lucide-react";
 import type { PartnerIcon } from "@/content/partnership";
 
 const icons: Record<PartnerIcon, typeof Cpu> = {
@@ -9,6 +20,8 @@ const icons: Record<PartnerIcon, typeof Cpu> = {
   wheels: Circle,
   seats: Armchair,
   builder: Wrench,
+  radiators: Thermometer,
+  tools: Hammer,
 };
 
 export function PartnerCard({

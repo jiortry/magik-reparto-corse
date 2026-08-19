@@ -219,7 +219,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/partnership": {
       title: `Partnership e sponsor — Diventa partner | ${SITE}`,
       description:
-        "Partner tecnici e sponsor di MAGIK Reparto Corse: motori LKE, telemetria AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering. Scopri come diventare partner.",
+        "Partner tecnici e sponsor di MAGIK Reparto Corse: motori LKE, telemetria AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering, EM Radiatori, Buraschi Utensili. Scopri come diventare partner.",
       ogTitle: `Partnership & Sponsor — ${SITE}`,
       ogDescription: "I marchi e le realtà che corrono insieme a noi.",
       keywords: [
@@ -393,7 +393,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/partnership": {
       title: `Partnerships and sponsors — Become a partner | ${SITE}`,
       description:
-        "MAGIK Reparto Corse technical partners and sponsors: LKE engines, AIM telemetry, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering.",
+        "MAGIK Reparto Corse technical partners and sponsors: LKE engines, AIM telemetry, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering, EM Radiatori, Buraschi Utensili.",
       ogTitle: `Partnership & Sponsors — ${SITE}`,
       ogDescription: "The brands and businesses racing alongside us.",
       keywords: ["karting sponsorship", "kart team partners", "sponsor a kart team"],
@@ -574,7 +574,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/partnership": {
       title: `Partnership y sponsors — Hazte partner | ${SITE}`,
       description:
-        "Partners técnicos y sponsors de MAGIK Reparto Corse: motores LKE, telemetría AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering. Descubre cómo convertirte en partner.",
+        "Partners técnicos y sponsors de MAGIK Reparto Corse: motores LKE, telemetría AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering, EM Radiatori, Buraschi Utensili. Descubre cómo convertirte en partner.",
       ogTitle: `Partnership y sponsors — ${SITE}`,
       ogDescription: "Las marcas y las realidades que corren junto a nosotros.",
       keywords: [
