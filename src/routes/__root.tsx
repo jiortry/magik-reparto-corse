@@ -15,7 +15,6 @@ import { dictionary } from "@/i18n/dictionary";
 import { buildRootJsonLd, getSsrPageSeo, metaArrayFromPageSeo } from "@/i18n/seo";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { LanguagePopup } from "@/components/site/LanguagePopup";
 import { KartTransition } from "@/components/site/KartTransition";
 import { IntroLoader } from "@/components/site/IntroLoader";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
@@ -136,7 +135,6 @@ function RootComponent() {
         <DocumentMetaSync />
         <SmoothScroll />
         <IntroLoader />
-        <LanguagePopup />
         <KartTransition />
         <Navbar />
         <Outlet />

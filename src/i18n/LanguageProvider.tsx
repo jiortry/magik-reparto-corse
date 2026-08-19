@@ -1,6 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { LANG_SPLASH_COVER_MS, LANG_SPLASH_GONE_MS } from "@/components/site/SiteSplash";
 import { dictionary, isLang, type Dict, type Lang } from "./dictionary";
+import { fetchCountryFromCfTrace, langFromNavigator, resolveVisitorLang } from "./geoLang";
+import { getVisitorCountry } from "./getVisitorCountry";
 
 type Ctx = {
   lang: Lang;
@@ -33,7 +35,55 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       setLangState(saved);
       setHasChosen(true);
       document.documentElement.lang = saved;
+      return;
     }
+
+    const guessed = langFromNavigator();
+    if (guessed) {
+      setLangState(guessed);
+      document.documentElement.lang = guessed;
+    }
+
+    let cancelled = false;
+    const apply = (next: Lang) => {
+      if (cancelled || window.localStorage.getItem(LANG_STORAGE_KEY)) return;
+      setLangState(next);
+      setHasChosen(true);
+      window.localStorage.setItem(LANG_STORAGE_KEY, next);
+      document.documentElement.lang = next;
+    };
+
+    void (async () => {
+      try {
+        const hint = await Promise.race([
+          getVisitorCountry(),
+          new Promise<null>((resolve) => {
+            window.setTimeout(() => resolve(null), 2500);
+          }),
+        ]);
+        let country = hint?.country ?? "";
+        if (!country || country === "XX" || country === "T1") {
+          country = await fetchCountryFromCfTrace();
+        }
+        apply(
+          resolveVisitorLang({
+            country,
+            acceptLanguage: hint?.acceptLanguage,
+            navigatorLangs: navigator.languages?.length
+              ? navigator.languages
+              : navigator.language
+                ? [navigator.language]
+                : [],
+          }),
+        );
+      } catch {
+        apply(guessed ?? "it");
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const setLang = useCallback((l: Lang) => {
