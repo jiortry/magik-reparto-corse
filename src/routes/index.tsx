@@ -4,10 +4,10 @@ import { Hero } from "@/components/site/Hero";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { ServiceCard } from "@/components/site/ServiceCard";
 import { RacingButton } from "@/components/site/RacingButton";
+import { KartTeaser } from "@/components/site/KartTeaser";
 import { useLang } from "@/i18n/LanguageProvider";
 import { getSsrPageSeo, linksForPath, metaArrayFromPageSeo } from "@/i18n/seo";
 import missionPhoto from "@/assets/gallery/D4S_2474.JPG";
-import gokart from "@/assets/gokart.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -104,27 +104,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Kart teaser */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-carbon">
-        <div className="absolute inset-0 carbon-texture opacity-30" />
-        <div className="relative mx-auto max-w-[1400px] px-5 lg:px-8 grid gap-12 lg:grid-cols-2 items-center">
-          <div>
-            <SectionHeader eyebrow={t.kart.eyebrow} title={t.kart.title} lead={t.kart.lead} />
-            <div className="mt-8">
-              <RacingButton to="/kart-magik">{t.common.readMore}</RacingButton>
-            </div>
-          </div>
-          <motion.img
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
-            src={gokart}
-            alt={t.home.kartTeaserAlt}
-            className="w-full max-w-2xl mx-auto drop-shadow-[0_30px_60px_rgba(225,6,0,0.3)]"
-          />
-        </div>
-      </section>
+      <KartTeaser />
 
       {/* CTA */}
       <section className="relative py-20 border-t border-border">

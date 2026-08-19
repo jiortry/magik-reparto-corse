@@ -15,7 +15,7 @@ const VARIANTS: Array<{
   contain?: boolean;
 }> = [
   { id: "shifter", to: "/kart-magik/shifter", image: gokart, contain: true },
-  { id: "direct-drive", to: "/kart-magik/direct-drive", image: directDrive },
+  { id: "direct-drive", to: "/kart-magik/direct-drive", image: directDrive, contain: true },
 ];
 
 export function KartPills({

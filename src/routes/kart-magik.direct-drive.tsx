@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { KartModelView } from "@/components/site/KartModelView";
+import { kartMedia } from "@/content/kart-media";
 import { useLang } from "@/i18n/LanguageProvider";
 import {
   absoluteUrl,
@@ -60,6 +61,7 @@ function DirectDrivePage() {
       copy={k}
       image={directDrive}
       imageAlt={t.kartSelect.directAlt}
+      details={kartMedia["direct-drive"].details}
     />
   );
 }

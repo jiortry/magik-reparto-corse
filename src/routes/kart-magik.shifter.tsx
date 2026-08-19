@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { KartModelView } from "@/components/site/KartModelView";
+import { kartMedia } from "@/content/kart-media";
 import { useLang } from "@/i18n/LanguageProvider";
 import {
   absoluteUrl,
@@ -61,6 +62,7 @@ function ShifterPage() {
       copy={k}
       hotspots={k.hotspots}
       imageAlt={t.kartSelect.shifterAlt}
+      details={kartMedia.shifter.details}
       ficheDownload={k.ficheDownload}
     />
   );

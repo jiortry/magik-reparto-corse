@@ -4,9 +4,11 @@ import { ArrowLeft } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { KartHotspots } from "@/components/site/KartHotspots";
+import { KartDetailsGallery } from "@/components/site/KartDetailsGallery";
 import { KartPills, type KartVariant } from "@/components/site/KartPills";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
+import type { GalleryItem } from "@/components/site/Gallery";
 
 type KartCopy = {
   title: string;
@@ -26,6 +28,7 @@ export function KartModelView({
   image,
   imageAlt,
   hotspots,
+  details,
   ficheDownload,
 }: {
   variant: KartVariant;
@@ -33,6 +36,7 @@ export function KartModelView({
   image?: string;
   imageAlt?: string;
   hotspots?: ReadonlyArray<{ label: string; body: string }>;
+  details?: GalleryItem[];
   ficheDownload?: string;
 }) {
   const { t } = useLang();
@@ -85,17 +89,32 @@ export function KartModelView({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55 }}
-              className="relative mx-auto max-w-5xl overflow-hidden border border-border bg-white"
+              className="relative mx-auto max-w-5xl"
             >
+              <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl" />
               <img
                 src={image}
                 alt={imageAlt ?? copy.title}
-                className="relative w-full aspect-[4/5] sm:aspect-[16/11] object-cover object-center"
+                className="relative w-full drop-shadow-[0_30px_60px_rgba(225,6,0,0.28)]"
               />
-              <span className="absolute inset-x-0 bottom-0 h-px racing-stripe" />
             </motion.div>
           )}
         </div>
+
+        {details && details.length > 0 ? (
+          <div className="mt-16">
+            <p className="inline-flex items-center gap-2 font-display text-[11px] font-bold uppercase tracking-[0.3em] text-accent">
+              <span className="h-px w-8 bg-accent" />
+              {t.kartSelect.detailsTitle}
+            </p>
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+              {t.kartSelect.detailsLead}
+            </p>
+            <div className="mt-8">
+              <KartDetailsGallery items={details} />
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-24 space-y-20">
           {copy.features.map((feature, i) => (

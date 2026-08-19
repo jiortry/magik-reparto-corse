@@ -60,6 +60,9 @@ export type Dict = {
     directTag: string;
     directAlt: string;
     backToSelect: string;
+    chooseChassis: string;
+    detailsTitle: string;
+    detailsLead: string;
   };
   kartDirect: {
     title: string;
@@ -413,6 +416,10 @@ export const dictionary: Record<Lang, Dict> = {
       directTag: "Trasmissione diretta",
       directAlt: "Kart Magik Direct Drive",
       backToSelect: "Tutte le configurazioni",
+      chooseChassis: "Scegli il telaio",
+      detailsTitle: "Particolari",
+      detailsLead:
+        "Dettagli di costruzione della configurazione selezionata: scocca, freni, trasmissione e componenti racing.",
     },
     kartDirect: {
       title: "Kart Magik Direct Drive",
@@ -450,7 +457,8 @@ export const dictionary: Record<Lang, Dict> = {
         },
       ],
       specsTitle: "Scheda tecnica",
-      specsLead: "Configurazione Direct Drive del Kart Magik: trasmissione diretta, frizione centrifuga, pacchetto racing MAGIK.",
+      specsLead:
+        "Configurazione Direct Drive del Kart Magik: trasmissione diretta, frizione centrifuga, pacchetto racing MAGIK.",
       homologation: "Configurazione Direct Drive",
       specs: [
         { label: "Configurazione", value: "Direct Drive" },
@@ -844,6 +852,10 @@ export const dictionary: Record<Lang, Dict> = {
       directTag: "Direct drivetrain",
       directAlt: "Magik Kart Direct Drive",
       backToSelect: "All configurations",
+      chooseChassis: "Choose the chassis",
+      detailsTitle: "Details",
+      detailsLead:
+        "Build details of the selected spec: frame, brakes, drivetrain and racing components.",
     },
     kartDirect: {
       title: "Magik Kart Direct Drive",
@@ -881,7 +893,8 @@ export const dictionary: Record<Lang, Dict> = {
         },
       ],
       specsTitle: "Technical sheet",
-      specsLead: "Magik Kart Direct Drive spec: straight drivetrain, centrifugal clutch, MAGIK racing package.",
+      specsLead:
+        "Magik Kart Direct Drive spec: straight drivetrain, centrifugal clutch, MAGIK racing package.",
       homologation: "Direct Drive configuration",
       specs: [
         { label: "Configuration", value: "Direct Drive" },
