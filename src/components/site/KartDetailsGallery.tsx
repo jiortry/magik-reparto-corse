@@ -45,15 +45,15 @@ export function KartDetailsGallery({ items }: { items: GalleryItem[] }) {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
             onClick={() => setOpen(i)}
-            className="group relative aspect-[4/3] overflow-hidden border border-border bg-transparent text-left carbon-texture"
+            className="group relative aspect-[4/3] overflow-hidden border border-border bg-card text-left"
           >
             <img
               src={it.src}
               alt={it.alt}
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-105 sm:p-3"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-carbon/50 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-gradient-to-t from-carbon/80 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
             <div className="absolute inset-0 border-2 border-primary opacity-0 transition-opacity group-hover:opacity-100" />
             {it.caption && (
               <p className="absolute inset-x-0 bottom-0 p-2.5 font-display text-[10px] uppercase tracking-widest text-accent opacity-0 transition-opacity group-hover:opacity-100">

@@ -3,10 +3,10 @@ import gokart from "@/assets/gokart.png";
 import directDrive from "@/assets/kart/direct-drive.png";
 import type { KartVariant } from "@/components/site/KartPills";
 
-const shifterModules = import.meta.glob<{ default: string }>("../assets/kart/shifter/*.png", {
+const shifterModules = import.meta.glob<{ default: string }>("../assets/kart/shifter/*.jpg", {
   eager: true,
 });
-const directModules = import.meta.glob<{ default: string }>("../assets/kart/direct-drive/*.png", {
+const directModules = import.meta.glob<{ default: string }>("../assets/kart/direct-drive/*.jpg", {
   eager: true,
 });
 
