@@ -106,19 +106,47 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ],
     },
     "/kart-magik": {
-      title: `Kart Magik MRK1 omologato CIK-FIA — Scheda tecnica completa | ${SITE}`,
+      title: `Kart Magik — Shifter e Direct Drive | ${SITE}`,
       description:
-        "Telaio kart Magik MRK1 omologato CIK-FIA 007-CH-60: acciaio cromo molibdeno Ø 30 mm, passo 1045 mm, assale 50 mm, freni FREELINE e carene KG 509-507.",
-      ogTitle: "Kart Magik MRK1 omologato CIK-FIA",
+        "Scegli il Kart Magik: Shifter a cambio sequenziale (MRK1 omologato CIK-FIA) o Direct Drive a trasmissione diretta per OK e junior.",
+      ogTitle: "Kart Magik — Shifter o Direct Drive",
+      ogDescription: "Due configurazioni, lo stesso DNA Magik: shifter e direct drive.",
+      keywords: [
+        "kart Magik",
+        "kart shifter",
+        "kart direct drive",
+        "telaio kart omologato CIK-FIA",
+        "kart da corsa nuovo",
+      ],
+    },
+    "/kart-magik/shifter": {
+      title: `Kart Magik Shifter MRK1 omologato CIK-FIA — Scheda tecnica | ${SITE}`,
+      description:
+        "Telaio kart Magik MRK1 shifter omologato CIK-FIA 007-CH-60: acciaio cromo molibdeno Ø 30 mm, passo 1045 mm, assale 50 mm, freni FREELINE e carene KG 509-507.",
+      ogTitle: "Kart Magik Shifter MRK1 omologato CIK-FIA",
       ogDescription:
         "Scocca in acciaio cromo molibdeno, impianto FREELINE e carene KG 509-507 incluse nel pacchetto.",
       keywords: [
         "kart Magik MRK1",
+        "kart shifter",
         "telaio kart omologato CIK-FIA",
         "scheda tecnica kart",
         "comprare telaio kart",
-        "kart da corsa nuovo",
         "carene KG 509 507",
+      ],
+    },
+    "/kart-magik/direct-drive": {
+      title: `Kart Magik Direct Drive — Trasmissione diretta | ${SITE}`,
+      description:
+        "Kart Magik Direct Drive: trasmissione diretta, frizione centrifuga, categorie OK e junior. Preparato e assistito da MAGIK Reparto Corse.",
+      ogTitle: "Kart Magik Direct Drive",
+      ogDescription: "Trasmissione diretta, risposta immediata, DNA Magik da gara.",
+      keywords: [
+        "kart Magik direct drive",
+        "kart OK",
+        "kart trasmissione diretta",
+        "kart senza cambio",
+        "comprare kart da corsa",
       ],
     },
     "/lke": {
@@ -266,17 +294,46 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ],
     },
     "/kart-magik": {
-      title: `Magik MRK1 CIK-FIA homologated kart — Full specs | ${SITE}`,
+      title: `Magik Kart — Shifter and Direct Drive | ${SITE}`,
       description:
-        "Magik MRK1 CIK-FIA 007-CH-60 kart chassis: chrome-moly Ø 30 mm tubing, 1045 mm wheelbase, 50 mm axle, FREELINE brakes and KG 509-507 bodywork.",
-      ogTitle: "Homologated Magik Kart MRK1",
+        "Choose your Magik Kart: sequential-gearbox Shifter (CIK-FIA homologated MRK1) or Direct Drive for OK and junior classes.",
+      ogTitle: "Magik Kart — Shifter or Direct Drive",
+      ogDescription: "Two configurations, the same Magik DNA: shifter and direct drive.",
+      keywords: [
+        "Magik kart",
+        "shifter kart",
+        "direct drive kart",
+        "CIK-FIA homologated chassis",
+        "buy race kart chassis",
+      ],
+    },
+    "/kart-magik/shifter": {
+      title: `Magik Kart Shifter MRK1 CIK-FIA homologated — Full specs | ${SITE}`,
+      description:
+        "Magik MRK1 shifter chassis, CIK-FIA 007-CH-60: chrome-moly Ø 30 mm tubing, 1045 mm wheelbase, 50 mm axle, FREELINE brakes and KG 509-507 bodywork.",
+      ogTitle: "Homologated Magik Kart Shifter MRK1",
       ogDescription:
         "Chrome-molybdenum steel frame, FREELINE brakes and KG 509-507 bodywork included.",
       keywords: [
         "Magik MRK1 kart",
+        "shifter kart",
         "CIK-FIA homologated chassis",
         "kart chassis specs",
         "buy race kart chassis",
+      ],
+    },
+    "/kart-magik/direct-drive": {
+      title: `Magik Kart Direct Drive — Straight drivetrain | ${SITE}`,
+      description:
+        "Magik Kart Direct Drive: straight drivetrain, centrifugal clutch, OK and junior classes. Prepared and supported by MAGIK Reparto Corse.",
+      ogTitle: "Magik Kart Direct Drive",
+      ogDescription: "Direct drivetrain, instant response, Magik race DNA.",
+      keywords: [
+        "Magik kart direct drive",
+        "OK kart",
+        "direct drive kart",
+        "kart without gearbox",
+        "buy race kart",
       ],
     },
     "/lke": {

@@ -49,6 +49,29 @@ export type Dict = {
     ficheDownload: string;
     specs: { label: string; value: string }[];
   };
+  kartSelect: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    shifterName: string;
+    shifterTag: string;
+    shifterAlt: string;
+    directName: string;
+    directTag: string;
+    directAlt: string;
+    backToSelect: string;
+  };
+  kartDirect: {
+    title: string;
+    eyebrow: string;
+    lead: string;
+    features: { eyebrow: string; title: string; body: string }[];
+    highlights: { label: string; body: string }[];
+    specsTitle: string;
+    specsLead: string;
+    homologation: string;
+    specs: { label: string; value: string }[];
+  };
   lke: {
     title: string;
     eyebrow: string;
@@ -377,6 +400,67 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Impianto frenante", value: "FREELINE" },
         { label: "Accessori forniti", value: "Componenti FREELINE" },
         { label: "Carenature", value: "KG 509-507 con supporti dedicati" },
+      ],
+    },
+    kartSelect: {
+      eyebrow: "Kart Magik",
+      title: "Scegli la configurazione",
+      lead: "Due anime, lo stesso DNA Magik. Shifter per il cambio sequenziale, Direct Drive per la trasmissione diretta.",
+      shifterName: "Shifter",
+      shifterTag: "Cambio sequenziale",
+      shifterAlt: "Kart Magik Shifter MRK1",
+      directName: "Direct Drive",
+      directTag: "Trasmissione diretta",
+      directAlt: "Kart Magik Direct Drive",
+      backToSelect: "Tutte le configurazioni",
+    },
+    kartDirect: {
+      title: "Kart Magik Direct Drive",
+      eyebrow: "Direct Drive",
+      lead: "La configurazione a trasmissione diretta del Kart Magik: risposta immediata, zero cambiata, massima fluidità in categoria OK e junior.",
+      features: [
+        {
+          eyebrow: "Trasmissione",
+          title: "Direct drive, zero cambiata",
+          body: "Niente cambio sequenziale: la coppia passa dritta dal motore alle ruote. Meno inerzia, risposta più pulita e un kart più semplice da gestire dal via alla bandiera.",
+        },
+        {
+          eyebrow: "Categorie",
+          title: "OK, junior e oltre",
+          body: "La configurazione Direct Drive è pensata per le categorie a frizione centrifuga: adatta a chi cerca performance senza il carico del shifter, con lo stesso telaio Magik da gara.",
+        },
+        {
+          eyebrow: "Pacchetto gara",
+          title: "Stesso DNA Magik",
+          body: "Stessa filosofia di scocca, carene e impianto frenante del programma Magik: preparato, assistito e sviluppato dal reparto corse in pista.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Trasmissione",
+          body: "Direct drive: nessun selettore, frizione centrifuga, feeling diretto in uscita di curva.",
+        },
+        {
+          label: "Peso e risposta",
+          body: "Meno masse e meno organi di trasmissione: il kart reagisce prima e resta più prevedibile.",
+        },
+        {
+          label: "Assistenza",
+          body: "Setup, ricambi e supporto gara MAGIK: dalla prima uscita al weekend di campionato.",
+        },
+      ],
+      specsTitle: "Scheda tecnica",
+      specsLead: "Configurazione Direct Drive del Kart Magik: trasmissione diretta, frizione centrifuga, pacchetto racing MAGIK.",
+      homologation: "Configurazione Direct Drive",
+      specs: [
+        { label: "Configurazione", value: "Direct Drive" },
+        { label: "Trasmissione", value: "Diretta, senza cambio sequenziale" },
+        { label: "Frizione", value: "Centrifuga" },
+        { label: "Categorie", value: "OK / OKJ e categorie a trasmissione diretta" },
+        { label: "Telaio", value: "Kart Magik" },
+        { label: "Impianto frenante", value: "FREELINE" },
+        { label: "Carenature", value: "KG con livrea MAGIK Reparto Corse" },
+        { label: "Assistenza", value: "MAGIK Reparto Corse" },
       ],
     },
     lke: {
@@ -747,6 +831,67 @@ export const dictionary: Record<Lang, Dict> = {
         { label: "Brake system", value: "FREELINE" },
         { label: "Supplied accessories", value: "FREELINE components" },
         { label: "Bodywork", value: "KG 509-507 with dedicated mounts" },
+      ],
+    },
+    kartSelect: {
+      eyebrow: "Kart Magik",
+      title: "Choose your configuration",
+      lead: "Two characters, the same Magik DNA. Shifter for sequential gears, Direct Drive for a straight drivetrain.",
+      shifterName: "Shifter",
+      shifterTag: "Sequential gearbox",
+      shifterAlt: "Magik Kart Shifter MRK1",
+      directName: "Direct Drive",
+      directTag: "Direct drivetrain",
+      directAlt: "Magik Kart Direct Drive",
+      backToSelect: "All configurations",
+    },
+    kartDirect: {
+      title: "Magik Kart Direct Drive",
+      eyebrow: "Direct Drive",
+      lead: "The Magik Kart in direct-drive spec: instant response, no gearshift, maximum fluidity in OK and junior classes.",
+      features: [
+        {
+          eyebrow: "Drivetrain",
+          title: "Direct drive, no gearshift",
+          body: "No sequential gearbox: torque goes straight from the engine to the wheels. Less inertia, a cleaner response and a kart that is simpler to manage from lights out to the flag.",
+        },
+        {
+          eyebrow: "Classes",
+          title: "OK, junior and beyond",
+          body: "Direct Drive is built for centrifugal-clutch classes: performance without the shifter workload, on the same Magik race chassis.",
+        },
+        {
+          eyebrow: "Race package",
+          title: "The same Magik DNA",
+          body: "The same chassis philosophy, bodywork and braking as the Magik programme: prepared, supported and developed by the racing department on track.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Drivetrain",
+          body: "Direct drive: no gear selector, centrifugal clutch, direct feel out of corners.",
+        },
+        {
+          label: "Weight and response",
+          body: "Fewer rotating parts: the kart reacts sooner and stays more predictable.",
+        },
+        {
+          label: "Support",
+          body: "MAGIK setup, parts and race support: from the first outing to championship weekends.",
+        },
+      ],
+      specsTitle: "Technical sheet",
+      specsLead: "Magik Kart Direct Drive spec: straight drivetrain, centrifugal clutch, MAGIK racing package.",
+      homologation: "Direct Drive configuration",
+      specs: [
+        { label: "Configuration", value: "Direct Drive" },
+        { label: "Drivetrain", value: "Direct, no sequential gearbox" },
+        { label: "Clutch", value: "Centrifugal" },
+        { label: "Classes", value: "OK / OKJ and direct-drive categories" },
+        { label: "Chassis", value: "Magik Kart" },
+        { label: "Brake system", value: "FREELINE" },
+        { label: "Bodywork", value: "KG with MAGIK Reparto Corse livery" },
+        { label: "Support", value: "MAGIK Reparto Corse" },
       ],
     },
     lke: {

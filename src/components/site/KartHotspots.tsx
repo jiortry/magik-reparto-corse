@@ -3,7 +3,15 @@ import gokart from "@/assets/gokart.png";
 
 type Hotspot = { label: string; body: string; x: number; y: number };
 
-export function KartHotspots({ items }: { items: ReadonlyArray<{ label: string; body: string }> }) {
+export function KartHotspots({
+  items,
+  image = gokart,
+  alt = "Kart Magik",
+}: {
+  items: ReadonlyArray<{ label: string; body: string }>;
+  image?: string;
+  alt?: string;
+}) {
   // Fixed positions tuned to gokart.png composition
   const positions: Array<Pick<Hotspot, "x" | "y">> = [
     { x: 50, y: 65 }, // Telaio
@@ -18,7 +26,7 @@ export function KartHotspots({ items }: { items: ReadonlyArray<{ label: string; 
   return (
     <div className="relative mx-auto max-w-5xl">
       <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
-      <img src={gokart} alt="Kart Magik" className="relative w-full" />
+      <img src={image} alt={alt} className="relative w-full" />
       {hotspots.map((h, i) => (
         <motion.div
           key={h.label}

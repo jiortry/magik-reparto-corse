@@ -20,12 +20,30 @@
   </url>
   <url>
     <loc>https://www.magikrepartocorse.it/kart-magik</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.magikrepartocorse.it/kart-magik"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.magikrepartocorse.it/kart-magik"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.magikrepartocorse.it/kart-magik"/>
+  </url>
+  <url>
+    <loc>https://www.magikrepartocorse.it/kart-magik/shifter</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.magikrepartocorse.it/kart-magik/shifter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.magikrepartocorse.it/kart-magik/shifter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.magikrepartocorse.it/kart-magik/shifter"/>
+  </url>
+  <url>
+    <loc>https://www.magikrepartocorse.it/kart-magik/direct-drive</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.magikrepartocorse.it/kart-magik/direct-drive"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.magikrepartocorse.it/kart-magik/direct-drive"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.magikrepartocorse.it/kart-magik/direct-drive"/>
   </url>
   <url>
     <loc>https://www.magikrepartocorse.it/lke</loc>
