@@ -36,13 +36,12 @@ export const Route = createFileRoute("/kart-magik/direct-drive")({
           name: "Kart Magik Direct Drive",
           category: "Telaio kart da competizione",
           description:
-            "Kart Magik Direct Drive: trasmissione diretta, frizione centrifuga, categorie OK e junior. Preparato da MAGIK Reparto Corse.",
+            "Kart Magik Direct Drive: trasmissione a presa diretta, categorie OK e junior. Preparato da MAGIK Reparto Corse.",
           brand: { "@type": "Brand", name: "Magik" },
           url: absoluteUrl(PATH),
           additionalProperty: [
             { "@type": "PropertyValue", name: "Configurazione", value: "Direct Drive" },
-            { "@type": "PropertyValue", name: "Trasmissione", value: "Diretta" },
-            { "@type": "PropertyValue", name: "Frizione", value: "Centrifuga" },
+            { "@type": "PropertyValue", name: "Trasmissione", value: "Presa diretta" },
           ],
         }),
       },
@@ -62,6 +61,7 @@ function DirectDrivePage() {
       image={directDrive}
       imageAlt={t.kartSelect.directAlt}
       details={kartMedia["direct-drive"].details}
+      ficheDownload={k.ficheDownload}
     />
   );
 }

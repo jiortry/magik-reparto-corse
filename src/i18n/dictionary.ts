@@ -95,6 +95,7 @@ export type Dict = {
     specsTitle: string;
     specsLead: string;
     homologation: string;
+    ficheDownload: string;
     specs: { label: string; value: string }[];
   };
   lke: {
@@ -456,7 +457,7 @@ export const dictionary: Record<Lang, Dict> = {
         {
           eyebrow: "Categorie",
           title: "OK, junior e oltre",
-          body: "La configurazione Direct Drive è pensata per le categorie a frizione centrifuga: adatta a chi cerca performance senza il carico del shifter, con lo stesso telaio Magik da gara.",
+          body: "La configurazione Direct Drive è pensata per le categorie a presa diretta: adatta a chi cerca performance senza il carico del shifter, con lo stesso telaio Magik da gara.",
         },
         {
           eyebrow: "Pacchetto gara",
@@ -467,7 +468,7 @@ export const dictionary: Record<Lang, Dict> = {
       highlights: [
         {
           label: "Trasmissione",
-          body: "Direct drive: nessun selettore, frizione centrifuga, feeling diretto in uscita di curva.",
+          body: "Direct drive: nessun selettore, presa diretta, feeling diretto in uscita di curva.",
         },
         {
           label: "Peso e risposta",
@@ -480,12 +481,12 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       specsTitle: "Scheda tecnica",
       specsLead:
-        "Configurazione Direct Drive del Kart Magik: trasmissione diretta, frizione centrifuga, pacchetto racing MAGIK.",
+        "Configurazione Direct Drive del Kart Magik: trasmissione a presa diretta, pacchetto racing MAGIK.",
       homologation: "Configurazione Direct Drive",
+      ficheDownload: "Download Fiche",
       specs: [
         { label: "Configurazione", value: "Direct Drive" },
         { label: "Trasmissione", value: "Diretta, senza cambio sequenziale" },
-        { label: "Frizione", value: "Centrifuga" },
         { label: "Categorie", value: "OK / OKJ e categorie a trasmissione diretta" },
         { label: "Telaio", value: "Kart Magik" },
         { label: "Impianto frenante", value: "FREELINE" },
@@ -892,7 +893,7 @@ export const dictionary: Record<Lang, Dict> = {
         {
           eyebrow: "Classes",
           title: "OK, junior and beyond",
-          body: "Direct Drive is built for centrifugal-clutch classes: performance without the shifter workload, on the same Magik race chassis.",
+          body: "Direct Drive is built for direct-drive classes: performance without the shifter workload, on the same Magik race chassis.",
         },
         {
           eyebrow: "Race package",
@@ -903,7 +904,7 @@ export const dictionary: Record<Lang, Dict> = {
       highlights: [
         {
           label: "Drivetrain",
-          body: "Direct drive: no gear selector, centrifugal clutch, direct feel out of corners.",
+          body: "Direct drive: no gear selector, straight drivetrain, direct feel out of corners.",
         },
         {
           label: "Weight and response",
@@ -916,12 +917,12 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       specsTitle: "Technical sheet",
       specsLead:
-        "Magik Kart Direct Drive spec: straight drivetrain, centrifugal clutch, MAGIK racing package.",
+        "Magik Kart Direct Drive spec: straight drivetrain, MAGIK racing package.",
       homologation: "Direct Drive configuration",
+      ficheDownload: "Download Fiche",
       specs: [
         { label: "Configuration", value: "Direct Drive" },
         { label: "Drivetrain", value: "Direct, no sequential gearbox" },
-        { label: "Clutch", value: "Centrifugal" },
         { label: "Classes", value: "OK / OKJ and direct-drive categories" },
         { label: "Chassis", value: "Magik Kart" },
         { label: "Brake system", value: "FREELINE" },
@@ -1328,7 +1329,7 @@ export const dictionary: Record<Lang, Dict> = {
         {
           eyebrow: "Categorías",
           title: "OK, junior y más",
-          body: "La configuración Direct Drive está pensada para las categorías de embrague centrífugo: rendimiento sin la carga del shifter, con el mismo chasis Magik de carrera.",
+          body: "La configuración Direct Drive está pensada para las categorías de toma directa: rendimiento sin la carga del shifter, con el mismo chasis Magik de carrera.",
         },
         {
           eyebrow: "Paquete de carrera",
@@ -1339,7 +1340,7 @@ export const dictionary: Record<Lang, Dict> = {
       highlights: [
         {
           label: "Transmisión",
-          body: "Direct drive: sin selector, embrague centrífugo, feeling directo a la salida de curva.",
+          body: "Direct drive: sin selector, toma directa, feeling directo a la salida de curva.",
         },
         {
           label: "Peso y respuesta",
@@ -1352,12 +1353,12 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       specsTitle: "Ficha técnica",
       specsLead:
-        "Configuración Direct Drive del Kart Magik: transmisión directa, embrague centrífugo, paquete racing MAGIK.",
+        "Configuración Direct Drive del Kart Magik: transmisión de toma directa, paquete racing MAGIK.",
       homologation: "Configuración Direct Drive",
+      ficheDownload: "Descargar ficha",
       specs: [
         { label: "Configuración", value: "Direct Drive" },
         { label: "Transmisión", value: "Directa, sin cambio secuencial" },
-        { label: "Embrague", value: "Centrífugo" },
         { label: "Categorías", value: "OK / OKJ y categorías de transmisión directa" },
         { label: "Chasis", value: "Kart Magik" },
         { label: "Sistema de frenos", value: "FREELINE" },

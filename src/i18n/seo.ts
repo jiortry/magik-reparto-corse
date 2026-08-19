@@ -154,7 +154,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/kart-magik/direct-drive": {
       title: `Kart Magik Direct Drive — Trasmissione diretta | ${SITE}`,
       description:
-        "Kart Magik Direct Drive: trasmissione diretta, frizione centrifuga, categorie OK e junior. Preparato e assistito da MAGIK Reparto Corse.",
+        "Kart Magik Direct Drive: trasmissione a presa diretta, categorie OK e junior. Preparato e assistito da MAGIK Reparto Corse.",
       ogTitle: "Kart Magik Direct Drive",
       ogDescription: "Trasmissione diretta, risposta immediata, DNA Magik da gara.",
       keywords: [
@@ -341,7 +341,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/kart-magik/direct-drive": {
       title: `Magik Kart Direct Drive — Straight drivetrain | ${SITE}`,
       description:
-        "Magik Kart Direct Drive: straight drivetrain, centrifugal clutch, OK and junior classes. Prepared and supported by MAGIK Reparto Corse.",
+        "Magik Kart Direct Drive: straight drivetrain, OK and junior classes. Prepared and supported by MAGIK Reparto Corse.",
       ogTitle: "Magik Kart Direct Drive",
       ogDescription: "Direct drivetrain, instant response, Magik race DNA.",
       keywords: [
@@ -509,7 +509,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/kart-magik/direct-drive": {
       title: `Kart Magik Direct Drive — Transmisión directa | ${SITE}`,
       description:
-        "Kart Magik Direct Drive: transmisión directa, embrague centrífugo, categorías OK y junior. Preparado y asistido por MAGIK Reparto Corse.",
+        "Kart Magik Direct Drive: transmisión de toma directa, categorías OK y junior. Preparado y asistido por MAGIK Reparto Corse.",
       ogTitle: "Kart Magik Direct Drive",
       ogDescription: "Transmisión directa, respuesta inmediata, ADN Magik de carrera.",
       keywords: [
