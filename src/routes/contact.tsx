@@ -10,6 +10,7 @@ import {
   linksForPath,
   metaArrayFromPageSeo,
 } from "@/i18n/seo";
+import { PEPPO_WHATSAPP } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -78,7 +79,7 @@ function ContactPage() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="https://wa.me/?text=Ciao%20MAGIK%20Reparto%20Corse"
+              href={PEPPO_WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 border border-accent text-accent hover:bg-accent hover:text-accent-foreground font-display text-xs font-bold uppercase tracking-widest transition-colors"

@@ -1,9 +1,10 @@
 import { MessageCircle } from "lucide-react";
+import { PEPPO_WHATSAPP } from "@/lib/whatsapp";
 
 export function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/?text=Ciao%20MAGIK%20Reparto%20Corse"
+      href={PEPPO_WHATSAPP}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"

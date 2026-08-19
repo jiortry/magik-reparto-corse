@@ -1,5 +1,6 @@
 import { posts, postPlainText, readingMinutes } from "@/content/blog";
 import { faqItems } from "@/content/faq";
+import { PEPPO_PHONE_DISPLAY } from "@/lib/whatsapp";
 import type { Lang } from "./dictionary";
 
 export type PageSeo = {
@@ -511,7 +512,7 @@ export function buildRootJsonLd(): Record<string, unknown> {
         description:
           "Reparto corse ufficiale del marchio Magik: preparazione kart, assistenza in pista, riparazione go-kart, ricambi e rivenditore ufficiale LKE in Emilia-Romagna.",
         email: "posmaster@magikrepartocorse.it",
-        telephone: "+39 351 992 5868",
+        telephone: PEPPO_PHONE_DISPLAY,
         inLanguage: ["it", "en"],
         areaServed: [
           { "@type": "AdministrativeArea", name: "Emilia-Romagna" },
