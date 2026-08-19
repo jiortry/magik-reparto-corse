@@ -5,6 +5,7 @@ import { ArrowUpRight, Clock, Search } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
 import { RevealText } from "@/components/site/RevealText";
+import { LANG_LOCALES, type Lang } from "@/i18n/dictionary";
 import { useLang } from "@/i18n/LanguageProvider";
 import {
   buildBlogListingJsonLd,
@@ -38,8 +39,8 @@ export const Route = createFileRoute("/blog/")({
   component: BlogPage,
 });
 
-function formatDate(date: string, lang: "it" | "en") {
-  return new Date(date).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", {
+function formatDate(date: string, lang: Lang) {
+  return new Date(date).toLocaleDateString(LANG_LOCALES[lang], {
     day: "2-digit",
     month: "short",
     year: "numeric",

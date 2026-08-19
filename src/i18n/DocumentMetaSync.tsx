@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { useLang } from "@/i18n/LanguageProvider";
+import { OG_LOCALES } from "@/i18n/dictionary";
 import { absoluteUrl, getPageSeo, keywordsFor, normalizePathname } from "@/i18n/seo";
 
 function setMeta(selector: string, content: string) {
@@ -31,7 +32,7 @@ export function DocumentMetaSync() {
     setMeta('meta[property="og:title"]', seo.ogTitle);
     setMeta('meta[property="og:description"]', seo.ogDescription);
     setMeta('meta[property="og:url"]', url);
-    setMeta('meta[property="og:locale"]', lang === "it" ? "it_IT" : "en_GB");
+    setMeta('meta[property="og:locale"]', OG_LOCALES[lang]);
     setMeta('meta[name="twitter:title"]', seo.ogTitle);
     setMeta('meta[name="twitter:description"]', seo.ogDescription);
     setLink("canonical", url);

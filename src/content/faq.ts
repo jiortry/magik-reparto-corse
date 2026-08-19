@@ -67,4 +67,38 @@ export const faqItems = {
       a: "Usually within 24–48 business hours. For urgent race weekends, mention it in the message or reach us on WhatsApp.",
     },
   ],
+  es: [
+    {
+      q: "¿Qué es MAGIK Reparto Corse?",
+      a: "Es el departamento de competición oficial de la marca Magik: preparamos, desarrollamos y llevamos a pista el Kart Magik, con un equipo técnico profesional.",
+    },
+    {
+      q: "¿Ofrecéis asistencia en pista?",
+      a: "Sí. Acompañamos a pilotos y equipos durante entrenamientos y carreras con soporte técnico, setup, mantenimiento y gestión mecánica completa.",
+    },
+    {
+      q: "¿Puedo comprar recambios en MAGIK?",
+      a: "Sí, somos punto de venta de recambios kart al por mayor y al detalle, con asesoramiento técnico especializado.",
+    },
+    {
+      q: "¿Sois distribuidores LKE?",
+      a: "Sí, somos distribuidores oficiales LKE en Emilia-Romaña, con soporte técnico, recambios disponibles y asistencia directa.",
+    },
+    {
+      q: "¿Puedo hacer un día de pista con vuestro apoyo?",
+      a: "Por supuesto. Organizamos días de pista acompañando al piloto con un equipo profesional para setup, asistencia mecánica y análisis.",
+    },
+    {
+      q: "¿Reparáis go-kart de otras marcas?",
+      a: "Sí, nuestro taller está especializado en la reparación y revisión de go-kart de competición de varias marcas.",
+    },
+    {
+      q: "¿Cómo puedo contactar con el equipo?",
+      a: "A través del formulario de contacto, WhatsApp o Instagram (@magik_repartocorse). Respondemos con rapidez.",
+    },
+    {
+      q: "¿En cuánto tiempo recibo respuesta a una solicitud?",
+      a: "Normalmente en 24–48 horas laborables. Para urgencias en fin de semana de carrera, indícalo en el mensaje o escríbenos por WhatsApp.",
+    },
+  ],
 };

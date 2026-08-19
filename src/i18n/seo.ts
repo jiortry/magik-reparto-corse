@@ -1,7 +1,7 @@
 import { posts, postPlainText, readingMinutes } from "@/content/blog";
 import { faqItems } from "@/content/faq";
 import { PEPPO_PHONE_DISPLAY } from "@/lib/whatsapp";
-import type { Lang } from "./dictionary";
+import { OG_LOCALES, type Lang } from "./dictionary";
 
 export type PageSeo = {
   title: string;
@@ -37,6 +37,13 @@ const BASE_KEYWORDS: Record<Lang, string[]> = {
     "karting Emilia-Romagna",
     "racing go kart",
   ],
+  es: [
+    "MAGIK Reparto Corse",
+    "kart Magik",
+    "equipo kart Italia",
+    "karting Emilia-Romaña",
+    "go kart de competición",
+  ],
 };
 
 export const blogPostFallbackSeo: Record<Lang, PageSeo> = {
@@ -55,6 +62,14 @@ export const blogPostFallbackSeo: Record<Lang, PageSeo> = {
     ogTitle: `Karting blog — ${SITE}`,
     ogDescription: "Technical guides, setup, engines and behind the scenes of karting.",
     keywords: ["karting blog", "kart guides", "kart setup", "go kart technique"],
+  },
+  es: {
+    title: `Blog de karting — Guías técnicas y setup de kart | ${SITE}`,
+    description:
+      "Guías sobre setup de kart, motores LKE, costes del karting, categorías y asistencia en pista, firmadas por MAGIK Reparto Corse.",
+    ogTitle: `Blog de karting — ${SITE}`,
+    ogDescription: "Guías técnicas, setup, motores y entre bastidores del karting.",
+    keywords: ["blog karting", "guías kart", "setup kart", "técnica go kart"],
   },
 };
 
@@ -414,6 +429,203 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       keywords: ["contact kart team", "kart support quote", "karting Italy contact"],
     },
   },
+  es: {
+    "/": {
+      title: `Equipo de kart y asistencia en pista en Emilia-Romaña | ${SITE}`,
+      description:
+        "Departamento de competición oficial Kart Magik: asistencia en pista, reparación de go-kart, recambios kart y distribuidor oficial LKE en Emilia-Romaña. Escríbenos para una consulta.",
+      ogTitle: `${SITE} — Rendimiento, técnica y ambición mundial`,
+      ogDescription:
+        "Asistencia en pista, reparación de go-kart, recambios y motores LKE en Emilia-Romaña.",
+      keywords: [
+        "equipo kart Emilia-Romaña",
+        "asistencia en pista kart",
+        "reparación go kart",
+        "recambios kart",
+        "distribuidor LKE",
+        "departamento de competición karting",
+        "escuela kart Emilia-Romaña",
+      ],
+    },
+    "/about": {
+      title: `Quiénes somos — Departamento de competición oficial Kart Magik | ${SITE}`,
+      description:
+        "MAGIK Reparto Corse es el departamento de competición oficial del Kart Magik: taller, desarrollo de chasis, asistencia de carrera y pilotos en Emilia-Romaña.",
+      ogTitle: `Quiénes somos — ${SITE}`,
+      ogDescription: "Nacidos para llevar el Kart Magik al máximo nivel competitivo.",
+      keywords: [
+        "quiénes somos MAGIK Reparto Corse",
+        "departamento de competición kart",
+        "taller kart Emilia-Romaña",
+        "desarrollo chasis kart",
+      ],
+    },
+    "/services": {
+      title: `Reparación de go-kart, recambios y asistencia en pista | ${SITE}`,
+      description:
+        "Servicios kart: reparación de go-kart, revisión de chasis, venta de recambios, motores LKE, días de pista y asistencia técnica en carrera en Emilia-Romaña.",
+      ogTitle: `Servicios kart — ${SITE}`,
+      ogDescription: "De la preparación técnica a la pista: cada fase del rendimiento.",
+      keywords: [
+        "reparación go kart",
+        "asistencia técnica kart",
+        "venta recambios kart",
+        "revisión chasis kart",
+        "día de pista kart",
+        "preparación kart de carrera",
+        "taller go kart",
+      ],
+    },
+    "/kart-magik": {
+      title: `Kart Magik — Shifter y Direct Drive | ${SITE}`,
+      description:
+        "Elige el Kart Magik: Shifter de cambio secuencial (MRK1 homologado CIK-FIA) o Direct Drive de transmisión directa para OK y junior.",
+      ogTitle: "Kart Magik — Shifter o Direct Drive",
+      ogDescription: "Dos configuraciones, el mismo ADN Magik: shifter y direct drive.",
+      keywords: [
+        "kart Magik",
+        "kart shifter",
+        "kart direct drive",
+        "chasis kart homologado CIK-FIA",
+        "kart de competición nuevo",
+      ],
+    },
+    "/kart-magik/shifter": {
+      title: `Kart Magik Shifter MRK1 homologado CIK-FIA — Ficha técnica | ${SITE}`,
+      description:
+        "Chasis kart Magik MRK1 shifter homologado CIK-FIA 007-CH-60: acero cromo-molibdeno Ø 30 mm, batalla 1045 mm, eje 50 mm, frenos FREELINE y carenados KG 509-507.",
+      ogTitle: "Kart Magik Shifter MRK1 homologado CIK-FIA",
+      ogDescription:
+        "Bastidor de acero cromo-molibdeno, sistema FREELINE y carenados KG 509-507 incluidos en el paquete.",
+      keywords: [
+        "kart Magik MRK1",
+        "kart shifter",
+        "chasis kart homologado CIK-FIA",
+        "ficha técnica kart",
+        "comprar chasis kart",
+        "carenados KG 509 507",
+      ],
+    },
+    "/kart-magik/direct-drive": {
+      title: `Kart Magik Direct Drive — Transmisión directa | ${SITE}`,
+      description:
+        "Kart Magik Direct Drive: transmisión directa, embrague centrífugo, categorías OK y junior. Preparado y asistido por MAGIK Reparto Corse.",
+      ogTitle: "Kart Magik Direct Drive",
+      ogDescription: "Transmisión directa, respuesta inmediata, ADN Magik de carrera.",
+      keywords: [
+        "kart Magik direct drive",
+        "kart OK",
+        "kart transmisión directa",
+        "kart sin cambio",
+        "comprar kart de competición",
+      ],
+    },
+    "/lke": {
+      title: `Motor LKE — Distribuidor oficial Emilia-Romaña | ${SITE}`,
+      description:
+        "Distribuidor oficial de motores LKE en Emilia-Romaña: venta, recambios originales, revisiones, carburación y asistencia técnica en pista.",
+      ogTitle: "LKE Emilia-Romaña — Distribuidor oficial",
+      ogDescription:
+        "Soporte técnico, disponibilidad de recambios y asesoramiento especializado sobre el motor LKE.",
+      keywords: [
+        "motor LKE",
+        "distribuidor LKE Emilia-Romaña",
+        "recambios LKE",
+        "revisión motor kart",
+        "motor kart 60cc",
+        "asistencia motores kart",
+      ],
+    },
+    "/team": {
+      title: `Racing Team kart — Pilotos, mecánicos e ingenieros | ${SITE}`,
+      description:
+        "El racing team MAGIK: mecánicos, ingenieros de pista y pilotos seguidos carrera a carrera, de la preparación del kart a la asistencia en parrilla.",
+      ogTitle: `Racing Team — ${SITE}`,
+      ogDescription: "Método, turnos y precisión del box a la parrilla.",
+      keywords: [
+        "racing team kart",
+        "equipo karting italiano",
+        "mecánico kart",
+        "ingeniero de pista karting",
+      ],
+    },
+    "/gallery": {
+      title: `Galería — Fotos de kart, box y pista | ${SITE}`,
+      description:
+        "Fotos del box, de la pista y de los fines de semana de carrera de MAGIK Reparto Corse: karts, pilotos y entre bastidores.",
+      ogTitle: `Galería — ${SITE}`,
+      ogDescription: "En pista, en el box, entre bastidores.",
+      keywords: ["fotos kart de competición", "galería karting", "imágenes pista kart"],
+    },
+    "/giuseppe-morcia": {
+      title: `Giuseppe "Peppo" Morcia — Fundador y coach de campeones | ${SITE}`,
+      description:
+        "La historia de Giuseppe Morcia, cofundador de MAGIK: de los títulos en Perú al coaching de campeones mundiales de karting desde 1994 hasta hoy.",
+      ogTitle: `Giuseppe "Peppo" Morcia — El fundador`,
+      ogDescription: "Jefe de mecánicos y coach de campeones, de Perú al karting mundial.",
+      keywords: [
+        "Giuseppe Morcia",
+        "Peppo Morcia kart",
+        "coach karting",
+        "jefe de mecánicos kart",
+        "historia karting italiano",
+      ],
+    },
+    "/partnership": {
+      title: `Partnership y sponsors — Hazte partner | ${SITE}`,
+      description:
+        "Partners técnicos y sponsors de MAGIK Reparto Corse: motores LKE, telemetría AIM, Olivia Racing, AMV Kart, Greyhound Seats, S. Engineering. Descubre cómo convertirte en partner.",
+      ogTitle: `Partnership y sponsors — ${SITE}`,
+      ogDescription: "Las marcas y las realidades que corren junto a nosotros.",
+      keywords: [
+        "sponsor karting",
+        "partnership equipo kart",
+        "patrocinar equipo karting",
+        "partners técnicos kart",
+      ],
+    },
+    "/blog": {
+      title: `Blog de karting — Setup, motores, costes y categorías | ${SITE}`,
+      description:
+        "Guías prácticas de karting: setup de kart, convergencia y caída, motores LKE, cuánto cuesta correr en kart, categorías y asistencia en pista.",
+      ogTitle: `Blog de karting — ${SITE}`,
+      ogDescription: "Guías técnicas, setup, motores y entre bastidores.",
+      keywords: [
+        "blog karting",
+        "guía setup kart",
+        "cuánto cuesta correr en kart",
+        "categorías kart",
+        "mantenimiento go kart",
+        "consejos pilotos kart",
+      ],
+    },
+    "/faq": {
+      title: `FAQ karting — Asistencia, recambios, LKE y carreras | ${SITE}`,
+      description:
+        "Respuestas a las preguntas más frecuentes sobre asistencia en pista, recambios kart, motores LKE, reparación de go-kart y cómo empezar a correr.",
+      ogTitle: `FAQ — ${SITE}`,
+      ogDescription: "Las respuestas más pedidas sobre karting y nuestros servicios.",
+      keywords: [
+        "preguntas frecuentes karting",
+        "cómo empezar a correr en kart",
+        "asistencia kart preguntas",
+        "recambios kart FAQ",
+      ],
+    },
+    "/contact": {
+      title: `Contacto — Asistencia kart y presupuestos | ${SITE} Emilia-Romaña`,
+      description:
+        "Contacta MAGIK Reparto Corse para asistencia técnica kart, recambios, motores LKE, días de pista y carreras. Respuesta rápida por email o WhatsApp.",
+      ogTitle: `Contacto — ${SITE}`,
+      ogDescription: "Habla con el equipo: asistencia, recambios, motores y carreras.",
+      keywords: [
+        "contacto equipo kart",
+        "presupuesto asistencia kart",
+        "taller kart contacto",
+        "karting Emilia-Romaña contacto",
+      ],
+    },
+  },
 };
 
 export function normalizePathname(path: string): string {
@@ -476,8 +688,10 @@ export function metaArrayFromPageSeo(
     { property: "og:url", content: url },
     { property: "og:site_name", content: SITE },
     { property: "og:type", content: extras?.type ?? "website" },
-    { property: "og:locale", content: "it_IT" },
-    { property: "og:locale:alternate", content: "en_GB" },
+    { property: "og:locale", content: OG_LOCALES[lang] },
+    ...(["it", "en", "es"] as Lang[])
+      .filter((l) => l !== lang)
+      .map((l) => ({ property: "og:locale:alternate" as const, content: OG_LOCALES[l] })),
     { property: "og:image", content: absoluteUrl(extras?.ogImage ?? DEFAULT_OG_IMAGE) },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: seo.ogTitle },
@@ -487,13 +701,14 @@ export function metaArrayFromPageSeo(
   return meta;
 }
 
-/** Canonical + hreflang set. The site serves both languages on the same URL. */
+/** Canonical + hreflang set. The site serves all languages on the same URL. */
 export function linksForPath(path: string): LinkTag[] {
   const url = absoluteUrl(normalizePathname(path));
   return [
     { rel: "canonical", href: url },
     { rel: "alternate", hrefLang: "it", href: url },
     { rel: "alternate", hrefLang: "en", href: url },
+    { rel: "alternate", hrefLang: "es", href: url },
     { rel: "alternate", hrefLang: "x-default", href: url },
   ];
 }
@@ -513,7 +728,7 @@ export function buildRootJsonLd(): Record<string, unknown> {
           "Reparto corse ufficiale del marchio Magik: preparazione kart, assistenza in pista, riparazione go-kart, ricambi e rivenditore ufficiale LKE in Emilia-Romagna.",
         email: "posmaster@magikrepartocorse.it",
         telephone: PEPPO_PHONE_DISPLAY,
-        inLanguage: ["it", "en"],
+        inLanguage: ["it", "en", "es"],
         areaServed: [
           { "@type": "AdministrativeArea", name: "Emilia-Romagna" },
           { "@type": "Country", name: "Italia" },
@@ -548,7 +763,7 @@ export function buildRootJsonLd(): Record<string, unknown> {
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
         name: SITE,
-        inLanguage: ["it", "en"],
+        inLanguage: ["it", "en", "es"],
         publisher: { "@id": ORGANIZATION_ID },
       },
     ],

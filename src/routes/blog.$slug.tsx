@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Check, Clock, Link2, Tag } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { RevealText } from "@/components/site/RevealText";
 import { RacingButton } from "@/components/site/RacingButton";
+import { LANG_LOCALES } from "@/i18n/dictionary";
 import { useLang } from "@/i18n/LanguageProvider";
 import { posts, readingMinutes, relatedPosts, type Post } from "@/content/blog";
 import {
@@ -145,7 +146,7 @@ function PostPage() {
   const related = relatedPosts(post, lang);
 
   const dateLabel = (d: string) =>
-    new Date(d).toLocaleDateString(lang === "it" ? "it-IT" : "en-US", {
+    new Date(d).toLocaleDateString(LANG_LOCALES[lang], {
       day: "2-digit",
       month: "long",
       year: "numeric",

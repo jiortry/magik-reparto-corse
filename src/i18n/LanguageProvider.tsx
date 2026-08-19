@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { dictionary, type Dict, type Lang } from "./dictionary";
+import { LANG_SPLASH_COVER_MS, LANG_SPLASH_GONE_MS } from "@/components/site/SiteSplash";
+import { dictionary, isLang, type Dict, type Lang } from "./dictionary";
 
 type Ctx = {
   lang: Lang;
@@ -16,8 +17,8 @@ export const LANG_STORAGE_KEY = "magik.lang";
 /** For components outside LanguageProvider (e.g. root 404) — client only; SSR returns `it`. */
 export function readStoredLang(): Lang {
   if (typeof window === "undefined") return "it";
-  const saved = window.localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
-  return saved === "en" ? "en" : "it";
+  const saved = window.localStorage.getItem(LANG_STORAGE_KEY);
+  return isLang(saved) ? saved : "it";
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -27,8 +28,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const saved = window.localStorage.getItem(LANG_STORAGE_KEY) as Lang | null;
-    if (saved === "it" || saved === "en") {
+    const saved = window.localStorage.getItem(LANG_STORAGE_KEY);
+    if (isLang(saved)) {
       setLangState(saved);
       setHasChosen(true);
       document.documentElement.lang = saved;
@@ -55,9 +56,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         return;
       }
       setIsTransitioning(true);
-      // change language at the visual peak
-      window.setTimeout(() => setLang(l), 450);
-      window.setTimeout(() => setIsTransitioning(false), 1100);
+      window.setTimeout(() => setLang(l), LANG_SPLASH_COVER_MS);
+      window.setTimeout(() => setIsTransitioning(false), LANG_SPLASH_GONE_MS);
     },
     [lang, setLang],
   );

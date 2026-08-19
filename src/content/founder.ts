@@ -148,6 +148,78 @@ export const founderTimeline: Record<Lang, FounderMilestone[]> = {
       body: "Second consecutive Italian title in the X30 Junior category.",
     },
   ],
+  es: [
+    {
+      year: "1985",
+      title: "Los orígenes en Lima",
+      body: "Crezco en pista junto a mi padre Alfredo: el equipo familiar se convierte en MAGIK — Morcia Alfredo Gruppo Italia Karting.",
+    },
+    {
+      year: "1990",
+      title: "De Lima a Italia",
+      body: "Tras varios títulos conquistados en Perú, llevo mi carrera a Italia y me convierto en un nombre conocido del karting internacional.",
+    },
+    {
+      year: "1994",
+      title: "Junto a las grandes marcas",
+      body: "Empiezo a trabajar con Top Kart, CRG, PCR, Maranello y Tony Kart, acompañando a los pilotos de élite en las competiciones internacionales.",
+    },
+    {
+      year: "1997",
+      title: "Alessandro Piccolo — 2.º Europeo 100 ICA",
+      body: "Segundo puesto en el Campeonato Europeo 100 ICA como jefe de mecánicos.",
+    },
+    {
+      year: "2000",
+      title: "Juan Manuel Polar — Campeón",
+      body: "Título peruano y título NACAM conquistados el mismo año.",
+    },
+    {
+      year: "2003",
+      title: "Manuel Renaudie — Copa Italia",
+      body: "Victoria en la Copa Italia 100cc FA.",
+    },
+    {
+      year: "2007",
+      title: "Alex Fontana — Campeón suizo",
+      body: "Título suizo conquistado en la categoría KF.",
+    },
+    {
+      year: "2011",
+      title: "Wesley Orr — Grand Final Super ROK",
+      body: "Victoria en la Grand Final Super ROK 2011.",
+    },
+    {
+      year: "2013",
+      title: "Leonardo Pulcini — Subcampeón del mundo",
+      body: "Segundo puesto en la Copa del Mundo.",
+    },
+    {
+      year: "2014",
+      title: "Lorenzo Travisanutto — Ganador de la 3.ª ronda del Campeonato europeo en Kristianstad",
+      body: "Victoria en la 3.ª ronda del Campeonato europeo en Kristianstad.",
+    },
+    {
+      year: "2016",
+      title: "Matteo Viganò — Temporada de protagonista",
+      body: "Tercer puesto en la IAME Euro Series y en el Europeo CIK-FIA, victoria en la Grand Final IAME Shifter.",
+    },
+    {
+      year: "2019",
+      title: "Taylor Greenfield — Campeón mexicano",
+      body: "Título X30 Senior conquistado en México.",
+    },
+    {
+      year: "2020",
+      title: "Francesco Marenghi — Campeón italiano X30 Junior",
+      body: "Victoria en Castelletto en el campeonato italiano X30 Junior.",
+    },
+    {
+      year: "2021",
+      title: "Francesco Marenghi — Campeón de nuevo",
+      body: "Segundo título italiano consecutivo en categoría X30 Junior.",
+    },
+  ],
 };
 
 export const founderBio: Record<Lang, string[]> = {
@@ -162,6 +234,12 @@ export const founderBio: Record<Lang, string[]> = {
     "As a young professional driver in the late 1980s and early 1990s, I quickly picked up the trade: perseverance, technical knowledge and the engineering behind a competition kart. I won multiple titles in Peru, then in 1990 brought my career to Italy, becoming a household name in international karting.",
     "Karting is a market where only a handful of people truly have the knowledge to prepare a driver for the top level. From 1994 into the early 2000s I worked with the industry's major manufacturers — Top Kart, CRG, PCR, Maranello, Tony Kart — supporting top drivers and solving the issues that make the difference on the grid.",
     "Today, as lead mechanic and coach, I'm looking ahead: new challenges and new drivers to bring to the top step of the podium.",
+  ],
+  es: [
+    "Me llamo Giuseppe Morcia, para todos «Peppo» en el mundo del karting. Nacido en Perú, crezco respirando velocidad gracias a mi padre Alfredo Morcia — MAGIK nace como acrónimo de Morcia Alfredo Gruppo Italia Karting. Un legado que sigo llevando hoy, en pista y fuera.",
+    "Como joven piloto profesional, entre finales de los 80 y principios de los 90, aprendo rápido el oficio: perseverancia, conocimiento técnico y la ingeniería que hay detrás de un kart de competición. Gano varios títulos en Perú y en 1990 llevo mi carrera a Italia, convirtiéndome en un nombre conocido del karting internacional.",
+    "El karting es un mundo donde pocos tienen de verdad la experiencia para preparar a un piloto al máximo nivel. Desde 1994 hasta principios de los 2000 trabajo con las grandes marcas del sector — Top Kart, CRG, PCR, Maranello, Tony Kart — acompañando a pilotos internacionales y resolviendo los problemas que marcan la diferencia en parrilla.",
+    "Hoy, como jefe de mecánicos y coach, miro hacia adelante: nuevos retos y nuevos pilotos que llevar al peldaño más alto del podio.",
   ],
 };
 

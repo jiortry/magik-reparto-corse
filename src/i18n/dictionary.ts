@@ -1,4 +1,26 @@
-export type Lang = "it" | "en";
+export type Lang = "it" | "en" | "es";
+
+export const LANGS: Lang[] = ["it", "en", "es"];
+export const LANG_LABELS: Record<Lang, string> = { it: "IT", en: "EN", es: "ES" };
+export const LANG_NAMES: Record<Lang, string> = {
+  it: "Italiano",
+  en: "English",
+  es: "Español",
+};
+export const LANG_LOCALES: Record<Lang, string> = {
+  it: "it-IT",
+  en: "en-GB",
+  es: "es-ES",
+};
+export const OG_LOCALES: Record<Lang, string> = {
+  it: "it_IT",
+  en: "en_GB",
+  es: "es_ES",
+};
+
+export function isLang(v: unknown): v is Lang {
+  return v === "it" || v === "en" || v === "es";
+}
 
 export type Dict = {
   nav: Record<string, string>;
@@ -230,7 +252,7 @@ export const dictionary: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       followInstagram: "Seguici su Instagram",
       langPickTitle: "Scegli la lingua",
-      langPickSub: "Choose your language",
+      langPickSub: "Choose your language · Elige tu idioma",
       backHome: "Torna alla Home",
     },
     errors: {
@@ -666,7 +688,7 @@ export const dictionary: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       followInstagram: "Follow on Instagram",
       langPickTitle: "Choose your language",
-      langPickSub: "Scegli la lingua",
+      langPickSub: "Scegli la lingua · Elige tu idioma",
       backHome: "Back to home",
     },
     errors: {
@@ -1076,6 +1098,442 @@ export const dictionary: Record<Lang, Dict> = {
       sponsorsTitle: "Our Sponsors",
       sponsorsLead: "The businesses supporting the MAGIK Reparto Corse project off track.",
       visitLabel: "Visit website",
+    },
+  },
+  es: {
+    nav: {
+      home: "Home",
+      about: "Quiénes somos",
+      services: "Servicios",
+      kart: "Kart Magik",
+      lke: "LKE",
+      team: "Racing Team",
+      gallery: "Galería",
+      blog: "Blog",
+      partnership: "Partnership",
+      faq: "FAQ",
+      contact: "Contacto",
+    },
+    common: {
+      discoverTeam: "Descubre el equipo",
+      contactUs: "Contáctanos",
+      trackDay: "Vive un día de pista",
+      readMore: "Saber más",
+      requestInfo: "Pedir información",
+      bookConsult: "Reserva una consulta",
+      whatsapp: "WhatsApp",
+      followInstagram: "Síguenos en Instagram",
+      langPickTitle: "Elige tu idioma",
+      langPickSub: "Scegli la lingua · Choose your language",
+      backHome: "Volver al inicio",
+    },
+    errors: {
+      notFoundKicker: "404",
+      notFoundTitle: "Fuera de pista",
+      notFoundBody: "La página que buscas no existe o se ha movido.",
+      notFoundCta: "Volver a la pista",
+      brokeTitle: "Algo no va bien",
+      retry: "Reintentar",
+      homeLink: "Home",
+    },
+    hero: {
+      eyebrow: "Departamento de competición oficial",
+      title: "MAGIK Reparto Corse",
+      subtitle: "Técnica, velocidad y ambición mundial.",
+      lead: "Preparamos, asistimos y llevamos a pista el Kart Magik: máximo nivel técnico y soporte de carrera.",
+      scroll: "Scroll",
+    },
+    home: {
+      missionEyebrow: "La misión",
+      missionTitle: "Ganar el Mundial con el Kart Magik.",
+      missionLead:
+        "Un departamento de competición construido en torno a una sola promesa: llevar la marca Magik al peldaño más alto del podio internacional.",
+      statsTitle: "Números que corren",
+      ctaClosing:
+        "De la preparación a la pista: contáctanos para asistencia, recambios o un día en circuito con el equipo.",
+      missionImageAlt: "Kart Magik en pista — MAGIK Reparto Corse",
+      kartTeaserAlt: "Kart Magik — vista de producto",
+      raceNumberLabel: "Número de carrera",
+      stats: [
+        { value: "100%", label: "Asistencia en pista" },
+        { value: "24/7", label: "Departamento técnico" },
+        { value: "1.º", label: "Top mundial" },
+        { value: "ER", label: "Distribuidor LKE" },
+      ],
+    },
+    about: {
+      title: "Quiénes somos",
+      eyebrow: "About",
+      lead: "MAGIK Reparto Corse es el departamento de competición oficial de la marca Magik, dedicado a la preparación, el desarrollo y la asistencia en carrera del Kart Magik.",
+      blocks: [
+        {
+          title: "Nacidos para competir",
+          body: "Existimos para llevar el Kart Magik al máximo nivel competitivo, con una estructura técnica construida para el rendimiento.",
+        },
+        {
+          title: "Método y precisión",
+          body: "Cada detalle está estudiado: chasis, motor, setup, asistencia. Trabajamos como un equipo de alta categoría, de la preparación a la pista.",
+        },
+        {
+          title: "Presencia internacional",
+          body: "Seguimos calendarios y circuitos en Italia y en el extranjero: logística de traslado, asistencia en parrilla y protocolos de carrera consolidados en pista.",
+        },
+      ],
+    },
+    services: {
+      title: "Servicios",
+      eyebrow: "Qué hacemos",
+      lead: "De la preparación técnica a la pista, MAGIK Reparto Corse sigue cada fase del rendimiento.",
+      items: [
+        {
+          icon: "🏁",
+          title: "Kart Magik homologado",
+          body: "Chasis Magik listo para correr, homologado y desarrollado por nuestro departamento de competición.",
+        },
+        {
+          icon: "🔧",
+          title: "Reparación de go-kart",
+          body: "Taller especializado en reparación y revisión de go-kart de competición.",
+        },
+        {
+          icon: "⚙️",
+          title: "Asistencia técnica y mecánica",
+          body: "Diagnóstico, mantenimiento y setup realizados por mecánicos profesionales.",
+        },
+        {
+          icon: "🏎️",
+          title: "Asistencia en pista",
+          body: "Acompañamos a pilotos y equipos en entrenamientos y carreras con soporte técnico completo.",
+        },
+        {
+          icon: "👨‍🔧",
+          title: "Día de pista",
+          body: "Vive un día en circuito junto a un equipo profesional.",
+        },
+        {
+          icon: "🧩",
+          title: "Punto de venta de recambios",
+          body: "Componentes kart originales, al por mayor y al detalle, con asesoramiento técnico.",
+        },
+        {
+          icon: "📦",
+          title: "Venta al por mayor y al detalle",
+          body: "Logística y disponibilidad para pilotos, equipos y talleres.",
+        },
+        {
+          icon: "🔥",
+          title: "Distribuidor oficial LKE",
+          body: "Referente oficial del motor LKE en Emilia-Romaña.",
+        },
+        {
+          icon: "🌍",
+          title: "Programas de carrera y temporada",
+          body: "Planes de varios rounds, telemetría y checklists operativos: acompañamos a pilotos y equipos con continuidad del taller a la bandera a cuadros.",
+        },
+      ],
+    },
+    kart: {
+      title: "Kart Magik MRK1",
+      eyebrow: "El chasis",
+      lead: "El Magik MRK1 homologado CIK-FIA (007-CH-60) es el corazón de nuestro departamento de competición: bastidor de acero cromo-molibdeno, geometría racing y paquete completo para la pista.",
+      hotspots: [
+        {
+          label: "Chasis",
+          body: "Bastidor de acero cromo-molibdeno, tubos Ø 30 mm, batalla 1045 mm.",
+        },
+        {
+          label: "Carenados",
+          body: "KG 509-507 con soportes dedicados, incluidos en el paquete de compra.",
+        },
+        { label: "Radiador", body: "Refrigeración de alta eficiencia para las carreras largas." },
+        {
+          label: "Sistema de frenos",
+          body: "Sistema FREELINE: frenada potente, modulable y constante.",
+        },
+        { label: "Motor", body: "Configuración LKE para máximo rendimiento." },
+        { label: "Setup de carrera", body: "Puesta a punto del equipo, calibrada al circuito." },
+      ],
+      features: [
+        {
+          eyebrow: "Kit de carenados KG",
+          title: "Carenados KG 509-507",
+          body: "Incluidos en el paquete de compra del chasis: carenados KG 509-507 con los soportes dedicados.",
+        },
+        {
+          eyebrow: "Sistema de frenos FREELINE",
+          title: "Frenada de carrera",
+          body: "El MRK1 monta el sistema de frenos FREELINE: componentes de calidad racing para una frenada eficiente, modulable y constante en cualquier condición de pista. Los accesorios suministrados son componentes FREELINE.",
+        },
+        {
+          eyebrow: "Bastidor racing",
+          title: "Cromo-molibdeno Ø 30 mm",
+          body: "El bastidor está fabricado en acero cromo-molibdeno con tubos de 30 mm de diámetro: rigidez calibrada, respuesta directa y handling en todo tipo de circuito, con batalla de 1045 mm y eje Ø 50 mm.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Eje",
+          body: "Diámetro 50 mm, para máxima rigidez y feeling a la salida de curva.",
+        },
+        {
+          label: "Diámetro de tubos",
+          body: "Tubo Ø 30 mm de igual diámetro en largueros y travesaños del bastidor.",
+        },
+        {
+          label: "Batalla",
+          body: "1045 mm — geometría homologada para el mejor handling en todo tipo de circuito.",
+        },
+      ],
+      specsTitle: "Ficha técnica",
+      specsLead: "Datos del Magik MRK1 según homologación CIK-FIA 007-CH-60 (Group 2, 2025–2027).",
+      homologation: "Homologación CIK-FIA 007-CH-60",
+      ficheDownload: "Descargar ficha",
+      specs: [
+        { label: "Modelo", value: "Magik MRK1" },
+        { label: "Material del bastidor", value: "Acero cromo-molibdeno" },
+        { label: "Tubos Ø", value: "30 mm" },
+        { label: "Batalla", value: "1045 mm" },
+        { label: "Eje Ø", value: "50 mm" },
+        { label: "Sistema de frenos", value: "FREELINE" },
+        { label: "Accesorios suministrados", value: "Componentes FREELINE" },
+        { label: "Carenados", value: "KG 509-507 con soportes dedicados" },
+      ],
+    },
+    kartSelect: {
+      eyebrow: "Kart Magik",
+      title: "Elige la configuración",
+      lead: "Dos almas, el mismo ADN Magik. Shifter para el cambio secuencial, Direct Drive para la transmisión directa.",
+      shifterName: "Shifter",
+      shifterTag: "Cambio secuencial",
+      shifterAlt: "Kart Magik Shifter MRK1",
+      directName: "Direct Drive",
+      directTag: "Transmisión directa",
+      directAlt: "Kart Magik Direct Drive",
+      backToSelect: "Todas las configuraciones",
+      chooseChassis: "Elige el chasis",
+      detailsTitle: "Detalles",
+      detailsLead:
+        "Detalles de construcción de la configuración seleccionada: bastidor, frenos, transmisión y componentes racing.",
+    },
+    kartDirect: {
+      title: "Kart Magik Direct Drive",
+      eyebrow: "Direct Drive",
+      lead: "La configuración de transmisión directa del Kart Magik: respuesta inmediata, sin cambios, máxima fluidez en categoría OK y junior.",
+      features: [
+        {
+          eyebrow: "Transmisión",
+          title: "Direct drive, sin cambios",
+          body: "Sin cambio secuencial: el par va directo del motor a las ruedas. Menos inercia, respuesta más limpia y un kart más sencillo de gestionar desde la salida hasta la bandera.",
+        },
+        {
+          eyebrow: "Categorías",
+          title: "OK, junior y más",
+          body: "La configuración Direct Drive está pensada para las categorías de embrague centrífugo: rendimiento sin la carga del shifter, con el mismo chasis Magik de carrera.",
+        },
+        {
+          eyebrow: "Paquete de carrera",
+          title: "El mismo ADN Magik",
+          body: "La misma filosofía de bastidor, carenados y sistema de frenos del programa Magik: preparado, asistido y desarrollado por el departamento de competición en pista.",
+        },
+      ],
+      highlights: [
+        {
+          label: "Transmisión",
+          body: "Direct drive: sin selector, embrague centrífugo, feeling directo a la salida de curva.",
+        },
+        {
+          label: "Peso y respuesta",
+          body: "Menos masas y menos órganos de transmisión: el kart reacciona antes y se mantiene más predecible.",
+        },
+        {
+          label: "Asistencia",
+          body: "Setup, recambios y soporte de carrera MAGIK: desde la primera salida hasta el fin de semana de campeonato.",
+        },
+      ],
+      specsTitle: "Ficha técnica",
+      specsLead:
+        "Configuración Direct Drive del Kart Magik: transmisión directa, embrague centrífugo, paquete racing MAGIK.",
+      homologation: "Configuración Direct Drive",
+      specs: [
+        { label: "Configuración", value: "Direct Drive" },
+        { label: "Transmisión", value: "Directa, sin cambio secuencial" },
+        { label: "Embrague", value: "Centrífugo" },
+        { label: "Categorías", value: "OK / OKJ y categorías de transmisión directa" },
+        { label: "Chasis", value: "Kart Magik" },
+        { label: "Sistema de frenos", value: "FREELINE" },
+        { label: "Carenados", value: "KG con librea MAGIK Reparto Corse" },
+        { label: "Asistencia", value: "MAGIK Reparto Corse" },
+      ],
+    },
+    lke: {
+      title: "LKE Emilia-Romaña",
+      eyebrow: "Distribuidor oficial",
+      lead: "MAGIK es distribuidor oficial en Emilia-Romaña del motor LKE, con soporte técnico, recambios disponibles y asesoramiento especializado.",
+      ctas: [
+        { label: "Pedir información LKE", href: "/contact" },
+        { label: "Pedir componentes", href: "/contact" },
+        { label: "Habla con el departamento técnico", href: "/contact" },
+      ],
+      points: [
+        "Soporte técnico directo sobre el motor LKE",
+        "Disponibilidad de recambios y componentes originales",
+        "Asistencia en pista para pilotos LKE",
+        "Asesoramiento de setup y configuración de carrera",
+      ],
+    },
+    team: {
+      title: "Racing Team",
+      eyebrow: "El equipo",
+      lead: "Un equipo técnico, rápido y determinado. De la preparación del kart a la asistencia en pista, cada detalle está estudiado para el rendimiento.",
+      imageAltCrew: "MAGIK Racing Team en el trabajo",
+      imageAltPilot: "Piloto MAGIK — casco y equipación",
+      founderEyebrow: "El fundador",
+      founderTitle: "Giuseppe “Peppo” Morcia",
+      founderBody:
+        "De los títulos en Perú a la élite del karting mundial: la historia del cofundador de MAGIK, jefe de mecánicos y coach de campeones desde 1994.",
+      founderCta: "Descubre su historia",
+    },
+    founder: {
+      backLabel: "Racing Team",
+      eyebrow: "El fundador",
+      kicker: "AKA Peppo",
+      name: "Giuseppe Morcia",
+      role: "Cofundador · Jefe de mecánicos y coach",
+      emailCta: "Escribe a Peppo",
+      timelineEyebrow: "Carrera en pista",
+      timelineTitle: "Treinta años de títulos",
+      timelineLead:
+        "Cada etapa es una carrera ganada junto a un piloto. Recorre la línea de tiempo para revivir los hitos más importantes.",
+      timelineHint: "Arrastra el cursor o toca un año para cambiar de etapa",
+      timelinePrev: "Etapa anterior",
+      timelineNext: "Etapa siguiente",
+      manufacturersTitle: "Marcas con las que ha trabajado",
+      driversEyebrow: "Alumnos en pista",
+      driversTitle: "Pilotos seguidos en el mundo",
+      driversLead:
+        "Decenas de pilotos internacionales acompañados en más de treinta años. Busca un nombre para encontrarlo.",
+      driversSearchPlaceholder: "Busca un piloto…",
+      driversEmpty: "Ningún piloto encontrado con ese nombre.",
+      driversCount: "{n} de {total} pilotos",
+      ctaEyebrow: "El futuro",
+      ctaTitle: "Nuevos retos, nuevos campeones",
+      ctaBody:
+        "Giuseppe Morcia sigue buscando nuevos pilotos para llevarlos a lo más alto del karting mundial con el equipo MAGIK.",
+      ctaTeam: "Conoce al equipo",
+      ctaContact: "Contáctanos",
+    },
+    gallery: {
+      title: "Galería",
+      eyebrow: "En pista",
+      lead: "Imágenes del box, de la pista y de los momentos que cuentan.",
+      close: "Cerrar",
+      prev: "Anterior",
+      next: "Siguiente",
+    },
+    blog: {
+      title: "Blog de karting",
+      eyebrow: "Guías e insights",
+      lead: "Guías prácticas sobre setup de kart, motores LKE, asistencia en pista, costes del karting y categorías: lo que preguntamos y nos preguntan cada fin de semana de carrera.",
+      categories: [
+        "Carreras",
+        "Técnica",
+        "Setup",
+        "Motores",
+        "News Magik",
+        "Consejos",
+        "Entre bastidores",
+      ],
+      postNotFoundTitle: "Artículo no encontrado",
+      backToBlog: "Volver al blog",
+      navBackLabel: "Blog",
+      allCategories: "Todos",
+      featured: "Destacado",
+      readArticle: "Leer el artículo",
+      readingTime: "min de lectura",
+      empty: "Ningún artículo para estos filtros.",
+      searchPlaceholder: "Busca: setup, LKE, costes, categorías…",
+      resultsCount: "artículos",
+      resultsCountOne: "artículo",
+      tocTitle: "En este artículo",
+      tagsTitle: "Temas",
+      relatedTitle: "Sigue leyendo",
+      shareTitle: "Compartir",
+      copyLink: "Copiar enlace",
+      copied: "Enlace copiado",
+      faqTitle: "Preguntas frecuentes",
+      updatedOn: "Actualizado el",
+      prevPost: "Anterior",
+      nextPost: "Siguiente",
+      ctaTitle: "¿Tienes una pregunta técnica sobre tu kart?",
+      ctaBody:
+        "Setup, recambios, motor LKE o asistencia en pista en Emilia-Romaña: háblalo directamente con nuestro departamento de competición.",
+      ctaButton: "Contacta al equipo",
+    },
+    faq: {
+      title: "FAQ",
+      eyebrow: "Preguntas frecuentes",
+      lead: "Las respuestas más pedidas. Para todo lo demás, escríbenos.",
+    },
+    contact: {
+      title: "Contacto",
+      eyebrow: "Habla con el equipo",
+      lead: "Asistencia técnica, recambios, motor LKE o un día de pista: dinos qué necesitas.",
+      form: {
+        firstName: "Nombre",
+        lastName: "Apellidos",
+        email: "Email",
+        phone: "Teléfono",
+        type: "Tipo de solicitud",
+        message: "Mensaje",
+        submit: "Enviar solicitud",
+        success: "Solicitud enviada. Te respondemos en breve.",
+        types: [
+          "Asistencia técnica",
+          "Reparación de kart",
+          "Recambios",
+          "Motor LKE",
+          "Día de pista",
+          "Carreras",
+          "Otro",
+        ],
+      },
+      ctas: [
+        "Reserva una consulta técnica",
+        "Pide asistencia en pista",
+        "Consulta disponibilidad de recambios",
+      ],
+      emailsTitle: "Escríbenos por email",
+      emails: [
+        { label: "Información general", address: "posmaster@magikrepartocorse.it" },
+        { label: "Giuseppe Morcia — Fundador", address: "peppo.morcia@magikrepartocorse.it" },
+        { label: "Contacto alternativo", address: "magik.racing@gmail.com" },
+      ],
+    },
+    webCta: {
+      eyebrow: "Web & Digital",
+      title: "¿Quieres también un",
+      titleAccent: "sitio web?",
+      lead: "Sitios web y apps a medida, rápidos, cuidados en los detalles como un kart de carrera. Escríbenos por WhatsApp: te respondemos con una idea concreta, no con un presupuesto automático.",
+      button: "Escribe por WhatsApp",
+      note: "Respuesta rápida · +39 351 992 5868",
+    },
+    footer: {
+      desc: "Departamento de competición oficial de la marca Magik. Preparación, asistencia y carreras con el Kart Magik.",
+      quickLinks: "Enlaces rápidos",
+      services: "Servicios",
+      contact: "Contacto",
+      rights: "Todos los derechos reservados.",
+      email: "posmaster@magikrepartocorse.it",
+    },
+    partnership: {
+      eyebrow: "Partners y sponsors",
+      title: "Partnership y sponsors",
+      lead: "Las marcas y las realidades que corren con nosotros, del motor al box hasta la meta.",
+      partnersTitle: "Partnerships técnicas",
+      partnersLead: "Los proveedores técnicos que hacen posible cada rendimiento en pista.",
+      sponsorsTitle: "Nuestros sponsors",
+      sponsorsLead: "Quienes apoyan el proyecto MAGIK Reparto Corse fuera de la pista.",
+      visitLabel: "Visitar el sitio",
     },
   },
 };

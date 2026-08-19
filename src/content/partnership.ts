@@ -66,6 +66,34 @@ export const partnerships: Record<Lang, PartnerItem[]> = {
       icon: "builder",
     },
   ],
+  es: [
+    { name: "LKE Engines", category: "Motores", url: "https://lkengines.com/", icon: "engine" },
+    {
+      name: "AIM Sportline",
+      category: "Telemetría",
+      url: "https://www.aim-sportline.com/",
+      icon: "telemetry",
+    },
+    {
+      name: "Olivia Racing",
+      category: "Partner",
+      url: "https://oliviaracing.com/",
+      icon: "partner",
+    },
+    { name: "AMV Kart", category: "Llantas", url: "https://www.amvkart.com/", icon: "wheels" },
+    {
+      name: "Greyhound Seats",
+      category: "Asientos",
+      url: "https://greyhoundseats.com/",
+      icon: "seats",
+    },
+    {
+      name: "S. Engineering",
+      category: "Motorista",
+      url: "https://www.instagram.com/s.engineering_/",
+      icon: "builder",
+    },
+  ],
 };
 
 export type SponsorItem = { name: string; url: string };
