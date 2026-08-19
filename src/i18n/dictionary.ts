@@ -374,7 +374,7 @@ export const dictionary: Record<Lang, Dict> = {
           label: "Carene",
           body: "KG 509-507 con supporti dedicati, incluse nel pacchetto d'acquisto.",
         },
-        { label: "Radiatore", body: "Raffreddamento ad alta efficienza per le gare lunghe." },
+        { label: "Radiatore EM Technology", body: "Raffreddamento ad alta efficienza per le gare lunghe." },
         {
           label: "Impianto Frenante",
           body: "Impianto FREELINE: frenata potente, modulabile e costante.",
@@ -810,7 +810,7 @@ export const dictionary: Record<Lang, Dict> = {
           label: "Bodywork",
           body: "KG 509-507 with dedicated mounts, included in the chassis package.",
         },
-        { label: "Radiator", body: "High-efficiency cooling for long races." },
+        { label: "EM Technology Radiator", body: "High-efficiency cooling for long races." },
         {
           label: "Brake System",
           body: "FREELINE braking: powerful, modulable and consistent.",
@@ -1246,7 +1246,7 @@ export const dictionary: Record<Lang, Dict> = {
           label: "Carenados",
           body: "KG 509-507 con soportes dedicados, incluidos en el paquete de compra.",
         },
-        { label: "Radiador", body: "Refrigeración de alta eficiencia para las carreras largas." },
+        { label: "Radiador EM Technology", body: "Refrigeración de alta eficiencia para las carreras largas." },
         {
           label: "Sistema de frenos",
           body: "Sistema FREELINE: frenada potente, modulable y constante.",
