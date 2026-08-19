@@ -3,5 +3,5 @@ import { SiteSplash } from "./SiteSplash";
 
 export function KartTransition() {
   const { isTransitioning } = useLang();
-  return <SiteSplash visible={isTransitioning} className="z-[200]" />;
+  return <SiteSplash visible={isTransitioning} variant="kart" playIntro className="z-[200]" />;
 }
