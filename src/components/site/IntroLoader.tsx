@@ -8,27 +8,37 @@ const CLIP_BOT = "polygon(0% 75%, 100% 25%, 100% 100%, 0% 100%)";
 const SLASH_DEG = -26.565;
 const EASE_RACE: [number, number, number, number] = [0.77, 0, 0.175, 1];
 
-type Phase = "idle" | "zoom" | "slash" | "split";
+type Phase = "idle" | "slash" | "split";
 
-function SplashFace() {
+function SplashFace({ playIntro = false }: { playIntro?: boolean }) {
   return (
     <div className="absolute inset-0 bg-carbon">
       <div className="absolute inset-0 carbon-texture opacity-50" />
       <div className="absolute inset-0 grid-overlay opacity-30" />
       <motion.div
-        initial={{ scaleX: 0 }}
+        initial={playIntro ? { scaleX: 0 } : false}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.8, ease: EASE_RACE }}
-        className="absolute left-0 top-1/2 h-[3px] w-full origin-left racing-stripe"
+        className="absolute left-0 top-1/2 h-[2px] sm:h-[3px] w-full origin-left racing-stripe"
       />
-      <motion.img
-        src={logo}
-        alt="MAGIK Reparto Corse"
-        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.35, duration: 0.6 }}
-        className="absolute left-1/2 top-1/2 h-28 sm:h-36 md:h-48 lg:h-56 w-auto max-w-[80vw] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_0_45px_rgba(225,6,0,0.55)]"
-      />
+      <div
+        className="absolute inset-0 flex items-center justify-center"
+        style={{
+          paddingLeft: "max(1.25rem, env(safe-area-inset-left))",
+          paddingRight: "max(1.25rem, env(safe-area-inset-right))",
+          paddingTop: "max(1.5rem, env(safe-area-inset-top))",
+          paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))",
+        }}
+      >
+        <motion.img
+          src={logo}
+          alt="MAGIK Reparto Corse"
+          initial={playIntro ? { opacity: 0, y: 16, scale: 0.96 } : false}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.65 }}
+          className="relative h-auto w-[min(82vw,22rem)] sm:w-[min(70vw,28rem)] md:w-[min(56vw,32rem)] max-h-[min(38svh,16rem)] object-contain object-center drop-shadow-[0_0_45px_rgba(225,6,0,0.55)]"
+        />
+      </div>
     </div>
   );
 }
@@ -50,9 +60,9 @@ function SlashHalf({
     <motion.div
       className="absolute inset-0 will-change-transform"
       style={{ clipPath, WebkitClipPath: clipPath }}
-      initial={{ x: 0, y: 0, rotate: 0 }}
-      animate={split ? { x, y, rotate } : { x: 0, y: 0, rotate: 0 }}
-      transition={{ duration: 0.82, ease: EASE_RACE }}
+      initial={{ x: 0, y: 0, rotate: 0, scale: 1 }}
+      animate={split ? { x, y, rotate, scale: 1.12 } : { x: 0, y: 0, rotate: 0, scale: 1 }}
+      transition={{ duration: 0.78, ease: EASE_RACE }}
     >
       <SplashFace />
     </motion.div>
@@ -64,25 +74,36 @@ export function IntroLoader() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    if (!visible) return;
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+    };
+  }, [visible]);
+
+  useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
-      const t = window.setTimeout(() => setVisible(false), 400);
+      const t = window.setTimeout(() => setVisible(false), 500);
       return () => window.clearTimeout(t);
     }
 
-    const tZoom = window.setTimeout(() => setPhase("zoom"), 1150);
-    const tSlash = window.setTimeout(() => setPhase("slash"), 1580);
-    const tSplit = window.setTimeout(() => setPhase("split"), 1820);
-    const tGone = window.setTimeout(() => setVisible(false), 2750);
+    const tSlash = window.setTimeout(() => setPhase("slash"), 1850);
+    const tSplit = window.setTimeout(() => setPhase("split"), 2140);
+    const tGone = window.setTimeout(() => setVisible(false), 3050);
     return () => {
-      window.clearTimeout(tZoom);
       window.clearTimeout(tSlash);
       window.clearTimeout(tSplit);
       window.clearTimeout(tGone);
     };
   }, []);
 
-  const zooming = phase === "zoom" || phase === "slash" || phase === "split";
   const slashing = phase === "slash" || phase === "split";
   const splitting = phase === "split";
 
@@ -90,35 +111,36 @@ export function IntroLoader() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[150] overflow-hidden"
+          className="fixed top-0 left-0 z-[150] w-full max-w-[100vw] overflow-hidden overscroll-none touch-none select-none"
+          style={{ height: "100dvh" }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.18 } }}
           aria-hidden
         >
-          <motion.div
-            className="absolute inset-0 will-change-transform"
-            initial={{ scale: 1 }}
-            animate={{ scale: splitting ? 1.62 : zooming ? 1.18 : 1 }}
-            transition={{
-              duration: splitting ? 0.85 : 0.55,
-              ease: splitting ? EASE_RACE : [0.4, 0, 0.2, 1],
-            }}
-          >
-            <SlashHalf
-              clipPath={CLIP_TOP}
-              split={splitting}
-              x="-22%"
-              y="-78%"
-              rotate={-11}
-            />
-            <SlashHalf
-              clipPath={CLIP_BOT}
-              split={splitting}
-              x="22%"
-              y="78%"
-              rotate={11}
-            />
-          </motion.div>
+          {(slashing || splitting) && (
+            <div className="absolute inset-0">
+              <SlashHalf
+                clipPath={CLIP_TOP}
+                split={splitting}
+                x="-75vw"
+                y="-95vh"
+                rotate={-8}
+              />
+              <SlashHalf
+                clipPath={CLIP_BOT}
+                split={splitting}
+                x="75vw"
+                y="95vh"
+                rotate={8}
+              />
+            </div>
+          )}
+
+          {!splitting && (
+            <div className="absolute inset-0">
+              <SplashFace playIntro />
+            </div>
+          )}
 
           <AnimatePresence>
             {slashing && (
@@ -128,10 +150,10 @@ export function IntroLoader() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: splitting ? 0 : 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: splitting ? 0.45 : 0.2, delay: splitting ? 0.12 : 0 }}
+                transition={{ duration: splitting ? 0.4 : 0.2, delay: splitting ? 0.08 : 0 }}
               >
                 <div
-                  className="absolute left-1/2 top-1/2 h-[4px] w-[150vmax]"
+                  className="absolute left-1/2 top-1/2 h-[3px] sm:h-[4px] w-[160vmax]"
                   style={{
                     transform: `translate(-50%, -50%) rotate(${SLASH_DEG}deg)`,
                   }}
@@ -140,7 +162,7 @@ export function IntroLoader() {
                     className="h-full w-full origin-left"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.26, ease: [0.2, 0.9, 0.2, 1] }}
+                    transition={{ duration: 0.24, ease: [0.2, 0.9, 0.2, 1] }}
                     style={{
                       background:
                         "linear-gradient(90deg, transparent 0%, #fff 18%, var(--color-primary) 50%, #fff 82%, transparent 100%)",
@@ -159,9 +181,9 @@ export function IntroLoader() {
                 key="flash"
                 className="pointer-events-none absolute inset-0 bg-white mix-blend-overlay"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 0.42, 0] }}
+                animate={{ opacity: [0, 0.38, 0] }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.32, times: [0, 0.35, 1] }}
+                transition={{ duration: 0.3, times: [0, 0.35, 1] }}
               />
             )}
           </AnimatePresence>
