@@ -9,7 +9,7 @@ import {
   linksForPath,
   metaArrayFromPageSeo,
 } from "@/i18n/seo";
-import directDrive from "@/assets/kart/direct-drive.jpg";
+import directDrive from "@/assets/kart/direct-drive.png";
 
 const PATH = "/kart-magik/direct-drive";
 

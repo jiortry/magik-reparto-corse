@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLang } from "@/i18n/LanguageProvider";
 import gokart from "@/assets/gokart.png";
-import directDrive from "@/assets/kart/direct-drive.jpg";
+import directDrive from "@/assets/kart/direct-drive.png";
 import { cn } from "@/lib/utils";
 
 export type KartVariant = "shifter" | "direct-drive";
