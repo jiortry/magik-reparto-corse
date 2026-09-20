@@ -1,4 +1,5 @@
 import { posts, postPlainText, readingMinutes } from "@/content/blog";
+import { dealers, dealerAddressLine, dealerInstagramUrl } from "@/content/dealers";
 import { faqItems } from "@/content/faq";
 import { PEPPO_PHONE_DISPLAY } from "@/lib/whatsapp";
 import { OG_LOCALES, type Lang } from "./dictionary";
@@ -229,6 +230,21 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "partner tecnici kart",
       ],
     },
+    "/rivenditori": {
+      title: `Rivenditori Magik Kart — Germania e rete ufficiale | ${SITE}`,
+      description:
+        "Rivenditore ufficiale Magik Kart in Germania: Magik Kart Germany, Gary Kirkby, Dassel. Email, telefono e Instagram per vendita e assistenza sul territorio.",
+      ogTitle: `Rivenditori Magik Kart — ${SITE}`,
+      ogDescription: "La rete ufficiale Magik Kart. In Germania: Magik Kart Germany, Dassel.",
+      keywords: [
+        "rivenditore Magik Kart",
+        "Magik Kart Germany",
+        "rivenditore kart Germania",
+        "Gary Kirkby kart",
+        "Magik Kart Dassel",
+        "dealer Magik Kart",
+      ],
+    },
     "/blog": {
       title: `Blog karting — Setup, motori, costi e categorie kart | ${SITE}`,
       description:
@@ -397,6 +413,20 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ogTitle: `Partnership & Sponsors — ${SITE}`,
       ogDescription: "The brands and businesses racing alongside us.",
       keywords: ["karting sponsorship", "kart team partners", "sponsor a kart team"],
+    },
+    "/rivenditori": {
+      title: `Magik Kart dealers — Germany and official network | ${SITE}`,
+      description:
+        "Official Magik Kart dealer in Germany: Magik Kart Germany, Gary Kirkby, Dassel. Email, phone and Instagram for sales and local support.",
+      ogTitle: `Magik Kart dealers — ${SITE}`,
+      ogDescription: "The official Magik Kart network. In Germany: Magik Kart Germany, Dassel.",
+      keywords: [
+        "Magik Kart dealer",
+        "Magik Kart Germany",
+        "kart dealer Germany",
+        "Gary Kirkby kart",
+        "Magik Kart Dassel",
+      ],
     },
     "/blog": {
       title: `Karting blog — Setup, engines, costs and classes | ${SITE}`,
@@ -584,6 +614,20 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "partners técnicos kart",
       ],
     },
+    "/rivenditori": {
+      title: `Distribuidores Magik Kart — Alemania y red oficial | ${SITE}`,
+      description:
+        "Distribuidor oficial Magik Kart en Alemania: Magik Kart Germany, Gary Kirkby, Dassel. Email, teléfono e Instagram para venta y asistencia local.",
+      ogTitle: `Distribuidores Magik Kart — ${SITE}`,
+      ogDescription: "La red oficial Magik Kart. En Alemania: Magik Kart Germany, Dassel.",
+      keywords: [
+        "distribuidor Magik Kart",
+        "Magik Kart Germany",
+        "distribuidor kart Alemania",
+        "Gary Kirkby kart",
+        "Magik Kart Dassel",
+      ],
+    },
     "/blog": {
       title: `Blog de karting — Setup, motores, costes y categorías | ${SITE}`,
       description:
@@ -767,6 +811,37 @@ export function buildRootJsonLd(): Record<string, unknown> {
         publisher: { "@id": ORGANIZATION_ID },
       },
     ],
+  };
+}
+
+export function buildDealersJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Rivenditori Magik Kart",
+    itemListElement: dealers.map((dealer, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": ["AutoDealer", "LocalBusiness"],
+        name: dealer.name,
+        email: dealer.email,
+        telephone: dealer.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: dealer.street,
+          postalCode: dealer.postalCode,
+          addressLocality: dealer.city,
+          addressCountry: dealer.countryCode,
+        },
+        employee: { "@type": "Person", name: dealer.contactName },
+        sameAs: [dealerInstagramUrl(dealer.instagram)],
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        brand: "Magik Kart",
+        url: absoluteUrl("/rivenditori"),
+        description: dealerAddressLine(dealer),
+      },
+    })),
   };
 }
 

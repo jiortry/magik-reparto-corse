@@ -226,6 +226,24 @@ export type Dict = {
     sponsorsLead: string;
     visitLabel: string;
   };
+  dealers: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    officialLabel: string;
+    emailLabel: string;
+    contactLabel: string;
+    addressLabel: string;
+    phoneLabel: string;
+    instagramLabel: string;
+    mapsLabel: string;
+    writeEmail: string;
+    callNow: string;
+    hqEyebrow: string;
+    hqTitle: string;
+    hqLead: string;
+    hqCta: string;
+  };
 };
 
 export const dictionary: Record<Lang, Dict> = {
@@ -240,6 +258,7 @@ export const dictionary: Record<Lang, Dict> = {
       gallery: "Gallery",
       blog: "Blog",
       partnership: "Partnership",
+      dealers: "Rivenditori",
       faq: "FAQ",
       contact: "Contatti",
     },
@@ -664,6 +683,25 @@ export const dictionary: Record<Lang, Dict> = {
       sponsorsLead: "Chi sostiene il progetto MAGIK Reparto Corse fuori dalla pista.",
       visitLabel: "Visita il sito",
     },
+    dealers: {
+      eyebrow: "Rete ufficiale",
+      title: "Rivenditori",
+      lead: "Il Kart Magik nel mondo. Punti di riferimento selezionati per vendita, assistenza e presenza sul territorio.",
+      officialLabel: "Rivenditore ufficiale",
+      emailLabel: "Email",
+      contactLabel: "Referente",
+      addressLabel: "Indirizzo",
+      phoneLabel: "Telefono",
+      instagramLabel: "Instagram",
+      mapsLabel: "Apri in Maps",
+      writeEmail: "Scrivi una email",
+      callNow: "Chiama ora",
+      hqEyebrow: "Diventa rivenditore",
+      hqTitle: "Vuoi portare Magik nel tuo Paese?",
+      hqLead:
+        "Stiamo costruendo una rete selezionata. Scrivi al reparto corse per una valutazione.",
+      hqCta: "Contatta MAGIK",
+    },
   },
   en: {
     nav: {
@@ -676,6 +714,7 @@ export const dictionary: Record<Lang, Dict> = {
       gallery: "Gallery",
       blog: "Blog",
       partnership: "Partnership",
+      dealers: "Dealers",
       faq: "FAQ",
       contact: "Contact",
     },
@@ -1100,6 +1139,24 @@ export const dictionary: Record<Lang, Dict> = {
       sponsorsLead: "The businesses supporting the MAGIK Reparto Corse project off track.",
       visitLabel: "Visit website",
     },
+    dealers: {
+      eyebrow: "Official network",
+      title: "Dealers",
+      lead: "Magik Kart around the world. Selected points of contact for sales, support and local presence.",
+      officialLabel: "Official dealer",
+      emailLabel: "Email",
+      contactLabel: "Contact",
+      addressLabel: "Address",
+      phoneLabel: "Phone",
+      instagramLabel: "Instagram",
+      mapsLabel: "Open in Maps",
+      writeEmail: "Send an email",
+      callNow: "Call now",
+      hqEyebrow: "Become a dealer",
+      hqTitle: "Want to bring Magik to your country?",
+      hqLead: "We are building a selected network. Write to the racing department for a review.",
+      hqCta: "Contact MAGIK",
+    },
   },
   es: {
     nav: {
@@ -1112,6 +1169,7 @@ export const dictionary: Record<Lang, Dict> = {
       gallery: "Galería",
       blog: "Blog",
       partnership: "Partnership",
+      dealers: "Distribuidores",
       faq: "FAQ",
       contact: "Contacto",
     },
@@ -1535,6 +1593,25 @@ export const dictionary: Record<Lang, Dict> = {
       sponsorsTitle: "Nuestros sponsors",
       sponsorsLead: "Quienes apoyan el proyecto MAGIK Reparto Corse fuera de la pista.",
       visitLabel: "Visitar el sitio",
+    },
+    dealers: {
+      eyebrow: "Red oficial",
+      title: "Distribuidores",
+      lead: "El Kart Magik en el mundo. Puntos de referencia seleccionados para venta, asistencia y presencia local.",
+      officialLabel: "Distribuidor oficial",
+      emailLabel: "Email",
+      contactLabel: "Contacto",
+      addressLabel: "Dirección",
+      phoneLabel: "Teléfono",
+      instagramLabel: "Instagram",
+      mapsLabel: "Abrir en Maps",
+      writeEmail: "Escribe un email",
+      callNow: "Llamar ahora",
+      hqEyebrow: "Hazte distribuidor",
+      hqTitle: "¿Quieres llevar Magik a tu país?",
+      hqLead:
+        "Estamos construyendo una red seleccionada. Escribe al departamento de competición para una evaluación.",
+      hqCta: "Contactar MAGIK",
     },
   },
 };

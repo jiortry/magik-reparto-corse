@@ -61,6 +61,11 @@ export function Footer() {
                 {t.nav.partnership}
               </Link>
             </li>
+            <li>
+              <Link to="/rivenditori" className="text-foreground/70 hover:text-primary">
+                {t.nav.dealers}
+              </Link>
+            </li>
           </ul>
         </div>
 

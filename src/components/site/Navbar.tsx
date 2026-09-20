@@ -31,6 +31,7 @@ export function Navbar() {
     { to: "/gallery", label: t.nav.gallery },
     { to: "/blog", label: t.nav.blog },
     { to: "/partnership", label: t.nav.partnership },
+    { to: "/rivenditori", label: t.nav.dealers },
     { to: "/faq", label: t.nav.faq },
     { to: "/contact", label: t.nav.contact },
   ];
@@ -50,17 +51,17 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-0">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="relative px-3 py-2 text-[13px] uppercase tracking-wider font-display font-semibold text-foreground/70 hover:text-foreground transition-colors group"
+              className="relative px-2.5 py-2 text-[12px] uppercase tracking-wide font-display font-semibold text-foreground/70 hover:text-foreground transition-colors group"
               activeProps={{ className: "!text-foreground" }}
               activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
-              <span className="absolute left-3 right-3 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute left-2.5 right-2.5 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
