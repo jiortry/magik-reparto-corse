@@ -182,7 +182,7 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
                   {...("external" in row && row.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="group/row flex items-start gap-4 border-b border-border/70 py-3.5 transition-colors hover:border-primary/40"
+                  className="group/row flex items-start gap-4 border-b border-border/70 py-3.5 transition-all duration-300 hover:translate-x-1 hover:border-primary/40"
                 >
                   <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover/row:bg-primary group-hover/row:text-primary-foreground">
                     <row.Icon size={15} />
@@ -229,6 +229,15 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
             >
               <MapPin size={13} />
               {copy.mapsLabel}
+            </a>
+            <a
+              href={dealerInstagramUrl(dealer.instagram)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <Instagram size={13} />
+              {copy.instagramLabel}
             </a>
           </motion.div>
         </div>

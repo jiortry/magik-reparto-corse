@@ -9,66 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FaqRouteImport } from './routes/faq'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as GiuseppeMorciaRouteImport } from './routes/giuseppe-morcia'
-import { Route as KartMagikRouteImport } from './routes/kart-magik'
-import { Route as LkeRouteImport } from './routes/lke'
-import { Route as PartnershipRouteImport } from './routes/partnership'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TeamRouteImport } from './routes/team'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as RivenditoriRouteImport } from './routes/rivenditori'
+import { Route as PartnershipRouteImport } from './routes/partnership'
+import { Route as LkeRouteImport } from './routes/lke'
+import { Route as KartMagikRouteImport } from './routes/kart-magik'
+import { Route as GiuseppeMorciaRouteImport } from './routes/giuseppe-morcia'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as KartMagikIndexRouteImport } from './routes/kart-magik.index'
-import { Route as KartMagikDirectDriveRouteImport } from './routes/kart-magik.direct-drive'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as KartMagikShifterRouteImport } from './routes/kart-magik.shifter'
+import { Route as KartMagikDirectDriveRouteImport } from './routes/kart-magik.direct-drive'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqRoute = FaqRouteImport.update({
-  id: '/faq',
-  path: '/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GiuseppeMorciaRoute = GiuseppeMorciaRouteImport.update({
-  id: '/giuseppe-morcia',
-  path: '/giuseppe-morcia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KartMagikRoute = KartMagikRouteImport.update({
-  id: '/kart-magik',
-  path: '/kart-magik',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LkeRoute = LkeRouteImport.update({
-  id: '/lke',
-  path: '/lke',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnershipRoute = PartnershipRouteImport.update({
-  id: '/partnership',
-  path: '/partnership',
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -76,19 +37,54 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamRoute = TeamRouteImport.update({
-  id: '/team',
-  path: '/team',
+const RivenditoriRoute = RivenditoriRouteImport.update({
+  id: '/rivenditori',
+  path: '/rivenditori',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
+const PartnershipRoute = PartnershipRouteImport.update({
+  id: '/partnership',
+  path: '/partnership',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const LkeRoute = LkeRouteImport.update({
+  id: '/lke',
+  path: '/lke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KartMagikRoute = KartMagikRouteImport.update({
+  id: '/kart-magik',
+  path: '/kart-magik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiuseppeMorciaRoute = GiuseppeMorciaRouteImport.update({
+  id: '/giuseppe-morcia',
+  path: '/giuseppe-morcia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KartMagikIndexRoute = KartMagikIndexRouteImport.update({
@@ -96,15 +92,25 @@ const KartMagikIndexRoute = KartMagikIndexRouteImport.update({
   path: '/',
   getParentRoute: () => KartMagikRoute,
 } as any)
-const KartMagikDirectDriveRoute = KartMagikDirectDriveRouteImport.update({
-  id: '/direct-drive',
-  path: '/direct-drive',
-  getParentRoute: () => KartMagikRoute,
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const KartMagikShifterRoute = KartMagikShifterRouteImport.update({
   id: '/shifter',
   path: '/shifter',
   getParentRoute: () => KartMagikRoute,
+} as any)
+const KartMagikDirectDriveRoute = KartMagikDirectDriveRouteImport.update({
+  id: '/direct-drive',
+  path: '/direct-drive',
+  getParentRoute: () => KartMagikRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/kart-magik': typeof KartMagikRouteWithChildren
   '/lke': typeof LkeRoute
   '/partnership': typeof PartnershipRoute
+  '/rivenditori': typeof RivenditoriRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/giuseppe-morcia': typeof GiuseppeMorciaRoute
   '/lke': typeof LkeRoute
   '/partnership': typeof PartnershipRoute
+  '/rivenditori': typeof RivenditoriRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -153,6 +161,7 @@ export interface FileRoutesById {
   '/kart-magik': typeof KartMagikRouteWithChildren
   '/lke': typeof LkeRoute
   '/partnership': typeof PartnershipRoute
+  '/rivenditori': typeof RivenditoriRoute
   '/services': typeof ServicesRoute
   '/team': typeof TeamRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -173,6 +182,7 @@ export interface FileRouteTypes {
     | '/kart-magik'
     | '/lke'
     | '/partnership'
+    | '/rivenditori'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -190,6 +200,7 @@ export interface FileRouteTypes {
     | '/giuseppe-morcia'
     | '/lke'
     | '/partnership'
+    | '/rivenditori'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -208,6 +219,7 @@ export interface FileRouteTypes {
     | '/kart-magik'
     | '/lke'
     | '/partnership'
+    | '/rivenditori'
     | '/services'
     | '/team'
     | '/blog/$slug'
@@ -227,6 +239,7 @@ export interface RootRouteChildren {
   KartMagikRoute: typeof KartMagikRouteWithChildren
   LkeRoute: typeof LkeRoute
   PartnershipRoute: typeof PartnershipRoute
+  RivenditoriRoute: typeof RivenditoriRoute
   ServicesRoute: typeof ServicesRoute
   TeamRoute: typeof TeamRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -235,67 +248,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faq': {
-      id: '/faq'
-      path: '/faq'
-      fullPath: '/faq'
-      preLoaderRoute: typeof FaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/giuseppe-morcia': {
-      id: '/giuseppe-morcia'
-      path: '/giuseppe-morcia'
-      fullPath: '/giuseppe-morcia'
-      preLoaderRoute: typeof GiuseppeMorciaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kart-magik': {
-      id: '/kart-magik'
-      path: '/kart-magik'
-      fullPath: '/kart-magik'
-      preLoaderRoute: typeof KartMagikRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lke': {
-      id: '/lke'
-      path: '/lke'
-      fullPath: '/lke'
-      preLoaderRoute: typeof LkeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partnership': {
-      id: '/partnership'
-      path: '/partnership'
-      fullPath: '/partnership'
-      preLoaderRoute: typeof PartnershipRouteImport
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -305,25 +262,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team': {
-      id: '/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof TeamRouteImport
+    '/rivenditori': {
+      id: '/rivenditori'
+      path: '/rivenditori'
+      fullPath: '/rivenditori'
+      preLoaderRoute: typeof RivenditoriRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
+    '/partnership': {
+      id: '/partnership'
+      path: '/partnership'
+      fullPath: '/partnership'
+      preLoaderRoute: typeof PartnershipRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/lke': {
+      id: '/lke'
+      path: '/lke'
+      fullPath: '/lke'
+      preLoaderRoute: typeof LkeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kart-magik': {
+      id: '/kart-magik'
+      path: '/kart-magik'
+      fullPath: '/kart-magik'
+      preLoaderRoute: typeof KartMagikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/giuseppe-morcia': {
+      id: '/giuseppe-morcia'
+      path: '/giuseppe-morcia'
+      fullPath: '/giuseppe-morcia'
+      preLoaderRoute: typeof GiuseppeMorciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kart-magik/': {
@@ -333,12 +339,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KartMagikIndexRouteImport
       parentRoute: typeof KartMagikRoute
     }
-    '/kart-magik/direct-drive': {
-      id: '/kart-magik/direct-drive'
-      path: '/direct-drive'
-      fullPath: '/kart-magik/direct-drive'
-      preLoaderRoute: typeof KartMagikDirectDriveRouteImport
-      parentRoute: typeof KartMagikRoute
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/kart-magik/shifter': {
       id: '/kart-magik/shifter'
@@ -346,6 +352,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/kart-magik/shifter'
       preLoaderRoute: typeof KartMagikShifterRouteImport
       parentRoute: typeof KartMagikRoute
+    }
+    '/kart-magik/direct-drive': {
+      id: '/kart-magik/direct-drive'
+      path: '/direct-drive'
+      fullPath: '/kart-magik/direct-drive'
+      preLoaderRoute: typeof KartMagikDirectDriveRouteImport
+      parentRoute: typeof KartMagikRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -376,6 +396,7 @@ const rootRouteChildren: RootRouteChildren = {
   KartMagikRoute: KartMagikRouteWithChildren,
   LkeRoute: LkeRoute,
   PartnershipRoute: PartnershipRoute,
+  RivenditoriRoute: RivenditoriRoute,
   ServicesRoute: ServicesRoute,
   TeamRoute: TeamRoute,
   BlogSlugRoute: BlogSlugRoute,
@@ -384,3 +405,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
