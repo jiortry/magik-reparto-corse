@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
@@ -44,7 +45,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   const t = dictionary[readStoredLang()];
@@ -54,7 +55,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <h1 className="font-display font-black uppercase italic text-3xl text-foreground">
           {t.errors.brokeTitle}
         </h1>
-        <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
+        <p className="mt-3 text-sm text-muted-foreground">
+          {error instanceof Error ? error.message : t.errors.brokeTitle}
+        </p>
         <div className="mt-6 flex justify-center gap-2">
           <button
             onClick={() => {

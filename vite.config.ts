@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import react from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
-import { defineConfig, loadEnv, mergeConfig } from "vite";
+import { defineConfig, loadEnv, mergeConfig, type PluginOption } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 const vercelBuild = process.env.VERCEL === "1";
@@ -11,7 +11,7 @@ const vercelBuild = process.env.VERCEL === "1";
 // Redirect TanStack Start's bundled server entry to src/server.ts (SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig(async ({ command, mode }) => {
-  const plugins = [tailwindcss(), tsConfigPaths({ projects: ["./tsconfig.json"] })];
+  const plugins: PluginOption[] = [tailwindcss(), tsConfigPaths({ projects: ["./tsconfig.json"] })];
 
   if (!vercelBuild && command === "build") {
     plugins.push(cloudflare({ viteEnvironment: { name: "ssr" } }));

@@ -6,6 +6,11 @@ export type Dealer = {
   countryCode: string;
   country: Record<Lang, string>;
   continent: Record<Lang, string>;
+  /** City/region reference point; not an exact street-level location. */
+  coordinates: { longitude: number; latitude: number };
+  mapLabel: { x: number; y: number };
+  /** Spread neighboring markers; a stem preserves the geographic reference. */
+  mapOffsetY?: number;
   areaServed?: string[];
   contactName?: string;
   secondaryContactName?: string;
@@ -28,6 +33,9 @@ export const dealers: Dealer[] = [
     countryCode: "DE",
     country: { it: "Germania", en: "Germany", es: "Alemania" },
     continent: { it: "Europa", en: "Europe", es: "Europa" },
+    coordinates: { longitude: 9.69, latitude: 51.8 },
+    mapLabel: { x: 42, y: 9 },
+    mapOffsetY: -18,
     contactName: "Gary Kirkby",
     email: "info@magikkartgermany.com",
     phone: "+49 157 81794612",
@@ -42,6 +50,8 @@ export const dealers: Dealer[] = [
     countryCode: "CO",
     country: { it: "Colombia", en: "Colombia", es: "Colombia" },
     continent: { it: "Sud America", en: "South America", es: "Sudamérica" },
+    coordinates: { longitude: -76.61, latitude: 2.44 },
+    mapLabel: { x: 22, y: 68 },
     contactName: "Luis Felipe Vejarano Restrepo",
     phone: "+57 300 05 89 802",
     whatsapp: "+57 300 05 89 802",
@@ -55,6 +65,8 @@ export const dealers: Dealer[] = [
     countryCode: "NZ",
     country: { it: "Nuova Zelanda", en: "New Zealand", es: "Nueva Zelanda" },
     continent: { it: "Oceania", en: "Oceania", es: "Oceanía" },
+    coordinates: { longitude: 176.84, latitude: -39.5 },
+    mapLabel: { x: 80, y: 91 },
     contactName: "Willie Pearson",
     secondaryContactName: "Johno Pearson",
     email: "info.pearsonmotorsport@gmail.com",
@@ -70,6 +82,9 @@ export const dealers: Dealer[] = [
     country: { it: "Italia e Svizzera", en: "Italy & Switzerland", es: "Italia y Suiza" },
     continent: { it: "Europa", en: "Europe", es: "Europa" },
     areaServed: ["IT", "CH"],
+    coordinates: { longitude: 8.82, latitude: 45.82 },
+    mapLabel: { x: 64, y: 43 },
+    mapOffsetY: 18,
     city: "Varese",
     website: "https://cbkracingvarese.com/",
   },

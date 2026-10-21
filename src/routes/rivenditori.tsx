@@ -2,10 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { PageShell } from "@/components/site/PageShell";
 import { SectionHeader } from "@/components/site/SectionHeader";
-import { DealerPlate } from "@/components/site/DealerPlate";
+import { DealerWorldMap } from "@/components/site/DealerWorldMap";
 import { RacingButton } from "@/components/site/RacingButton";
 import { useLang } from "@/i18n/LanguageProvider";
-import { dealers } from "@/content/dealers";
 import {
   buildBreadcrumbJsonLd,
   buildDealersJsonLd,
@@ -56,26 +55,7 @@ function DealersPage() {
 
         <SectionHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead} />
 
-        <nav aria-label={d.title} className="relative mt-10 flex flex-wrap gap-3">
-          {dealers.map((dealer) => (
-            <a
-              key={dealer.id}
-              href={`#${dealer.id}`}
-              className="inline-flex items-center gap-3 border border-border bg-card px-4 py-3 transition-colors hover:border-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-            >
-              <span className="font-display text-lg font-black italic text-primary">
-                {(dealer.areaServed ?? [dealer.countryCode]).join(" / ")}
-              </span>
-              <span className="text-sm font-medium">{dealer.country[lang]}</span>
-            </a>
-          ))}
-        </nav>
-
-        <div className="mt-10 space-y-10">
-          {dealers.map((dealer, i) => (
-            <DealerPlate key={dealer.id} dealer={dealer} lang={lang} copy={d} index={i} />
-          ))}
-        </div>
+        <DealerWorldMap lang={lang} copy={d} />
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

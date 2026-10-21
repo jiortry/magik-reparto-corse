@@ -227,6 +227,18 @@ export type Dict = {
     visitLabel: string;
   };
   dealers: {
+    mapTitle: string;
+    mapExplore: string;
+    mapNetwork: string;
+    mapDealers: string;
+    mapHint: string;
+    mapControls: string;
+    mapZoomIn: string;
+    mapZoomOut: string;
+    mapReset: string;
+    mapSelect: string;
+    mapLocationNote: string;
+    mapBack: string;
     eyebrow: string;
     title: string;
     lead: string;
@@ -692,6 +704,18 @@ export const dictionary: Record<Lang, Dict> = {
       visitLabel: "Visita il sito",
     },
     dealers: {
+      mapTitle: "Mappa mondiale dei rivenditori Magik",
+      mapExplore: "Il mondo corre Magik.",
+      mapNetwork: "Rete ufficiale",
+      mapDealers: "rivenditori",
+      mapHint: "Tocca un punto rosso per scoprire il rivenditore.",
+      mapControls: "Controlli della mappa",
+      mapZoomIn: "Ingrandisci la mappa",
+      mapZoomOut: "Riduci la mappa",
+      mapReset: "Mostra tutto il mondo",
+      mapSelect: "Scegli un rivenditore",
+      mapLocationNote: "I punti indicano le città e le aree di riferimento dei rivenditori.",
+      mapBack: "Torna alla mappa",
       eyebrow: "Rete ufficiale",
       title: "Rivenditori",
       lead: "Il Kart Magik nel mondo. Punti di riferimento selezionati per vendita, assistenza e presenza sul territorio.",
@@ -1152,6 +1176,18 @@ export const dictionary: Record<Lang, Dict> = {
       visitLabel: "Visit website",
     },
     dealers: {
+      mapTitle: "Magik worldwide dealer map",
+      mapExplore: "The world races Magik.",
+      mapNetwork: "Official network",
+      mapDealers: "dealers",
+      mapHint: "Tap a red dot to discover your dealer.",
+      mapControls: "Map controls",
+      mapZoomIn: "Zoom in",
+      mapZoomOut: "Zoom out",
+      mapReset: "Show the whole world",
+      mapSelect: "Choose a dealer",
+      mapLocationNote: "Markers show dealers’ cities and reference areas.",
+      mapBack: "Back to the map",
       eyebrow: "Official network",
       title: "Dealers",
       lead: "Magik Kart around the world. Selected points of contact for sales, support and local presence.",
@@ -1615,6 +1651,19 @@ export const dictionary: Record<Lang, Dict> = {
       visitLabel: "Visitar el sitio",
     },
     dealers: {
+      mapTitle: "Mapa mundial de distribuidores Magik",
+      mapExplore: "El mundo corre con Magik.",
+      mapNetwork: "Red oficial",
+      mapDealers: "distribuidores",
+      mapHint: "Toca un punto rojo para descubrir el distribuidor.",
+      mapControls: "Controles del mapa",
+      mapZoomIn: "Ampliar el mapa",
+      mapZoomOut: "Reducir el mapa",
+      mapReset: "Mostrar todo el mundo",
+      mapSelect: "Elige un distribuidor",
+      mapLocationNote:
+        "Los puntos indican las ciudades y zonas de referencia de los distribuidores.",
+      mapBack: "Volver al mapa",
       eyebrow: "Red oficial",
       title: "Distribuidores",
       lead: "El Kart Magik en el mundo. Puntos de referencia seleccionados para venta, asistencia y presencia local.",
