@@ -231,11 +231,12 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ],
     },
     "/rivenditori": {
-      title: `Rivenditori Magik Kart — Germania e rete ufficiale | ${SITE}`,
+      title: `Rivenditori Magik Kart — Rete internazionale | ${SITE}`,
       description:
-        "Rivenditore ufficiale Magik Kart in Germania: Magik Kart Germany, Gary Kirkby, Dassel. Email, telefono e Instagram per vendita e assistenza sul territorio.",
+        "Trova i rivenditori ufficiali Magik Kart in Germania, Colombia, Nuova Zelanda, Italia e Svizzera. Contatti diretti per vendita e assistenza kart.",
       ogTitle: `Rivenditori Magik Kart — ${SITE}`,
-      ogDescription: "La rete ufficiale Magik Kart. In Germania: Magik Kart Germany, Dassel.",
+      ogDescription:
+        "La rete Magik Kart in Europa, Sud America e Oceania. Scopri i rivenditori ufficiali e i loro contatti.",
       keywords: [
         "rivenditore Magik Kart",
         "Magik Kart Germany",
@@ -243,6 +244,10 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "Gary Kirkby kart",
         "Magik Kart Dassel",
         "dealer Magik Kart",
+        "Magik Kart Colombia",
+        "Pearson Motorsport",
+        "CBK Racing Varese",
+        "rivenditore kart Italia Svizzera",
       ],
     },
     "/blog": {
@@ -415,15 +420,19 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       keywords: ["karting sponsorship", "kart team partners", "sponsor a kart team"],
     },
     "/rivenditori": {
-      title: `Magik Kart dealers — Germany and official network | ${SITE}`,
+      title: `Magik Kart dealers — International network | ${SITE}`,
       description:
-        "Official Magik Kart dealer in Germany: Magik Kart Germany, Gary Kirkby, Dassel. Email, phone and Instagram for sales and local support.",
+        "Find official Magik Kart dealers in Germany, Colombia, New Zealand, Italy and Switzerland. Contact your local dealer for kart sales and support.",
       ogTitle: `Magik Kart dealers — ${SITE}`,
-      ogDescription: "The official Magik Kart network. In Germany: Magik Kart Germany, Dassel.",
+      ogDescription:
+        "The Magik Kart network across Europe, South America and Oceania. Explore official dealers and their contact details.",
       keywords: [
         "Magik Kart dealer",
         "Magik Kart Germany",
         "kart dealer Germany",
+        "Magik Kart Colombia",
+        "Pearson Motorsport New Zealand",
+        "CBK Racing Varese Italy Switzerland",
         "Gary Kirkby kart",
         "Magik Kart Dassel",
       ],
@@ -615,15 +624,19 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
       ],
     },
     "/rivenditori": {
-      title: `Distribuidores Magik Kart — Alemania y red oficial | ${SITE}`,
+      title: `Distribuidores Magik Kart — Red internacional | ${SITE}`,
       description:
-        "Distribuidor oficial Magik Kart en Alemania: Magik Kart Germany, Gary Kirkby, Dassel. Email, teléfono e Instagram para venta y asistencia local.",
+        "Encuentra distribuidores oficiales Magik Kart en Alemania, Colombia, Nueva Zelanda, Italia y Suiza. Contactos para venta y asistencia de karts.",
       ogTitle: `Distribuidores Magik Kart — ${SITE}`,
-      ogDescription: "La red oficial Magik Kart. En Alemania: Magik Kart Germany, Dassel.",
+      ogDescription:
+        "La red Magik Kart en Europa, Sudamérica y Oceanía. Descubre los distribuidores oficiales y sus contactos.",
       keywords: [
         "distribuidor Magik Kart",
         "Magik Kart Germany",
         "distribuidor kart Alemania",
+        "Magik Kart Colombia",
+        "Pearson Motorsport Nueva Zelanda",
+        "CBK Racing Varese Italia Suiza",
         "Gary Kirkby kart",
         "Magik Kart Dassel",
       ],
@@ -832,13 +845,20 @@ export function buildDealersJsonLd(): Record<string, unknown> {
           streetAddress: dealer.street,
           postalCode: dealer.postalCode,
           addressLocality: dealer.city,
+          addressRegion: dealer.region,
           addressCountry: dealer.countryCode,
         },
-        employee: { "@type": "Person", name: dealer.contactName },
-        sameAs: [dealerInstagramUrl(dealer.instagram)],
+        areaServed: dealer.areaServed ?? [dealer.countryCode],
+        employee: [dealer.contactName, dealer.secondaryContactName]
+          .filter(Boolean)
+          .map((name) => ({ "@type": "Person", name })),
+        sameAs: [
+          dealer.instagram ? dealerInstagramUrl(dealer.instagram) : undefined,
+          dealer.facebook,
+        ].filter(Boolean),
         parentOrganization: { "@id": ORGANIZATION_ID },
         brand: "Magik Kart",
-        url: absoluteUrl("/rivenditori"),
+        url: dealer.website ?? absoluteUrl(`/rivenditori#${dealer.id}`),
         description: dealerAddressLine(dealer),
       },
     })),

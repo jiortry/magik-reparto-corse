@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { Instagram, Mail, MapPin, Phone, User } from "lucide-react";
+import { Facebook, Globe, Instagram, Mail, MapPin, MessageCircle, Phone, User } from "lucide-react";
 import type { Dict, Lang } from "@/i18n/dictionary";
 import {
   dealerAddressLine,
   dealerInstagramUrl,
   dealerMapsUrl,
   dealerTelHref,
+  dealerWhatsappUrl,
   type Dealer,
 } from "@/content/dealers";
 
@@ -19,55 +20,101 @@ type Props = {
 };
 
 export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
+  const contactHref = dealer.email
+    ? `mailto:${dealer.email}`
+    : dealer.whatsapp
+      ? dealerWhatsappUrl(dealer.whatsapp)
+      : undefined;
   const rows = [
+    {
+      key: "whatsapp",
+      label: "WhatsApp",
+      value: dealer.whatsapp,
+      href: dealer.whatsapp ? dealerWhatsappUrl(dealer.whatsapp) : undefined,
+      Icon: MessageCircle,
+      external: true,
+      action: copy.writeWhatsapp,
+    },
     {
       key: "email",
       label: copy.emailLabel,
       value: dealer.email,
-      href: `mailto:${dealer.email}`,
+      href: dealer.email ? `mailto:${dealer.email}` : undefined,
       Icon: Mail,
+      action: copy.writeEmail,
     },
     {
       key: "contact",
       label: copy.contactLabel,
       value: dealer.contactName,
-      href: `mailto:${dealer.email}`,
+      href: contactHref,
+      Icon: User,
+    },
+    {
+      key: "secondaryContact",
+      label: copy.secondaryContactLabel,
+      value: dealer.secondaryContactName,
+      href: contactHref,
       Icon: User,
     },
     {
       key: "address",
-      label: copy.addressLabel,
+      label: dealer.street ? copy.addressLabel : copy.regionLabel,
       value: dealerAddressLine(dealer),
-      href: dealerMapsUrl(dealer),
+      href: dealer.street ? dealerMapsUrl(dealer) : undefined,
       Icon: MapPin,
       external: true,
+      action: dealer.street ? copy.mapsLabel : undefined,
     },
     {
       key: "phone",
       label: copy.phoneLabel,
       value: dealer.phone,
-      href: dealerTelHref(dealer.phone),
+      href: dealer.phone ? dealerTelHref(dealer.phone) : undefined,
       Icon: Phone,
+      action: copy.callNow,
+    },
+    {
+      key: "website",
+      label: copy.websiteLabel,
+      value: dealer.website ? new URL(dealer.website).hostname : undefined,
+      href: dealer.website,
+      Icon: Globe,
+      external: true,
+      action: copy.visitWebsite,
+    },
+    {
+      key: "facebook",
+      label: "Facebook",
+      value: dealer.facebook ? dealer.name : undefined,
+      href: dealer.facebook,
+      Icon: Facebook,
+      external: true,
+      action: "Facebook",
     },
     {
       key: "instagram",
       label: copy.instagramLabel,
-      value: `@${dealer.instagram}`,
-      href: dealerInstagramUrl(dealer.instagram),
+      value: dealer.instagram ? `@${dealer.instagram}` : undefined,
+      href: dealer.instagram ? dealerInstagramUrl(dealer.instagram) : undefined,
       Icon: Instagram,
       external: true,
+      action: copy.instagramLabel,
     },
-  ] as const;
+  ].filter((row) => row.value);
+
+  const actions = rows.filter((row) => row.action && row.href);
 
   const raceNo = String(index + 1).padStart(2, "0");
 
   return (
     <motion.article
+      id={dealer.id}
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay: index * 0.12, ease }}
-      className="group relative overflow-hidden border border-border bg-card"
+      className="group relative scroll-mt-28 overflow-hidden border border-border bg-card"
     >
       <div className="absolute inset-x-0 top-0 z-20 h-px origin-left scale-x-0 racing-stripe transition-transform duration-700 group-hover:scale-x-100" />
       <motion.span
@@ -109,18 +156,24 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
             </div>
 
             <div className="mt-16 lg:mt-0">
+              <p className="mb-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] text-muted-foreground">
+                {dealer.continent[lang]}
+              </p>
               <div className="overflow-hidden">
-                <motion.p
-                  initial={{ y: "110%" }}
-                  whileInView={{ y: "0%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.15, ease }}
+                <p
                   className="font-display text-[clamp(5.2rem,12vw,8.5rem)] font-black italic leading-[0.78] tracking-tight"
                   style={{ fontStretch: "condensed" }}
                 >
                   <span className="text-stroke">{dealer.countryCode[0]}</span>
                   <span className="text-primary">{dealer.countryCode[1]}</span>
-                </motion.p>
+                  {dealer.areaServed
+                    ?.filter((code) => code !== dealer.countryCode)
+                    .map((code) => (
+                      <span key={code} className="ml-4 inline-block text-[0.4em] text-accent">
+                        / {code}
+                      </span>
+                    ))}
+                </p>
               </div>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -138,7 +191,7 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
                 transition={{ duration: 0.55, delay: 0.45 }}
                 className="mt-2 text-sm text-muted-foreground"
               >
-                {dealer.city}
+                {[dealer.city, dealer.region].filter(Boolean).join(", ")}
               </motion.p>
             </div>
           </div>
@@ -168,36 +221,39 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
           </div>
 
           <ul className="mt-10 space-y-1">
-            {rows.map((row, i) => (
-              <motion.li
-                key={row.key}
-                custom={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.38 + i * 0.07, ease }}
-              >
-                <a
-                  href={row.href}
-                  {...("external" in row && row.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="group/row flex items-start gap-4 border-b border-border/70 py-3.5 transition-all duration-300 hover:translate-x-1 hover:border-primary/40"
+            {rows.map((row, i) => {
+              const RowTag = row.href ? "a" : "div";
+              return (
+                <motion.li
+                  key={row.key}
+                  custom={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.38 + i * 0.07, ease }}
                 >
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover/row:bg-primary group-hover/row:text-primary-foreground">
-                    <row.Icon size={15} />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-display text-[10px] font-bold uppercase tracking-[0.28em] text-muted-foreground">
-                      {row.label}
+                  <RowTag
+                    href={row.href}
+                    {...(row.href && row.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                    className={`group/row flex items-start gap-4 border-b border-border/70 py-3.5 transition-all duration-300 ${row.href ? "hover:translate-x-1 hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary" : ""}`}
+                  >
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover/row:bg-primary group-hover/row:text-primary-foreground">
+                      <row.Icon size={15} />
                     </span>
-                    <span className="mt-0.5 block text-[15px] font-medium text-foreground/90 transition-colors group-hover/row:text-primary">
-                      {row.value}
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-display text-[10px] font-bold uppercase tracking-[0.28em] text-muted-foreground">
+                        {row.label}
+                      </span>
+                      <span className="mt-0.5 block text-[15px] font-medium text-foreground/90 [overflow-wrap:anywhere] transition-colors group-hover/row:text-primary">
+                        {row.value}
+                      </span>
                     </span>
-                  </span>
-                </a>
-              </motion.li>
-            ))}
+                  </RowTag>
+                </motion.li>
+              );
+            })}
           </ul>
 
           <motion.div
@@ -207,38 +263,17 @@ export function DealerPlate({ dealer, lang, copy, index = 0 }: Props) {
             transition={{ duration: 0.5, delay: 0.85, ease }}
             className="mt-8 flex flex-wrap gap-2.5"
           >
-            <a
-              href={`mailto:${dealer.email}`}
-              className="inline-flex items-center gap-2 bg-primary px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <Mail size={13} />
-              {copy.writeEmail}
-            </a>
-            <a
-              href={dealerTelHref(dealer.phone)}
-              className="inline-flex items-center gap-2 border border-border px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              <Phone size={13} />
-              {copy.callNow}
-            </a>
-            <a
-              href={dealerMapsUrl(dealer)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-border px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-accent hover:text-accent"
-            >
-              <MapPin size={13} />
-              {copy.mapsLabel}
-            </a>
-            <a
-              href={dealerInstagramUrl(dealer.instagram)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-border px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              <Instagram size={13} />
-              {copy.instagramLabel}
-            </a>
+            {actions.map((action, i) => (
+              <a
+                key={action.key}
+                href={action.href}
+                {...(action.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`inline-flex items-center gap-2 px-4 py-2.5 font-display text-[11px] font-bold uppercase tracking-widest transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${i === 0 ? "bg-primary text-primary-foreground hover:bg-primary/90" : "border border-border text-foreground hover:border-primary hover:text-primary"}`}
+              >
+                <action.Icon size={13} />
+                {action.action}
+              </a>
+            ))}
           </motion.div>
         </div>
       </div>

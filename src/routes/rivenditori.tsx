@@ -51,12 +51,27 @@ function DealersPage() {
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
           className="pointer-events-none absolute -right-4 top-0 hidden select-none font-display text-[18vw] font-black italic leading-none text-stroke lg:block"
         >
-          DE
+          MAGIK
         </motion.p>
 
         <SectionHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead} />
 
-        <div className="mt-16 space-y-10">
+        <nav aria-label={d.title} className="relative mt-10 flex flex-wrap gap-3">
+          {dealers.map((dealer) => (
+            <a
+              key={dealer.id}
+              href={`#${dealer.id}`}
+              className="inline-flex items-center gap-3 border border-border bg-card px-4 py-3 transition-colors hover:border-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              <span className="font-display text-lg font-black italic text-primary">
+                {(dealer.areaServed ?? [dealer.countryCode]).join(" / ")}
+              </span>
+              <span className="text-sm font-medium">{dealer.country[lang]}</span>
+            </a>
+          ))}
+        </nav>
+
+        <div className="mt-10 space-y-10">
           {dealers.map((dealer, i) => (
             <DealerPlate key={dealer.id} dealer={dealer} lang={lang} copy={d} index={i} />
           ))}

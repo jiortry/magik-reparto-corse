@@ -233,12 +233,17 @@ export type Dict = {
     officialLabel: string;
     emailLabel: string;
     contactLabel: string;
+    secondaryContactLabel: string;
     addressLabel: string;
+    regionLabel: string;
     phoneLabel: string;
     instagramLabel: string;
     mapsLabel: string;
     writeEmail: string;
     callNow: string;
+    writeWhatsapp: string;
+    websiteLabel: string;
+    visitWebsite: string;
     hqEyebrow: string;
     hqTitle: string;
     hqLead: string;
@@ -393,7 +398,10 @@ export const dictionary: Record<Lang, Dict> = {
           label: "Carene",
           body: "KG 509-507 con supporti dedicati, incluse nel pacchetto d'acquisto.",
         },
-        { label: "Radiatore EM Technology", body: "Raffreddamento ad alta efficienza per le gare lunghe." },
+        {
+          label: "Radiatore EM Technology",
+          body: "Raffreddamento ad alta efficienza per le gare lunghe.",
+        },
         {
           label: "Impianto Frenante",
           body: "Impianto FREELINE: frenata potente, modulabile e costante.",
@@ -690,12 +698,17 @@ export const dictionary: Record<Lang, Dict> = {
       officialLabel: "Rivenditore ufficiale",
       emailLabel: "Email",
       contactLabel: "Referente",
+      secondaryContactLabel: "Altro referente",
       addressLabel: "Indirizzo",
+      regionLabel: "Zona",
       phoneLabel: "Telefono",
       instagramLabel: "Instagram",
       mapsLabel: "Apri in Maps",
       writeEmail: "Scrivi una email",
       callNow: "Chiama ora",
+      writeWhatsapp: "Scrivi su WhatsApp",
+      websiteLabel: "Sito web",
+      visitWebsite: "Visita il sito",
       hqEyebrow: "Diventa rivenditore",
       hqTitle: "Vuoi portare Magik nel tuo Paese?",
       hqLead:
@@ -955,8 +968,7 @@ export const dictionary: Record<Lang, Dict> = {
         },
       ],
       specsTitle: "Technical sheet",
-      specsLead:
-        "Magik Kart Direct Drive spec: straight drivetrain, MAGIK racing package.",
+      specsLead: "Magik Kart Direct Drive spec: straight drivetrain, MAGIK racing package.",
       homologation: "Direct Drive configuration",
       ficheDownload: "Download Fiche",
       specs: [
@@ -1146,12 +1158,17 @@ export const dictionary: Record<Lang, Dict> = {
       officialLabel: "Official dealer",
       emailLabel: "Email",
       contactLabel: "Contact",
+      secondaryContactLabel: "Additional contact",
       addressLabel: "Address",
+      regionLabel: "Area",
       phoneLabel: "Phone",
       instagramLabel: "Instagram",
       mapsLabel: "Open in Maps",
       writeEmail: "Send an email",
       callNow: "Call now",
+      writeWhatsapp: "Chat on WhatsApp",
+      websiteLabel: "Website",
+      visitWebsite: "Visit website",
       hqEyebrow: "Become a dealer",
       hqTitle: "Want to bring Magik to your country?",
       hqLead: "We are building a selected network. Write to the racing department for a review.",
@@ -1304,7 +1321,10 @@ export const dictionary: Record<Lang, Dict> = {
           label: "Carenados",
           body: "KG 509-507 con soportes dedicados, incluidos en el paquete de compra.",
         },
-        { label: "Radiador EM Technology", body: "Refrigeración de alta eficiencia para las carreras largas." },
+        {
+          label: "Radiador EM Technology",
+          body: "Refrigeración de alta eficiencia para las carreras largas.",
+        },
         {
           label: "Sistema de frenos",
           body: "Sistema FREELINE: frenada potente, modulable y constante.",
@@ -1601,12 +1621,17 @@ export const dictionary: Record<Lang, Dict> = {
       officialLabel: "Distribuidor oficial",
       emailLabel: "Email",
       contactLabel: "Contacto",
+      secondaryContactLabel: "Otro contacto",
       addressLabel: "Dirección",
+      regionLabel: "Zona",
       phoneLabel: "Teléfono",
       instagramLabel: "Instagram",
       mapsLabel: "Abrir en Maps",
       writeEmail: "Escribe un email",
       callNow: "Llamar ahora",
+      writeWhatsapp: "Escribe por WhatsApp",
+      websiteLabel: "Sitio web",
+      visitWebsite: "Visitar el sitio",
       hqEyebrow: "Hazte distribuidor",
       hqTitle: "¿Quieres llevar Magik a tu país?",
       hqLead:
