@@ -233,7 +233,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/rivenditori": {
       title: `Rivenditori Magik Kart — Rete internazionale | ${SITE}`,
       description:
-        "Trova i rivenditori ufficiali Magik Kart in Germania, Colombia, Nuova Zelanda, Italia e Svizzera. Contatti diretti per vendita e assistenza kart.",
+        "Trova i rivenditori ufficiali Magik Kart in Germania, Colombia, Nuova Zelanda, Italia, Svizzera e Francia. Contatti per vendita e assistenza kart.",
       ogTitle: `Rivenditori Magik Kart — ${SITE}`,
       ogDescription:
         "La rete Magik Kart in Europa, Sud America e Oceania. Scopri i rivenditori ufficiali e i loro contatti.",
@@ -248,6 +248,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "Pearson Motorsport",
         "CBK Racing Varese",
         "rivenditore kart Italia Svizzera",
+        "D Racing Francia",
       ],
     },
     "/blog": {
@@ -422,7 +423,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/rivenditori": {
       title: `Magik Kart dealers — International network | ${SITE}`,
       description:
-        "Find official Magik Kart dealers in Germany, Colombia, New Zealand, Italy and Switzerland. Contact your local dealer for kart sales and support.",
+        "Find official Magik Kart dealers in Germany, Colombia, New Zealand, Italy, Switzerland and France. Contact your dealer for kart sales and support.",
       ogTitle: `Magik Kart dealers — ${SITE}`,
       ogDescription:
         "The Magik Kart network across Europe, South America and Oceania. Explore official dealers and their contact details.",
@@ -433,6 +434,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "Magik Kart Colombia",
         "Pearson Motorsport New Zealand",
         "CBK Racing Varese Italy Switzerland",
+        "D Racing France",
         "Gary Kirkby kart",
         "Magik Kart Dassel",
       ],
@@ -626,7 +628,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
     "/rivenditori": {
       title: `Distribuidores Magik Kart — Red internacional | ${SITE}`,
       description:
-        "Encuentra distribuidores oficiales Magik Kart en Alemania, Colombia, Nueva Zelanda, Italia y Suiza. Contactos para venta y asistencia de karts.",
+        "Encuentra distribuidores oficiales Magik Kart en Alemania, Colombia, Nueva Zelanda, Italia, Suiza y Francia. Contactos para venta y asistencia de karts.",
       ogTitle: `Distribuidores Magik Kart — ${SITE}`,
       ogDescription:
         "La red Magik Kart en Europa, Sudamérica y Oceanía. Descubre los distribuidores oficiales y sus contactos.",
@@ -637,6 +639,7 @@ export const seoRoutes: Record<Lang, Record<string, PageSeo>> = {
         "Magik Kart Colombia",
         "Pearson Motorsport Nueva Zelanda",
         "CBK Racing Varese Italia Suiza",
+        "D Racing Francia",
         "Gary Kirkby kart",
         "Magik Kart Dassel",
       ],
@@ -722,9 +725,7 @@ export function getSsrPageSeo(path: string): PageSeo {
 }
 
 type MetaTag =
-  | { title: string }
-  | { name: string; content: string }
-  | { property: string; content: string };
+  { title: string } | { name: string; content: string } | { property: string; content: string };
 type LinkTag = { rel: string; href: string; hrefLang?: string };
 
 export function metaArrayFromPageSeo(

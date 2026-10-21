@@ -10,6 +10,7 @@ export type Dealer = {
   coordinates: { longitude: number; latitude: number };
   mapLabel: { x: number; y: number };
   /** Spread neighboring markers; a stem preserves the geographic reference. */
+  mapOffsetX?: number;
   mapOffsetY?: number;
   areaServed?: string[];
   contactName?: string;
@@ -87,6 +88,22 @@ export const dealers: Dealer[] = [
     mapOffsetY: 18,
     city: "Varese",
     website: "https://cbkracingvarese.com/",
+  },
+  {
+    id: "france",
+    name: "D Racing",
+    countryCode: "FR",
+    country: { it: "Francia", en: "France", es: "Francia" },
+    continent: { it: "Europa", en: "Europe", es: "Europa" },
+    coordinates: { longitude: 4.85, latitude: 45.01 },
+    mapLabel: { x: 22, y: 16 },
+    mapOffsetX: -36,
+    email: "sergeriou@dracing.fr",
+    phone: "+33 6 07 30 80 21",
+    street: "75 impasse de la Cité, Z.A. de la Croix des Marais",
+    city: "La Roche-de-Glun",
+    facebook: "https://www.facebook.com/Dracing.fr/",
+    website: "http://www.dracing.fr/",
   },
 ];
 

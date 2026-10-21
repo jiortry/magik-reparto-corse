@@ -112,8 +112,10 @@
 }
 .dealer-map-dot-stem {
   position: absolute;
-  left: calc(50% - 0.5px);
-  width: 1px;
+  left: 50%;
+  top: 50%;
+  height: 1px;
+  transform-origin: 0 50%;
   background: #ed383faa;
   pointer-events: none;
 }
@@ -280,6 +282,9 @@
   background: #27191f;
   border-color: #bc343d;
   color: #fff;
+}
+.dealer-country-selector > button:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 .dealer-country-selector > button:hover {
   border-color: #c74b52;

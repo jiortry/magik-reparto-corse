@@ -60,7 +60,7 @@ export function DealerWorldMap({ lang, copy }: Props) {
       zoom === 1
         ? dealer.mapLabel
         : {
-            x: clamp(x + (dealer.countryCode === "DE" ? -14 : 14), 15, 85),
+            x: clamp(x + (dealer.mapLabel.x < 50 ? -14 : 14), 15, 85),
             y: clamp(y + (dealer.countryCode === "DE" ? -22 : 22), 10, 90),
           };
     return { dealer, x, y, label, visible: x >= 1 && x <= 99 && y >= 2 && y <= 98 };
@@ -174,19 +174,22 @@ export function DealerWorldMap({ lang, copy }: Props) {
                     <button
                       type="button"
                       className={`dealer-map-dot ${active ? "is-active" : ""}`}
-                      style={{ left: `${x}%`, top: `calc(${y}% + ${dealer.mapOffsetY ?? 0}px)` }}
+                      style={{
+                        left: `calc(${x}% + ${dealer.mapOffsetX ?? 0}px)`,
+                        top: `calc(${y}% + ${dealer.mapOffsetY ?? 0}px)`,
+                      }}
                       aria-label={`${dealer.name} — ${dealer.country[lang]}`}
                       aria-pressed={active}
                       aria-controls="dealer-details"
                       onClick={() => selectDealer(dealer.id)}
                     >
-                      {dealer.mapOffsetY ? (
+                      {dealer.mapOffsetX || dealer.mapOffsetY ? (
                         <span
                           className="dealer-map-dot-stem"
                           aria-hidden="true"
                           style={{
-                            height: Math.abs(dealer.mapOffsetY),
-                            ...(dealer.mapOffsetY < 0 ? { top: "50%" } : { bottom: "50%" }),
+                            width: Math.hypot(dealer.mapOffsetX ?? 0, dealer.mapOffsetY ?? 0),
+                            transform: `rotate(${Math.atan2(-(dealer.mapOffsetY ?? 0), -(dealer.mapOffsetX ?? 0))}rad)`,
                           }}
                         />
                       ) : null}
