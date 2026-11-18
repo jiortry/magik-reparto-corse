@@ -784,7 +784,7 @@ export function buildRootJsonLd(): Record<string, unknown> {
         url: SITE_URL,
         description:
           "Reparto corse ufficiale del marchio Magik: preparazione kart, assistenza in pista, riparazione go-kart, ricambi e rivenditore ufficiale LKE in Emilia-Romagna.",
-        email: "posmaster@magikrepartocorse.it",
+        email: "postmaster@magikrepartocorse.it",
         telephone: PEPPO_PHONE_DISPLAY,
         inLanguage: ["it", "en", "es"],
         areaServed: [

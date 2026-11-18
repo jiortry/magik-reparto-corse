@@ -672,7 +672,7 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       emailsTitle: "Scrivici via email",
       emails: [
-        { label: "Informazioni generali", address: "posmaster@magikrepartocorse.it" },
+        { label: "Informazioni generali", address: "postmaster@magikrepartocorse.it" },
         { label: "Giuseppe Morcia — Fondatore", address: "peppo.morcia@magikrepartocorse.it" },
         { label: "Contatto alternativo", address: "magik.racing@gmail.com" },
       ],
@@ -691,7 +691,7 @@ export const dictionary: Record<Lang, Dict> = {
       services: "Servizi",
       contact: "Contatti",
       rights: "Tutti i diritti riservati.",
-      email: "posmaster@magikrepartocorse.it",
+      email: "postmaster@magikrepartocorse.it",
     },
     partnership: {
       eyebrow: "Partner & Sponsor",
@@ -1144,7 +1144,7 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       emailsTitle: "Email us",
       emails: [
-        { label: "General inquiries", address: "posmaster@magikrepartocorse.it" },
+        { label: "General inquiries", address: "postmaster@magikrepartocorse.it" },
         { label: "Giuseppe Morcia — Founder", address: "peppo.morcia@magikrepartocorse.it" },
         { label: "Alternative contact", address: "magik.racing@gmail.com" },
       ],
@@ -1163,7 +1163,7 @@ export const dictionary: Record<Lang, Dict> = {
       services: "Services",
       contact: "Contact",
       rights: "All rights reserved.",
-      email: "posmaster@magikrepartocorse.it",
+      email: "postmaster@magikrepartocorse.it",
     },
     partnership: {
       eyebrow: "Partners & Sponsors",
@@ -1619,7 +1619,7 @@ export const dictionary: Record<Lang, Dict> = {
       ],
       emailsTitle: "Escríbenos por email",
       emails: [
-        { label: "Información general", address: "posmaster@magikrepartocorse.it" },
+        { label: "Información general", address: "postmaster@magikrepartocorse.it" },
         { label: "Giuseppe Morcia — Fundador", address: "peppo.morcia@magikrepartocorse.it" },
         { label: "Contacto alternativo", address: "magik.racing@gmail.com" },
       ],
@@ -1638,7 +1638,7 @@ export const dictionary: Record<Lang, Dict> = {
       services: "Servicios",
       contact: "Contacto",
       rights: "Todos los derechos reservados.",
-      email: "posmaster@magikrepartocorse.it",
+      email: "postmaster@magikrepartocorse.it",
     },
     partnership: {
       eyebrow: "Partners y sponsors",
